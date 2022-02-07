@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --mainColor: #1dbfcc;
+  --optionalColor: #06a3da;
+  --whiteColor: #ffffff;
+  --blackColor: #002345;
+  --paragraphColor: #486683;
+  --fontSize: 16px;
+  --transition: 0.6s;
+}
