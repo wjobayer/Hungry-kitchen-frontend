@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  @apply font-bold mb-3;
+  line-height: 1.2;
+}
+button {
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-size: 3rem !important;
+}
+h2 {
+  font-size: 2.25rem !important;
+}
+h3 {
+  font-size: 1.875rem !important;
+}
+h4 {
+  font-size: 1.5rem !important;
+}
+h5 {
+  font-size: 1.25rem !important;
+}
+h6 {
+  font-size: 1.25rem !important;
+}
+
+p {
+  line-height: 1.8;
+  color: var(--paragraphColor);
+  font-weight: 400;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+}
+
+.container {
+  @apply px-4 mx-auto;
+}
+a {
+  transition: 0.3s;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: var(--paragraphColor);
+  font-weight: 400;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+}
+
+.section-padding {
+  padding-bottom: 75px;
+  padding-top: 100px;
+}
+.section-padding-t {
+  padding-top: 100px;
+}
+.section-padding-b {
+  padding-bottom: 75px;
+}
+
+.default-btn {
+  @apply text-center text-white text-base font-normal inline-flex items-center justify-center relative overflow-hidden border-0 bg-java-500;
+  padding: 15px 30px;
+  transition: var(--transition);
+  border-radius: 5px;
+  z-index: 0;
+  box-shadow: none;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  &:before {
+    @apply absolute top-0 bottom-0 left-1/2 m-auto;
+    content: "";
+    width: 550px;
+    height: 550px;
+    background: var(--optionalColor);
+    border-radius: 50%;
+    z-index: -1;
+    transform-origin: top center;
+    transform: translateX(-50%) translateY(-5%) scale(0.4);
+    transition: transform 0.9s;
+  }
+  &:hover {
+    color: var(--whiteColor);
+  }
+}
+
+.default-btn:hover:before {
+  transition: transform 1s;
+  transform: translateX(-45%) translateY(0) scale(1);
+  transform-origin: bottom center;
+}
+
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 75px;
+}
+.section-padding-t {
+  padding-top: 100px;
+}
+.section-padding-b {
+  padding-bottom: 75px;
+}
