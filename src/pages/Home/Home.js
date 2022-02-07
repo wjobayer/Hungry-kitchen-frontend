@@ -1,4 +1,5 @@
 import React from "react";
+import ParallaxSection from "../../components/ParallaxSection/ParallaxSection";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <h1>This is Home</h1>
       <ProductCard />
+      <ParallaxSection />
     </div>
   );
 };
