@@ -1,10 +1,11 @@
 import React from "react";
+import MobileFeatured from "../../components/MobileFeatured";
 import ProductCard from "../../components/ProductCard/ProductCard";
 const Home = () => {
   return (
     <div>
-      <h1>This is Home</h1>
       <ProductCard />
+      <MobileFeatured />
     </div>
   );
 };
