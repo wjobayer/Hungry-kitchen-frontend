@@ -4,10 +4,15 @@ import { BiLoaderCircle } from "react-icons/bi";
 import PaginationCompo from "./PaginationCompo";
 
 const ProductCard = () => {
-  const [country, setCountry] = useState("Indian");
+  const [country, setCountry] = useState("Italian");
   const handleFilter = (id) => {
     setCountry(id);
   };
+
+  //pagination stuff-----------------------------------
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage] = useState(8);
+
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -21,11 +26,10 @@ const ProductCard = () => {
       setLoading(false);
     };
     fetchBlogs();
+    setCurrentPage(1);
   }, [country]);
   console.log(country);
-  //pagination stuff-----------------------------------
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage] = useState(8);
+
   // Get Current Posts
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
