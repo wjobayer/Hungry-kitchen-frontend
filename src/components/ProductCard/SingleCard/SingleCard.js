@@ -1,11 +1,13 @@
 import { React, useState } from "react";
+import { IoMdCart } from "react-icons/io";
+
 import "./SingleCard.css";
 const SingleCard = ({ foods }) => {
   const [counter, setCounter] = useState(0);
   return (
     <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
       <img
-        className="rounded-full p-2.5"
+        className="rounded-full p-2.5 w-44 mx-auto"
         src={foods.strMealThumb}
         alt={foods.strMeal}
       />
@@ -33,8 +35,10 @@ const SingleCard = ({ foods }) => {
       </div>
 
       <div className="flex justify-center">
-        <button className="bg-red-500 text-white font-bold px-7 py-2 rounded-3xl duration-500 hover:bg-orange-400">
-          VIEW OPTIONS
+        <button className="bg-red-500 text-xs text-white font-bold px-6 py-3 rounded-3xl duration-500 hover:bg-orange-400">
+          <p className="flex items-center">
+            <IoMdCart className="mr-1" /> VIEW OPTIONS
+          </p>
         </button>
       </div>
     </div>

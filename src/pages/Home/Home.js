@@ -1,11 +1,11 @@
 import React from "react";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductSection from "../../components/ProductCard/SingleCard/ProductSection";
 
 const Home = () => {
   return (
     <div>
       <h1>This is Home</h1>
-      <ProductCard />
+      <ProductSection />
     </div>
   );
 };

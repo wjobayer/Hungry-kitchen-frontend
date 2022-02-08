@@ -15,6 +15,7 @@ const AppRouter = () => {
         <Route path="/home">
           <Home />
         </Route>
+        <Route></Route>
       </Switch>
       <Footer />
     </Router>
