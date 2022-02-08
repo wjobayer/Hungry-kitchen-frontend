@@ -68,14 +68,16 @@ a {
   margin-bottom: 0;
 }
 .btn-brand {
-  @apply bg-yellow-500 font-semibold py-3 px-6  hover:text-white;
+  @apply bg-yellow-500 font-semibold rounded-md py-3 px-6 hover:text-white;
   &:hover {
     background-color: #231900;
+    transition: var(--transition);
   }
 }
 .btn-brand-secondary {
-  @apply font-semibold py-3 px-6 bg-gray-900 text-white;
+  @apply font-semibold rounded-md  py-3 px-6 bg-gray-900 text-white;
   &:hover {
     background-color: #231900;
+    transition: var(--transition);
   }
 }
