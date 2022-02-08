@@ -1,11 +1,5 @@
-import {
-  faFacebook,
-  faGoogle,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFacebook, faGoogle, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from "react";
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
 
@@ -36,21 +30,11 @@ const Footer = () => {
                   <span className="font-extrabold">Email:</span>{" "}
                   restaurant@gmail.com
                 </p>
-                <a href="https://youtu.be/62b9HXn4VnI">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a className="mx-3" href="https://youtu.be/62b9HXn4VnI">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a href="https://youtu.be/62b9HXn4VnI">
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a className="mx-3" href="https://youtu.be/62b9HXn4VnI">
-                  <FontAwesomeIcon icon={faGoogle} />
-                </a>
-                <a href="https://youtu.be/62b9HXn4VnI">
-                  <FontAwesomeIcon icon={faYoutube} />
-                </a>
+                {/* <a href="https://youtu.be/62b9HXn4VnI"><FontAwesomeIcon icon={faFacebook} /></a>
+                        <a className='mx-3' href="https://youtu.be/62b9HXn4VnI"><FontAwesomeIcon icon={faTwitter} /></a>
+                        <a href="https://youtu.be/62b9HXn4VnI"><FontAwesomeIcon icon={faLinkedin} /></a>
+                        <a className='mx-3' href="https://youtu.be/62b9HXn4VnI"><FontAwesomeIcon icon={faGoogle} /></a>
+                        <a href="https://youtu.be/62b9HXn4VnI"><FontAwesomeIcon icon={faYoutube} /></a> */}
               </div>
               <div>
                 <h1 className="font-extrabold text-xl">Our Services</h1>
