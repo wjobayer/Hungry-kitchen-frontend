@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import ReactSlick from '../components/ReactSlick/ReactSlick';
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
-import './Footer.css'
 const Footer = () => {
     return (
         <div className='pt-8 fontsimplement'>
