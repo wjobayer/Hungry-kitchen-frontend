@@ -27,7 +27,6 @@ const ParallaxSection = () => {
                 </div>
             </div>
 
-
         </div >
 
     );
