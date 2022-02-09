@@ -19,7 +19,7 @@ const HeroSection = () => {
                 </div>
             </main>
 
-            <div className="lg:absolute lg:inset-y-0 lg:right-0 -z-30">
+            <div className="lg:absolute sm:absolute lg:inset-y-0 lg:right-0 -z-30">
                 <img
                     className="object-cover h-50"
                     src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png"
