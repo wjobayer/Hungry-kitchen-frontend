@@ -39,7 +39,6 @@ const ProductCard = () => {
 
   return (
     <div className="container px-7 mx-auto">
-      <h2>This is product card</h2>
       <div className="my-5 flex justify-center">
         <div className="w-96">
           <p className="text-red-500 font-bold text-sm text-center tracking-wider">
