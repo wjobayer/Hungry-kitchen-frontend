@@ -48,39 +48,37 @@ const ProductCard = () => {
       </div>
 
       {/* -------------filter/query buttons ------------- */}
-      <div className="flex justify-center">
-        <div>
-          <button
-            className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl"
-            onClick={() => handleFilter("Chinese")}
-          >
-            Chinese
-          </button>
-          <button
-            className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl"
-            onClick={() => handleFilter("Indian")}
-          >
-            India
-          </button>
-          <button
-            className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl"
-            onClick={() => handleFilter("Italian")}
-          >
-            Italian
-          </button>
-          <button
-            className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl"
-            onClick={() => handleFilter("Canadian")}
-          >
-            Canadian
-          </button>
-          <button
-            className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl"
-            onClick={() => handleFilter("Portuguese")}
-          >
-            Portuguese
-          </button>
-        </div>
+      <div className="flex justify-center flex-wrap">
+        <button
+          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          onClick={() => handleFilter("Chinese")}
+        >
+          Chinese
+        </button>
+        <button
+          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none "
+          onClick={() => handleFilter("Indian")}
+        >
+          India
+        </button>
+        <button
+          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          onClick={() => handleFilter("Italian")}
+        >
+          Italian
+        </button>
+        <button
+          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          onClick={() => handleFilter("Canadian")}
+        >
+          Canadian
+        </button>
+        <button
+          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          onClick={() => handleFilter("Portuguese")}
+        >
+          Portuguese
+        </button>
       </div>
       {/* ----------------------------------------------------------------------------------------- */}
       <div className="flex justify-center ">
