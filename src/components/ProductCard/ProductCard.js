@@ -11,7 +11,7 @@ const ProductCard = () => {
   console.log(food);
   return (
     <div className="container mx-auto">
-      <h2>This is product card</h2>
+      <h2 className="text-center my-5 font-bold">Popular Right Now!</h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
         {food.map((foods) => (
           <SingleCard key={foods.idMeal} foods={foods}></SingleCard>
