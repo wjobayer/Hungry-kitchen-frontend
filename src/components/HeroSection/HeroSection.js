@@ -3,7 +3,7 @@ import React from 'react';
 const HeroSection = () => {
     return (
         <div
-            style={{ backgroundImage: `url("https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png") `, height: '70vh', marginTop: "-250px" }}
+            style={{ backgroundImage: `url("https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png") `, backgroundRepeat: 'cover', height: '70vh', marginTop: "-250px" }}
             className='lg:pb-44 sm:pb-40 '>
 
             <main className="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-28 pt-44 p-10">
@@ -12,8 +12,8 @@ const HeroSection = () => {
                         <span className="block xl:inline">Order Healthy And <br /> Fresh Food</span>{' '}
                         <span className="block text-yellow-500 xl:inline">Any Time</span>
                     </h1>
-                    <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        While eating at a restaurant is an enjoyable and convenient occasional treat, most individuals and families prepare their meals at home. To get homemade food join our platform now.
+                    <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        While eating at a restaurant is an enjoyable and convenient occasional treat, most individuals and families prepare their meals at home. <br />  <span className='text-yellow-500 '>To get homemade food join our platform now.</span>
                     </p>
 
                     <div className="mt-4 sm:mt-4 sm:flex sm:justify-center lg:justify-start">

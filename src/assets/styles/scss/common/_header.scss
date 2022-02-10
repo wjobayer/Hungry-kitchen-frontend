@@ -1,3 +1,12 @@
 .header {
   // @apply bg-blue-500;
 }
+
+@media only screen and (max-width: 768px) {
+  .heroSection{
+    margin-top: 250px;
+    margin-left: 180px;
+    position: absolute;
+    background-color: black;
+  }
+}
