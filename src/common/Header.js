@@ -13,7 +13,7 @@ const Header = () => {
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black"
               href="#pablo"
             >
-              <img src="https://i.ibb.co/gddPmkP/Untitled-design-2-removebg-preview-1.png" className="text-white" alt="" srcset="" />
+              <img src="https://i.ibb.co/4MHt1jq/Untitled-design-3-removebg-preview.png" className="text-white" alt="" srcset="" />
             </a>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
