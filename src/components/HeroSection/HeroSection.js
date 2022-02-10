@@ -13,8 +13,7 @@ const HeroSection = () => {
                         <span className="block text-yellow-500 xl:inline">Any Time</span>
                     </h1>
                     <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                        fugiat veniam occaecat fugiat aliqua.
+                        While eating at a restaurant is an enjoyable and convenient occasional treat, most individuals and families prepare their meals at home. To get homemade food join our platform now.
                     </p>
 
                     <div className="mt-4 sm:mt-4 sm:flex sm:justify-center lg:justify-start">
