@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 const Partner = () => {
   return (
     <>
-      <div className="container">
+      <div className="container section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative partner">
             <div className="w-full">
