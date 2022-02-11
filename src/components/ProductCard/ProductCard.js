@@ -62,7 +62,7 @@ const ProductCard = () => {
           className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none "
           onClick={() => handleFilter("Indian")}
         >
-          India
+          Indian
         </button>
         <button
           className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"

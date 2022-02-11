@@ -36,6 +36,7 @@ body {
 //   font-size: 1.25rem;
 // }
 
+<<<<<<< HEAD
 // p {
 //   line-height: 1.8;
 //   color: var(--paragraphColor);
@@ -43,6 +44,15 @@ body {
 //   font-family: var(--fontFamily);
 //   font-size: var(--fontSize);
 // }
+=======
+p {
+  line-height: 1.8;
+  // color: var(--paragraphColor);
+  font-weight: 400;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+}
+>>>>>>> 354056b4c9be57f6982fbbffd9e800c2443f3e23
 
 .container {
   @apply px-4 mx-auto;
