@@ -17,39 +17,67 @@ h6 {
 button {
   font-family: "Roboto", sans-serif;
 }
-h1 {
-  font-size: 3rem;
-}
-h2 {
-  font-size: 2.25rem;
-}
-h3 {
-  font-size: 1.875rem;
-}
-h4 {
-  font-size: 1.5rem;
-}
-h5 {
-  font-size: 1.25rem;
-}
-h6 {
-  font-size: 1.25rem;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-family: "Roboto", sans-serif;
+//   @apply font-bold mb-3;
+//   line-height: 1.2;
+// }
+// button {
+//   font-family: "Roboto", sans-serif;
+// }
+// h1 {
+//   font-size: 3rem;
+// }
+// h2 {
+//   font-size: 2.25rem;
+// }
+// h3 {
+//   font-size: 1.875rem;
+// }
+// h4 {
+//   font-size: 1.5rem;
+// }
+// h5 {
+//   font-size: 1.25rem;
+// }
+// h6 {
+//   font-size: 1.25rem;
+// }
 
-p {
-  line-height: 1.8;
-  // color: var(--paragraphColor);
-  font-weight: 400;
-  font-family: var(--fontFamily);
-  font-size: var(--fontSize);
-}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 62608509ac3e7d1b827bd746c77c7e4b741e0387
+// p {
+//   line-height: 1.8;
+//   color: var(--paragraphColor);
+//   font-weight: 400;
+//   font-family: var(--fontFamily);
+//   font-size: var(--fontSize);
+// }
+<<<<<<< HEAD
+=======
+// p {
+//   line-height: 1.8;
+//   // color: var(--paragraphColor);
+//   font-weight: 400;
+//   font-family: var(--fontFamily);
+//   font-size: var(--fontSize);
+// }
+
+>>>>>>> 62608509ac3e7d1b827bd746c77c7e4b741e0387
 
 .container {
   @apply px-4 mx-auto;
 }
-a {
-  transition: 0.3s;
-}
+// a {
+//   transition: 0.3s;
+// }
 
 // p {
 //   margin-bottom: 15px;
