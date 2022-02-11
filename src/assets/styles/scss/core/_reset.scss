@@ -17,6 +17,19 @@ h6 {
 button {
   font-family: "Roboto", sans-serif;
 }
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-family: "Roboto", sans-serif;
+//   @apply font-bold mb-3;
+//   line-height: 1.2;
+// }
+// button {
+//   font-family: "Roboto", sans-serif;
+// }
 // h1 {
 //   font-size: 3rem;
 // }
@@ -36,6 +49,7 @@ button {
 //   font-size: 1.25rem;
 // }
 
+
 // p {
 //   line-height: 1.8;
 //   color: var(--paragraphColor);
@@ -43,13 +57,21 @@ button {
 //   font-family: var(--fontFamily);
 //   font-size: var(--fontSize);
 // }
+// p {
+//   line-height: 1.8;
+//   // color: var(--paragraphColor);
+//   font-weight: 400;
+//   font-family: var(--fontFamily);
+//   font-size: var(--fontSize);
+// }
+
 
 .container {
   @apply px-4 mx-auto;
 }
-a {
-  transition: 0.3s;
-}
+// a {
+//   transition: 0.3s;
+// }
 
 // p {
 //   margin-bottom: 15px;

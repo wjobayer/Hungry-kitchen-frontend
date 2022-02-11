@@ -7,11 +7,30 @@ const SingleCard = ({ food, loading }) => {
   const [counter, setCounter] = useState(0);
   if (loading) {
     return (
-      <div className="flex justify-center mb-32">
-        <p className="py-36 px-10 text-red-500 font-bold flex items-center text-xl bg-red-50 rounded-lg p-7 border border-gray-200">
-          <BiLoaderCircle className="mr-2" /> Loading...
-        </p>
+      <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
+        <div className="rounded-full object-cover p-20 w-40 mx-auto mb-4 skeleton" />
+        <div>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+        </div>
+
+        <div className="my-5">
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+        </div>
+
+        <div className="flex justify-between">
+          <div className="flex w-5"></div>
+          <div className="w-10 h-2 rounded-full bg-red-200 "></div>
+        </div>
       </div>
+      // <div className="flex justify-center mb-32">
+      //   <p className="py-36 px-10 text-red-500 font-bold flex items-center text-xl bg-red-50 rounded-lg p-7 border border-gray-200">
+      //     <BiLoaderCircle className="mr-2" /> Loading...
+      //   </p>
+      // </div>
     );
   }
   return (
