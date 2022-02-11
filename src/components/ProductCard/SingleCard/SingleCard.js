@@ -17,7 +17,7 @@ const SingleCard = ({ food, loading }) => {
   return (
     <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
       <img
-        className="rounded-full p-2.5 w-44 mx-auto"
+        className="rounded-full object-cover p-2.5 w-44 mx-auto"
         src={food.strMealThumb}
         alt={food.strMeal}
       />
