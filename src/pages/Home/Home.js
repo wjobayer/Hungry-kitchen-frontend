@@ -1,11 +1,15 @@
 import React from "react";
+import ParallaxSection from "../../components/ParallaxSection/ParallaxSection";
+import MobileFeatured from "../../components/MobileFeatured";
 import ProductCard from "../../components/ProductCard/ProductCard";
-
+import HeroSection from "../../components/HeroSection/HeroSection";
 const Home = () => {
   return (
     <div>
-      <h1>This is Home</h1>
+      <HeroSection></HeroSection>
       <ProductCard />
+      <ParallaxSection />
+      <MobileFeatured />
     </div>
   );
 };

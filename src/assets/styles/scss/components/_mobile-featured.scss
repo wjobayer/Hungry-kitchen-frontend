@@ -1,0 +1,20 @@
+.mobile-featured {
+  @apply pb-20;
+  &__wrapper {
+    @apply grid grid-cols-12 gap-4;
+  }
+  &__text-area {
+    @apply md:col-span-6 col-span-12;
+    h2 {
+      @apply mt-1;
+      font-size: 42px;
+    }
+    p {
+      @apply mt-7;
+      font-size: 18px;
+    }
+  }
+  &__image {
+    @apply md:col-span-6 col-span-12;
+  }
+}

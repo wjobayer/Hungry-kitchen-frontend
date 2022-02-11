@@ -1,17 +1,29 @@
 import { React, useState } from "react";
+import { IoMdCart } from "react-icons/io";
+import { BiLoaderCircle } from "react-icons/bi";
+
 import "./SingleCard.css";
-const SingleCard = ({ foods }) => {
+const SingleCard = ({ food, loading }) => {
   const [counter, setCounter] = useState(0);
+  if (loading) {
+    return (
+      <div className="flex justify-center mb-32">
+        <p className="py-36 px-10 text-red-500 font-bold flex items-center text-xl bg-red-50 rounded-lg p-7 border border-gray-200">
+          <BiLoaderCircle className="mr-2" /> Loading...
+        </p>
+      </div>
+    );
+  }
   return (
     <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
       <img
-        className="rounded-full p-2.5"
-        src={foods.strMealThumb}
-        alt={foods.strMeal}
+        className="rounded-full object-cover p-2.5 w-44 mx-auto"
+        src={food.strMealThumb}
+        alt={food.strMeal}
       />
-      <h3 className="text-xl font-bold"> {foods.strMeal}</h3>
+      <h3 className="text-xl font-bold"> {food.strMeal}</h3>
       <p className="my-3.5 text-gray-600">
-        {foods.strMeal}. The food is very popular here.
+        {food.strMeal}. The food is very popular here.
       </p>
       <div className="flex justify-between">
         <div className="flex">
@@ -29,12 +41,14 @@ const SingleCard = ({ foods }) => {
             +
           </div>
         </div>
-        <p className="text-xl font-bold text-red-500">${foods.idMeal}</p>
+        <p className="text-xl font-bold text-red-500">${food.idMeal}</p>
       </div>
 
       <div className="flex justify-center">
-        <button className="bg-red-500 text-white font-bold px-7 py-2 rounded-3xl duration-500 hover:bg-orange-400">
-          VIEW OPTIONS
+        <button className="bg-red-500 text-xs text-white font-bold px-6 py-3 rounded-3xl duration-500 hover:bg-orange-400">
+          <p className="flex items-center">
+            <IoMdCart className="mr-1" /> VIEW OPTIONS
+          </p>
         </button>
       </div>
     </div>

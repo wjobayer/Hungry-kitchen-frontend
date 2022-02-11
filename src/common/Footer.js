@@ -57,7 +57,6 @@ const Footer = () => {
                                     <p>March 19, 2021</p>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 <div className='col-span-2'>
@@ -73,7 +72,6 @@ const Footer = () => {
                 <h1 className='text-center mt-16'>Copyright 2022 © Hungry Kitchen Created By <a className='font-bold' href="https://docs.google.com/document/d/1o0VtDfH_Hixn8dfcQBbI0sVMUKvVRMBzYnzISIZLAGg/edit">AltDevs</a> <span ></span> Team All Rights Reserved</h1>
                 </div>
             </footer>
-            
         </div>
     );
 };
