@@ -1,6 +1,6 @@
 .product-btn-active {
-  @apply bg-orange-400 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500  mr-4 my-4 shadow-xl;
+  @apply bg-black text-sm text-white font-bold px-6 py-2 rounded-xl duration-500  mr-4 my-4 shadow-xl;
 }
 .product-btn {
-  @apply bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none;
+  @apply bg-yellow-400 text-sm text-black font-bold px-6 py-2 rounded-xl duration-500 hover:bg-black hover:text-white mr-4 my-4 hover:shadow-xl active:shadow-none;
 }

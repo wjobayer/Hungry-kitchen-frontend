@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import SingleCard from "./SingleCard/SingleCard";
-import { BiLoaderCircle } from "react-icons/bi";
+// import { BiLoaderCircle } from "react-icons/bi";
 import PaginationCompo from "./PaginationCompo";
 
 const ProductCard = () => {
