@@ -11,7 +11,7 @@ import React from "react";
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
 const Footer = () => {
   return (
-    <div className="pt-8 fontsimplement">
+    <div className="pt-8 container px-7 mx-auto">
       <div className="auto-scroll">
       </div>
       <footer className="bg-slate-100 text-left">
