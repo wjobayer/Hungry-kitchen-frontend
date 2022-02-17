@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./common/Footer";
 import Header from "./common/Header";
 import CourierForm from "./components/PartnerSection/CourierForm";
+import RestaurantForm from "./components/PartnerSection/RestaurantForm";
 import Home from "./pages/Home/Home";
 
 const AppRouter = () => {
@@ -12,6 +13,7 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="courierForm" element={<CourierForm />} />
+        <Route path="restaurantForm" element={<RestaurantForm />} />
       </Routes>
       <Footer />
     </Router>
