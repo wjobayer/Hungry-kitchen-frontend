@@ -111,12 +111,10 @@ const ProductCard = () => {
             <h3 className="font-bold">foods from us</h3>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex my-2">
           <div
             className={
-              layout == "vertical"
-                ? "text-4xl mr-2 text-yellow-400"
-                : "text-4xl mr-2"
+              layout === "vertical" ? "layout layout-active" : "layout"
             }
             onClick={() => setLayout("vertical")}
           >
@@ -124,9 +122,7 @@ const ProductCard = () => {
           </div>
           <div
             className={
-              layout == "horizontal"
-                ? "text-4xl mr-2 text-yellow-400"
-                : "text-4xl mr-2"
+              layout === "horizontal" ? "layout layout-active" : "layout"
             }
             onClick={() => setLayout("horizontal")}
           >

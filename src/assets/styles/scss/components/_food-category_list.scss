@@ -16,5 +16,9 @@
   @apply ml-3 font-bold text-red-500;
 }
 .layout {
-  @apply text-3xl border-2 p-2 border-yellow-400 mr-2;
+  @apply text-3xl border p-2 border-black mr-2 rounded-lg;
+}
+
+.layout-active {
+  @apply border-orange-300 text-orange-300;
 }

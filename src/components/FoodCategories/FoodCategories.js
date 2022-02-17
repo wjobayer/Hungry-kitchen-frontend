@@ -161,10 +161,10 @@ const FoodCategories = () => {
         </div>
         {/*------------- product showcase section ------------ */}
         <div>
-          <div className="flex">
+          <div className="flex my-2">
             <div
               className={
-                layout == "vertical" ? "layout-active layout" : "layout"
+                layout === "vertical" ? "layout layout-active" : "layout"
               }
               onClick={() => setLayout("vertical")}
             >
@@ -172,9 +172,7 @@ const FoodCategories = () => {
             </div>
             <div
               className={
-                layout == "horizontal"
-                  ? "text-4xl mr-2 text-yellow-400"
-                  : "text-4xl mr-2"
+                layout === "horizontal" ? "layout layout-active" : "layout"
               }
               onClick={() => setLayout("horizontal")}
             >

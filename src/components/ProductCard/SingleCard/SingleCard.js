@@ -43,7 +43,7 @@ const SingleCard = ({ food, loading, layout }) => {
     <div
       className={
         layout == "horizontal"
-          ? "single-card single-card-horizontal"
+          ? "single-card single-card-horizontal "
           : "single-card"
       }
     >
@@ -80,10 +80,7 @@ const SingleCard = ({ food, loading, layout }) => {
         </div>
 
         <div className="flex justify-center">
-          <button
-            className="bg-red-500 text-xs text-white font-bold px-6 py-3 rounded-3xl duration-500 hover:bg-orange-400"
-            onClick={() => handleDetails(food.idMeal)}
-          >
+          <button onClick={() => handleDetails(food.idMeal)}>
             <p className="flex items-center">
               <IoMdCart className="mr-1" /> VIEW OPTIONS
             </p>
