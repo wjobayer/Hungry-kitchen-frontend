@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { IoMdCart } from "react-icons/io";
 import { BiLoaderCircle } from "react-icons/bi";
-import "./SingleCard.css";
 import { useNavigate } from "react-router-dom";
 
 const SingleCard = ({ food, loading }) => {
@@ -43,7 +42,7 @@ const SingleCard = ({ food, loading }) => {
   return (
     <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
       <img
-        className="rounded-full object-cover p-2.5 w-44 mx-auto"
+        className="rounded-full object-cover p-2.5 w-60 mx-auto"
         src={food.strMealThumb}
         alt={food.strMeal}
       />
@@ -67,7 +66,7 @@ const SingleCard = ({ food, loading }) => {
             +
           </div>
         </div>
-        <p className="text-xl font-bold text-red-500">${food.idMeal}</p>
+        <p className="text-xl font-bold text-red-500">$11.99</p>
       </div>
 
       <div className="flex justify-center">

@@ -108,7 +108,7 @@ const ProductCard = () => {
           <h3 className="font-bold">foods from us</h3>
         </div>
       </div>
-      <div className="grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-7">
+      <div className="grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10">
         {currentFoods.map((food) => (
           <SingleCard
             key={food.idMeal}
