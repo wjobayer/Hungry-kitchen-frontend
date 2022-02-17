@@ -68,6 +68,26 @@ const RestaurantForm = () => {
           </span>
         </label>
         <label>
+          <span className="block mt-5">Restaurant Name</span>
+          <input
+            type="text"
+            name="restaurant"
+            {...register("name", {
+              required: {
+                value: true,
+                message: "You must enter restaurant",
+              },
+            })}
+            className={`${
+              errors.name ? "ring-2 ring-red-500" : null
+            } "block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow"`}
+            placeholder="Enter Your Restaurant Name"
+          />
+          <span className="py-2 text-sm text-red-400">
+            {errors?.name?.message}
+          </span>
+        </label>
+        <label>
           <span className="block mt-5 ">Address</span>
           <input
             type="text"
@@ -75,16 +95,36 @@ const RestaurantForm = () => {
             {...register("address", {
               required: {
                 value: true,
-                message: "You most enter address",
+                message: "You must enter address",
               },
             })}
             className={`${
               errors.address ? "ring-2 ring-red-500" : null
             } "block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow"`}
-            placeholder="Password"
+            placeholder="Enter Your Address"
           />
           <span className="py-2 text-sm text-red-400">
             {errors?.address?.message}
+          </span>
+        </label>
+        <label>
+          <span className="block mt-5 ">Phone Number</span>
+          <input
+            type="number"
+            name="Phone"
+            {...register("phone", {
+              required: {
+                value: true,
+                message: "You must enter phone Number",
+              },
+            })}
+            className={`${
+              errors.address ? "ring-2 ring-red-500" : null
+            } "block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow"`}
+            placeholder="Enter Your Phone Number"
+          />
+          <span className="py-2 text-sm text-red-400">
+            {errors?.phone?.message}
           </span>
         </label>
 
