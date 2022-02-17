@@ -4,19 +4,6 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto", sans-serif;
-  @apply font-bold mb-3;
-  line-height: 1.2;
-}
-button {
-  font-family: "Roboto", sans-serif;
-}
 // h1,
 // h2,
 // h3,
@@ -49,22 +36,13 @@ button {
 //   font-size: 1.25rem;
 // }
 
-
-// p {
-//   line-height: 1.8;
-//   color: var(--paragraphColor);
-//   font-weight: 400;
-//   font-family: var(--fontFamily);
-//   font-size: var(--fontSize);
-// }
-// p {
-//   line-height: 1.8;
-//   // color: var(--paragraphColor);
-//   font-weight: 400;
-//   font-family: var(--fontFamily);
-//   font-size: var(--fontSize);
-// }
-
+p {
+  line-height: 1.8;
+  // color: var(--paragraphColor);
+  font-weight: 400;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+}
 
 .container {
   @apply px-4 mx-auto;
