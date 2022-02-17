@@ -5,6 +5,7 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const FoodCategories = () => {
   const [category, setCategory] = useState("Seafood");
@@ -15,6 +16,13 @@ const FoodCategories = () => {
   const [layout, setLayout] = useState("vertical");
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
+
+  const handleDetails = (id) => {
+    //push id to the useparams
+    navigate(`/details/${id}`);
+  };
 
   const handleFilter = (index) => {
     setCategory(index);
@@ -151,7 +159,13 @@ const FoodCategories = () => {
                     />
                   </div>
                   <div className="mt-10">
-                    <h3 className="text-xl font-bold"> {food.strMeal}</h3>
+                    <h3
+                      className="text-xl font-bold cursor-pointer hover:text-red-400 duration-10 hover:underline underline-offset-4"
+                      onClick={() => handleDetails(food.idMeal)}
+                    >
+                      {" "}
+                      {food.strMeal}
+                    </h3>
                     <p className="font-bold text-red-400">$ 9.99</p>
                   </div>
                 </div>
