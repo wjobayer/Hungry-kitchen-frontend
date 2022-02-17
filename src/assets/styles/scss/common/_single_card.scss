@@ -1,4 +1,5 @@
 .single-card {
+  @apply border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50;
   position: relative;
   transition: all 0.3s;
   button {
@@ -13,5 +14,18 @@
   button {
     opacity: 1;
     transform: translateY(20px);
+  }
+}
+
+.single-card-horizontal {
+  display: flex;
+  align-items: center;
+  button {
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    transition: all 0.3s;
   }
 }

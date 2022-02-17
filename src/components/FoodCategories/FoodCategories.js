@@ -3,13 +3,16 @@ import SingleCard from "../ProductCard/SingleCard/SingleCard";
 // import { BiLoaderCircle } from "react-icons/bi";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import { MdOutlineArrowRight } from "react-icons/md";
+import { RiLayoutGridFill } from "react-icons/ri";
+import { FaListAlt } from "react-icons/fa";
+
 const FoodCategories = () => {
   const [category, setCategory] = useState("Seafood");
 
   //pagination stuff-----------------------------------
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(8);
-
+  const [layout, setLayout] = useState("vertical");
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -157,15 +160,45 @@ const FoodCategories = () => {
           </div>
         </div>
         {/*------------- product showcase section ------------ */}
-        <div className="grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-7">
-          {currentFoods.map((food) => (
-            <SingleCard
-              key={food.idMeal}
-              food={food}
-              loading={loading}
-            ></SingleCard>
-          ))}
-          <div className="flex justify-center">
+        <div>
+          <div className="flex">
+            <div
+              className={
+                layout == "vertical" ? "layout-active layout" : "layout"
+              }
+              onClick={() => setLayout("vertical")}
+            >
+              <RiLayoutGridFill />
+            </div>
+            <div
+              className={
+                layout == "horizontal"
+                  ? "text-4xl mr-2 text-yellow-400"
+                  : "text-4xl mr-2"
+              }
+              onClick={() => setLayout("horizontal")}
+            >
+              <FaListAlt />
+            </div>
+          </div>
+
+          <div
+            className={
+              layout == "horizontal"
+                ? "grid grid-cols sm:grid-cols md:grid-cols lg:grid-cols gap-10"
+                : "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
+            }
+          >
+            {currentFoods.map((food) => (
+              <SingleCard
+                key={food.idMeal}
+                food={food}
+                loading={loading}
+                layout={layout}
+              ></SingleCard>
+            ))}
+          </div>
+          <div className="flex justify-center my-4">
             <PaginationCompo
               postPerPage={postPerPage}
               totalPosts={foods.length}

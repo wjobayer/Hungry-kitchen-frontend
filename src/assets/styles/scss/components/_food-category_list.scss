@@ -15,3 +15,6 @@
 .list-content-active {
   @apply ml-3 font-bold text-red-500;
 }
+.layout {
+  @apply text-3xl border p-2 border-yellow-400;
+}

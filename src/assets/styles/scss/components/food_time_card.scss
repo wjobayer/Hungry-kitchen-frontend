@@ -1,6 +1,6 @@
 .food-courses {
-  @apply grid md:grid-cols-3 gap-4 my-4;
+  @apply grid md:grid-cols-3 gap-7 my-4 mt-7;
 }
 .food-time-card {
-  @apply bg-yellow-200 font-bold text-3xl p-16 rounded-xl;
+  @apply bg-yellow-50 font-bold text-3xl p-16 rounded-xl flex border-2 border-yellow-400 shadow-xl duration-150;
 }

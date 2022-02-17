@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <HeroSection></HeroSection>
       <FoodTime />
-      <PopularResturants />
+      {/* <PopularResturants /> */}
       <ProductCard />
       <ParallaxSection />
       <PartnerSection />
