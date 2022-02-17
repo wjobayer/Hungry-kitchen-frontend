@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./common/Footer";
 import Header from "./common/Header";
+import FoodCategories from "./components/FoodCategories/FoodCategories";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
 import Home from "./pages/Home/Home";
 import Sidebar from '../src/components/Sidebar';
@@ -25,6 +26,7 @@ const AppRouter = () => {
         <Route path="/settings" element={<Settings/>} />
         <Route path="/tables" element={<Tables/>} />
         <Route path="/maps" element={<Maps/>} />
+        <Route path="category" element={<FoodCategories />} />
       </Routes>
     </Router>
   );
