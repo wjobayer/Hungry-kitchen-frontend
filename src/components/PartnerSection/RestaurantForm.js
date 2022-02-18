@@ -12,11 +12,13 @@ const RestaurantForm = () => {
     console.log(data);
   };
   return (
-    <div className="container bg-gray-200 py-32">
-      <h2 className="text-center sm:text-3xl md:text-4xl">Restaurant Info</h2>
+    <div className="container bg-gray-900 py-32">
+      <h2 className="text-center sm:text-3xl md:text-4xl text-white">
+        Restaurant Info
+      </h2>
       <form className="w-2/4 mx-auto" onSubmit={handleSubmit(submitHandler)}>
         <label>
-          <span className="block mt-5">Name</span>
+          <span className="block mt-5 text-white">Name</span>
           <input
             type="text"
             name="name"
@@ -29,14 +31,14 @@ const RestaurantForm = () => {
             className={`${
               errors.name ? "ring-2 ring-red-500" : null
             } "block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow"`}
-            placeholder="Full name"
+            placeholder="Enter Your Full name"
           />
           <span className="py-2 text-sm text-red-400">
             {errors?.name?.message}
           </span>
         </label>
         <label>
-          <span className="block mt-5">Email</span>
+          <span className="block mt-5 text-white">Email</span>
           <input
             type="email"
             name="Email"
@@ -61,14 +63,14 @@ const RestaurantForm = () => {
             className={`${
               errors.email ? "ring-2 ring-red-500" : null
             } "block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow"`}
-            placeholder="Email"
+            placeholder="Enter Your Email"
           />
           <span className="py-2 text-sm text-red-400">
             {errors?.email?.message}
           </span>
         </label>
         <label>
-          <span className="block mt-5">Restaurant Name</span>
+          <span className="block mt-5 text-white">Restaurant Name</span>
           <input
             type="text"
             name="restaurant"
@@ -88,7 +90,7 @@ const RestaurantForm = () => {
           </span>
         </label>
         <label>
-          <span className="block mt-5 ">Address</span>
+          <span className="block mt-5 text-white">Address</span>
           <input
             type="text"
             name="address"
@@ -108,7 +110,7 @@ const RestaurantForm = () => {
           </span>
         </label>
         <label>
-          <span className="block mt-5 ">Phone Number</span>
+          <span className="block mt-5 text-white">Phone Number</span>
           <input
             type="number"
             name="Phone"
