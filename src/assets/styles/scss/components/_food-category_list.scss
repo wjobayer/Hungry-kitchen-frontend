@@ -1,0 +1,24 @@
+.category-list {
+  @apply py-5 border-b-2 cursor-pointer text-lg;
+  transition: all 0.3s;
+}
+.category-list:hover {
+  @apply bg-yellow-50;
+}
+.list-content {
+  transition: all 0.3s;
+}
+.category-list:hover .list-content {
+  @apply ml-3 font-bold text-red-500;
+}
+
+.list-content-active {
+  @apply ml-3 font-bold text-red-500;
+}
+.layout {
+  @apply text-3xl border p-2 border-black mr-2 rounded-lg;
+}
+
+.layout-active {
+  @apply border-orange-300 text-orange-300;
+}

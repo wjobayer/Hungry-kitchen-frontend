@@ -1,13 +1,12 @@
 import { React, useState, useEffect } from "react";
 import SingleCard from "./SingleCard/SingleCard";
-import { BiLoaderCircle } from "react-icons/bi";
+// import { BiLoaderCircle } from "react-icons/bi";
 import PaginationCompo from "./PaginationCompo";
-
+import { RiLayoutGridFill } from "react-icons/ri";
+import { FaListAlt } from "react-icons/fa";
 const ProductCard = () => {
   const [country, setCountry] = useState("Italian");
-  const handleFilter = (id) => {
-    setCountry(id);
-  };
+  const [layout, setLayout] = useState("vertical");
 
   //pagination stuff-----------------------------------
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,17 +14,24 @@ const ProductCard = () => {
 
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const handleFilter = (index) => {
+    setCountry(index);
+  };
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchFoods = async () => {
       setLoading(true);
-      await fetch(
+
+      const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`
-      )
-        .then((res) => res.json())
-        .then((data) => setFoods(data.meals));
+      );
+      const json = await response.json();
+      setFoods(json.meals);
+      // .then((res) => res.json())
+      // .then((data) => setFoods(data.meals));
       setLoading(false);
     };
-    fetchBlogs();
+    fetchFoods();
     setCurrentPage(1);
   }, [country]);
   console.log(country);
@@ -53,52 +59,91 @@ const ProductCard = () => {
       {/* -------------filter/query buttons ------------- */}
       <div className="flex justify-center flex-wrap">
         <button
-          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
-          onClick={() => handleFilter("Chinese")}
-        >
-          Chinese
-        </button>
-        <button
-          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none "
-          onClick={() => handleFilter("Indian")}
-        >
-          Indian
-        </button>
-        <button
-          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          className={
+            country === "Italian" ? "product-btn-active" : "product-btn"
+          }
           onClick={() => handleFilter("Italian")}
         >
           Italian
         </button>
         <button
-          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          className={
+            country === "Chinese" ? "product-btn-active" : "product-btn"
+          }
+          onClick={() => handleFilter("Chinese")}
+        >
+          Chinese
+        </button>
+        <button
+          className={
+            country === "Indian" ? "product-btn-active" : "product-btn"
+          }
+          onClick={() => handleFilter("Indian")}
+        >
+          Indian
+        </button>
+
+        <button
+          className={
+            country === "Canadian" ? "product-btn-active" : "product-btn"
+          }
           onClick={() => handleFilter("Canadian")}
         >
           Canadian
         </button>
         <button
-          className="bg-red-500 text-sm text-white font-bold px-6 py-2 rounded-3xl duration-500 hover:bg-orange-400 mr-4 my-4 hover:shadow-xl active:shadow-none"
+          className={
+            country === "Portuguese" ? "product-btn-active" : "product-btn"
+          }
           onClick={() => handleFilter("Portuguese")}
         >
           Portuguese
         </button>
       </div>
       {/* ----------------------------------------------------------------------------------------- */}
-      <div className="flex justify-center ">
-        <div className="flex bg-red-50 p-3 rounded-3xl  mb-4">
-          <h3 className="font-bold ">Here are all</h3>
-          <h3 className="font-bold border-b-2 mx-2 border-red-500 text-red-500 ">
-            {country}
-          </h3>
-          <h3 className="font-bold">foods from us</h3>
+      <div className="flex justify-between">
+        <div className="flex justify-center ">
+          <div className="flex  p-3 rounded-lg  mb-4">
+            <h3 className="font-bold ">Here are all</h3>
+            <h3 className="font-bold border-b-2 mx-2 border-yellow-500 text-yellow-500 ">
+              {country}
+            </h3>
+            <h3 className="font-bold">foods from us</h3>
+          </div>
+        </div>
+        <div className="flex my-2">
+          <div
+            className={
+              layout === "vertical" ? "layout layout-active" : "layout"
+            }
+            onClick={() => setLayout("vertical")}
+          >
+            <RiLayoutGridFill />
+          </div>
+          <div
+            className={
+              layout === "horizontal" ? "layout layout-active" : "layout"
+            }
+            onClick={() => setLayout("horizontal")}
+          >
+            <FaListAlt />
+          </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+
+      <div
+        className={
+          layout == "horizontal"
+            ? "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
+            : "grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10"
+        }
+      >
         {currentFoods.map((food) => (
           <SingleCard
             key={food.idMeal}
             food={food}
             loading={loading}
+            layout={layout}
           ></SingleCard>
         ))}
       </div>

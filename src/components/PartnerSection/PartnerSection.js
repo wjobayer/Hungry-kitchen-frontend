@@ -13,8 +13,8 @@ const PartnerSection = () => {
               <img src={partner1} className="w-full rounded-lg" alt="partner" />
             </div>
             <div className="absolute left-5 right-5 bottom-6 md:bottom-14 flex items-center justify-between">
-              <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-[#ffcc00] transition-all duration-300 ease-in-out">
-                Get paid as a courier partner
+              <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-yellow-500 transition-all duration-300 ease-in-out">
+                <a href="#">Get paid as a courier partner</a>
               </h2>
               <Link
                 to="/courierForm"
