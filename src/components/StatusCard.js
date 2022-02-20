@@ -3,7 +3,8 @@ import CardRow from '@material-tailwind/react/CardRow';
 import CardHeader from '@material-tailwind/react/CardHeader';
 import CardStatus from '@material-tailwind/react/CardStatus';
 import CardStatusFooter from '@material-tailwind/react/CardStatusFooter';
-import Icon from '@material-tailwind/react/Icon';
+import {SiIcon} from 'react-icons/si';
+import {FcRatings} from 'react-icons/fc';
 
 export default function StatusCard({
     color,
@@ -20,7 +21,7 @@ export default function StatusCard({
             <Card>
                 <CardRow>
                     <CardHeader color={color} iconOnly className="mb-0">
-                        <Icon name={icon} size="3xl" color="white" />
+                        <SiIcon/>
                     </CardHeader>
 
                     <CardStatus title={title} amount={amount} />
@@ -31,7 +32,7 @@ export default function StatusCard({
                     color={percentageColor}
                     date={date}
                 > 
-                    <Icon color={percentageColor} name={percentageIcon} />
+                    <FcRatings/>
                 </CardStatusFooter>
             </Card>
         </div>
