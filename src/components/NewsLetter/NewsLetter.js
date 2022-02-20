@@ -14,7 +14,7 @@ const NewsLetter = () => {
             className="py-5 px-5 rounded-full w-full focus:outline-none"
             placeholder="Enter your email"
           />
-          <button className="bg-yellow-500 font-pt_sans absolute py-2 px-5 rounded-full text-white right-1 top-1 bottom-1">
+          <button className="bg-yellow-500 hover:bg-yellow-400 font-pt_sans absolute py-2 px-5 rounded-full text-white right-1 top-1 bottom-1">
             Subscribe
           </button>
         </div>

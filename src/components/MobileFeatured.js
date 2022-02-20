@@ -9,12 +9,6 @@ const MobileFeatured = () => {
           <div className="mobile-featured__text-area">
             <div className="sub-title">Dine In or Take Away</div>
             <h2>Get Your Order 24/7 Right At Your Doorsteps</h2>
-            {/* <div className="bottom-dots  clearfix">
-                <span className="dot line-dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-              </div> */}
             <p>
               Plant-based diets may offer an advantage over those that are not
               plant based with respect to prevention and management of diabetes.

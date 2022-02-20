@@ -12,7 +12,7 @@ const PartnerSection = () => {
               <img src={partner1} className="w-full rounded-lg" alt="partner" />
             </div>
             <div className="absolute left-5 right-5 bottom-6 md:bottom-14 flex items-center justify-between">
-              <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-blue-900 transition-all duration-300 ease-in-out">
+              <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-yellow-500 transition-all duration-300 ease-in-out">
                 <a href="#">Get paid as a courier partner</a>
               </h2>
               <span className="hidden md:block text-3xl text-white p-3 border-2 border-white rounded-full cursor-pointer">
@@ -25,7 +25,7 @@ const PartnerSection = () => {
               <img src={partner2} className="w-full rounded-lg" alt="partner" />
             </div>
             <div className="absolute left-5 right-5 bottom-6 md:bottom-14 flex items-center justify-between">
-              <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-blue-900 transition-all duration-300 ease-in-out">
+              <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-yellow-500 transition-all duration-300 ease-in-out">
                 <a href="#">Become a restaurant partner</a>
               </h2>
               <span className="hidden md:block text-3xl text-white p-3 border-2 border-white rounded-full cursor-pointer">
