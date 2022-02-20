@@ -1,11 +1,11 @@
-import {
-  faFacebook,
-  faGoogle,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faFacebook,
+//   faGoogle,
+//   faLinkedin,
+//   faTwitter,
+//   faYoutube,
+// } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "@material-tailwind/react/Icon";
 import React from "react";
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';

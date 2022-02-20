@@ -119,7 +119,7 @@ const Login = () => {
 
                 {/* <!-- Image Section --> */}
                 <div className="w-1/2 shadow-2xl">
-                    <img className="object-cover w-full h-screen hidden md:block" src="https://images.unsplash.com/photo-1542866789-4cea91fea23d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
+                    <img className="object-cover w-full h-screen hidden md:block" src="https://i.ibb.co/x1Dd1LH/photo-1542866789-4cea91fea23d.jpg" />
                 </div>
             </div>
 
