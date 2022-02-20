@@ -1,10 +1,17 @@
 import { React, useState } from "react";
 import { IoMdCart } from "react-icons/io";
 import { BiLoaderCircle } from "react-icons/bi";
-
 import "./SingleCard.css";
+import { useNavigate } from "react-router-dom";
+
 const SingleCard = ({ food, loading }) => {
   const [counter, setCounter] = useState(0);
+  const navigate = useNavigate();
+
+  const handleDetails = (id) => {
+    //push id to the useparams
+    navigate(`/details/${id}`);
+  };
   if (loading) {
     return (
       <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
@@ -64,7 +71,10 @@ const SingleCard = ({ food, loading }) => {
       </div>
 
       <div className="flex justify-center">
-        <button className="bg-red-500 text-xs text-white font-bold px-6 py-3 rounded-3xl duration-500 hover:bg-orange-400">
+        <button
+          className="bg-red-500 text-xs text-white font-bold px-6 py-3 rounded-3xl duration-500 hover:bg-orange-400"
+          onClick={() => handleDetails(food.idMeal)}
+        >
           <p className="flex items-center">
             <IoMdCart className="mr-1" /> VIEW OPTIONS
           </p>
