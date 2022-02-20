@@ -1,19 +1,18 @@
-// import {
-//   faFacebook,
-//   faGoogle,
-//   faLinkedin,
-//   faTwitter,
-//   faYoutube,
-// } from "@fortawesome/free-brands-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faGoogle,
+  faLinkedin,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "@material-tailwind/react/Icon";
 import React from "react";
-import ReactSlick from "../components/ReactSlick/ReactSlick";
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
 const Footer = () => {
   return (
-    <div className="pt-8 fontsimplement">
+    <div className="pt-8 container px-7 mx-auto">
       <div className="auto-scroll">
-        <ReactSlick></ReactSlick>
       </div>
       <footer className="bg-slate-100 text-left">
         <div className="container mx-auto sm: px-8 py-16">
@@ -38,36 +37,37 @@ const Footer = () => {
                   <span className="font-extrabold">Email:</span>{" "}
                   restaurant@gmail.com
                 </p>
-                {/* <a
+                <a
                   className="hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
-                  <FontAwesomeIcon icon={faFacebook} />
+                  {/* <FontAwesomeIcon icon={faFacebook} /> */}
+                  <Icon name="facebook" size="2-xl" />
                 </a>
                 <a
                   className="mx-3 hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
-                  <FontAwesomeIcon icon={faTwitter} />
+                   <Icon name="settings" size="2-xl" />
                 </a>
                 <a
                   className="hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} />
+                  <Icon name="facebook" size="2-xl" />
                 </a>
                 <a
                   className="mx-3 hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
-                  <FontAwesomeIcon icon={faGoogle} />
+                   <Icon name="facebook" size="2-xl" />
                 </a>
                 <a
                   className="hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
-                  <FontAwesomeIcon icon={faYoutube} />
-                </a> */}
+                   <Icon name="youtube" size="lg" />
+                </a>
               </div>
               <div>
                 <h1 className="font-extrabold text-xl">Our Services</h1>

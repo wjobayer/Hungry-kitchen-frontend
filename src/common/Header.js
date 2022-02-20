@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHamburger } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -37,43 +38,61 @@ const Header = () => {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-facebook-square text-lg leading-lg text-black opacity-75"></i>
-                  <span className="ml-2">Home</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-twitter text-lg leading-lg text-black opacity-75"></i>
-                  <span className="ml-2">All Items</span>
-                </a>
+            <li className="nav-item">
+                <NavLink
+                                    to="/dashboard"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                >
+                                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
+                                  <span className="ml-2">Home</span>
+                                </NavLink>
               </li>
 
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
-                  <span className="ml-2">All Resturants</span>
-                </a>
+                <NavLink
+                                    to="/dashboard"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                >
+                                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
+                                  <span className="ml-2">All Items</span>
+                                </NavLink>
+              </li>
+
+
+              <li className="nav-item">
+                <NavLink
+                                    to="/dashboard"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                >
+                                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
+                                  <span className="ml-2">All Restaurant</span>
+                                </NavLink>
+              </li>
+
+
+              <li className="nav-item">
+                <NavLink
+                                    to="/dashboard"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                >
+                                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
+                                  <span className="ml-2">Restaurant Search</span>
+                                </NavLink>
               </li>
 
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
-                  <span className="ml-2">Resturant Search</span>
-                </a>
+                <NavLink
+                                    to="/dashboard"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                >
+                                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i>
+                                  <span className="ml-2">Dashboard</span>
+                                </NavLink>
               </li>
 
               <li className="nav-item">

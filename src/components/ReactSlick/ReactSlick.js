@@ -40,7 +40,7 @@ const ReactSlick = () => {
         ]
       };
     return (
-        <div className='py-16'>
+        <div className='py-16 container px-7 mx-auto'>
         <Slider {...settings}>
           <div className='focus:outline-none'>
             <img className='mx-auto w-3/4' src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/04.png" alt="" />

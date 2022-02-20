@@ -3,15 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-tailwind/react": "^0.3.4",
+    "@react-google-maps/api": "^2.7.0",
     "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "firebase": "^9.6.6",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.27.0",
+=======
+    "chart.js": "^2.9.4",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+>>>>>>> 187030addb4a21eacab85131a0a12c80416dc0fd
     "react-icons": "^4.3.1",
     "react-parallax": "^3.3.0",
     "react-router-dom": "^6.2.1",
