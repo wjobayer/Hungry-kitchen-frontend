@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.0.0",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@material-tailwind/react": "^0.3.4",
     "@react-google-maps/api": "^2.7.0",
     "@react-icons/all-files": "^4.1.0",
