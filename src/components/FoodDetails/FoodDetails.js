@@ -71,8 +71,8 @@ const FoodDetails = () => {
       </div>
       {/* ------------------More related products----------- */}
       <hr className="my-4" />
-      <h2 className="text-3xl font-bold my-4">Related Products</h2>
-      <div className="grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-7">
+      <h2 className="text-3xl font-bold my-4">Related Foods</h2>
+      <div className="grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10">
         {currentFoods.map((food) => (
           <SingleCard
             key={food.idMeal}

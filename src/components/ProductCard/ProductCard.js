@@ -2,9 +2,11 @@ import { React, useState, useEffect } from "react";
 import SingleCard from "./SingleCard/SingleCard";
 // import { BiLoaderCircle } from "react-icons/bi";
 import PaginationCompo from "./PaginationCompo";
-
+import { RiLayoutGridFill } from "react-icons/ri";
+import { FaListAlt } from "react-icons/fa";
 const ProductCard = () => {
   const [country, setCountry] = useState("Italian");
+  const [layout, setLayout] = useState("vertical");
 
   //pagination stuff-----------------------------------
   const [currentPage, setCurrentPage] = useState(1);
@@ -99,21 +101,49 @@ const ProductCard = () => {
         </button>
       </div>
       {/* ----------------------------------------------------------------------------------------- */}
-      <div className="flex justify-center ">
-        <div className="flex bg-red-50 p-3 rounded-3xl  mb-4">
-          <h3 className="font-bold ">Here are all</h3>
-          <h3 className="font-bold border-b-2 mx-2 border-red-500 text-red-500 ">
-            {country}
-          </h3>
-          <h3 className="font-bold">foods from us</h3>
+      <div className="flex justify-between">
+        <div className="flex justify-center ">
+          <div className="flex  p-3 rounded-lg  mb-4">
+            <h3 className="font-bold ">Here are all</h3>
+            <h3 className="font-bold border-b-2 mx-2 border-yellow-500 text-yellow-500 ">
+              {country}
+            </h3>
+            <h3 className="font-bold">foods from us</h3>
+          </div>
+        </div>
+        <div className="flex my-2">
+          <div
+            className={
+              layout === "vertical" ? "layout layout-active" : "layout"
+            }
+            onClick={() => setLayout("vertical")}
+          >
+            <RiLayoutGridFill />
+          </div>
+          <div
+            className={
+              layout === "horizontal" ? "layout layout-active" : "layout"
+            }
+            onClick={() => setLayout("horizontal")}
+          >
+            <FaListAlt />
+          </div>
         </div>
       </div>
-      <div className="grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-7">
+
+      <div
+        className={
+          layout == "horizontal"
+            ? "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
+            : "grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10"
+        }
+      >
         {currentFoods.map((food) => (
           <SingleCard
             key={food.idMeal}
             food={food}
             loading={loading}
+            layout={layout}
           ></SingleCard>
         ))}
       </div>
