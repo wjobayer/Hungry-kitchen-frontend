@@ -9,7 +9,7 @@ import ReactSlick from "../../components/ReactSlick/ReactSlick";
 import Header from "../../common/Header";
 import Footer from "../../common/Footer";
 import FoodTime from "../../components/FoodTime/FoodTime";
-import PopularResturants from "../../components/PopularResturants/PopularResturants";
+// import PopularResturants from "../../components/PopularResturants/PopularResturants";
 const Home = () => {
   return (
     <div>
