@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineArrowDropDownCircle } from "react-icons/md";
+import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import useFirebase from '../../Hooks/useFirebase';
 
@@ -16,32 +17,32 @@ const Register = () => {
         e.target.reset();
         console.log(data);
 
-        const { name, email, password, rePassword } = data;
+        const { name, email, password, retypePassword } = data;
 
-        if (password !== rePassword) {
+        if (password !== retypePassword) {
             // console.log('not matched')
             alert('Your password did not match');
 
         }
         else {
             console.log('matched');
-            // registerUser(name, email, password, history);
+            registerUser(name, email, password, navigate);
         }
 
 
     };
 
     // useNavigate usage
-    // const location = useLocation();
-    // const history = useHistory()
-    // const redirect_uri = location.state?.from || "/home"
+    const location = useLocation();
+    const navigate = useNavigate()
+    const redirect_uri = location.state?.from || "/"
 
     // Google login
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(result => {
                 console.log('google login done')
-                // history.push(redirect_uri)
+                navigate(redirect_uri)
             })
     }
 
@@ -80,7 +81,7 @@ const Register = () => {
                                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
                             </div>
 
-                            {/* Email */}
+                            {/* Phone number */}
                             <div className="flex flex-col pt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2" for="email">
                                     Phone Number <span className='text-red-500 text-xs'>*</span>
@@ -93,11 +94,12 @@ const Register = () => {
                                 <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                                     Are you? <span className='text-red-500 text-xs'>*</span>
                                 </label>
-                                <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required {...register}>
-                                    <option>Customer</option>
-                                    <option>Resturant owner</option>
-                                    <option>Rider</option>
+                                <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"  {...register("userType", { required: true })}>
+                                    <option value="Customer">Customer</option>
+                                    <option value="Rider"> Rider</option>
+                                    <option value="ResturantOwner"> Resturant Owner</option>
                                 </select>
+
 
                                 <div className="pointer-events-none mt-7 absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
@@ -108,7 +110,7 @@ const Register = () => {
                             <div className="flex pt-4 ">
                                 <div className='w-1/2 mr-2'>
                                     <label for="password" className="text-lg">Password</label>
-                                    <input type="password" id="password" placeholder="Password" {...register("password", { required: true, maxLength: 6 })} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                                    <input type="password" id="password" placeholder="Password" {...register("password", { required: true, min: 6 })} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
 
                                 </div>
 
@@ -116,7 +118,7 @@ const Register = () => {
                                 <div className='w-1/2 ml-2'>
 
                                     <label for="password" className="text-lg">Re-Type Password</label>
-                                    <input type="password" id="password" placeholder="Retype_Password" {...register("rePassword", { required: true, maxLength: 6 })} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                                    <input type="password" id="repassword" placeholder="Retype Password" {...register("retypePassword", { required: true, min: 6 })} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
 
                                 </div>
 
@@ -124,6 +126,7 @@ const Register = () => {
 
                             <input type="submit" value="Register" className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" />
                         </form>
+
                         <div className="text-center pt-12 pb-12">
                             <p>Already have an account? <a href="#" className="underline font-semibold" >Login here.</a></p>
                         </div>
@@ -140,7 +143,7 @@ const Register = () => {
 
                         {/* Social login */}
                         <div className='flex justify-center px-5'>
-                            <button aria-label="Continue with google" role="button" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-80 mr-5" >
+                            <button aria-label="Continue with google" role="button" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-80 mr-5" onClick={handleGoogleLogin}>
                                 <FcGoogle />
                                 <p className="text-base font-medium ml-4 text-gray-700">Continue with Google</p>
                             </button>

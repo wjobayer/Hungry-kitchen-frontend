@@ -28,7 +28,7 @@ const Login = () => {
 
         const { email, password } = data;
 
-        // loginUser(email, password, location, history);
+        loginUser(email, password, location, navigate);
 
     };
 
