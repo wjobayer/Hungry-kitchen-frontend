@@ -96,11 +96,11 @@ const Header = () => {
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex  items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#pablo"
+                  href="/login"
                 >
-                  <button className="leading-lg rounded text-black bg-yellow-400 px-5 py-3 hover:bg-transparent hover:outline hover:text-white hover:outline-offset-2 hover:outline-2">
+                  <NavLink to='/register' className="leading-lg rounded text-black bg-yellow-400 px-5 py-3 hover:bg-transparent hover:outline hover:text-white hover:outline-offset-2 hover:outline-2">
                     <strong className="animate-pulse">Login/Register</strong>
-                  </button>
+                  </NavLink>
                 </a>
               </li>
             </ul>

@@ -5,9 +5,10 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../common/Footer";
 import Header from "../../common/Header";
+import SearchFood from "../SearchFood";
 
 const FoodCategories = () => {
   const [category, setCategory] = useState("Seafood");
@@ -84,6 +85,23 @@ const FoodCategories = () => {
         {/* --------------------------------------- */}
         <div className="grid md:grid-cols-[1fr,_2fr] gap-4">
           <div>
+            <form>
+              <input
+                type="text"
+                name=""
+                id=""
+                className="placeholder:italic placeholder:text-slate-400 border border-gray-300 px-7 py-3 rounded"
+                placeholder="search here"
+              />
+              <Link to="/search">
+                <input
+                  type="submit"
+                  value="search"
+                  className="bg-yellow-400 px-7 py-3 rounded"
+                />
+              </Link>
+            </form>
+
             <div className="food-category mb-8">
               <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
                 Categories
