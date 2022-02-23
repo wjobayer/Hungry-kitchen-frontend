@@ -38,9 +38,7 @@
   }
 } */
 
-
-
-.partner::before{
+.partner::before {
   content: "";
   position: absolute;
   bottom: 0;
