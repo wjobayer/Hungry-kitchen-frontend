@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { unstable_HistoryRouter, useLocation, useNavigate } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import {
+    unstable_HistoryRouter,
+    useLocation,
+    useNavigate,
+} from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 
 const Login = () => {
     const { user,
@@ -28,7 +32,7 @@ const Login = () => {
 
         const { email, password } = data;
 
-        // loginUser(email, password, location, history);
+        loginUser(email, password, location, navigate);
 
     };
 
@@ -116,16 +120,10 @@ const Login = () => {
 
 
                 </div>
-
-                {/* <!-- Image Section --> */}
-                <div className="w-1/2 shadow-2xl">
-                    <img className="object-cover w-full h-screen hidden md:block" src="https://i.ibb.co/x1Dd1LH/photo-1542866789-4cea91fea23d.jpg" />
-                </div>
             </div>
+        </div>
 
 
-
-        </div >
     );
 };
 

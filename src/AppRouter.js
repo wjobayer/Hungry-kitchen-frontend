@@ -13,6 +13,7 @@ import Settings from "../src/pages/Settings";
 import Tables from "../src/pages/Tables";
 import Maps from "../src/pages/Maps";
 import DashboardMain from "./pages/DashboardMain";
+import SearchResult from "./components/SearchResult";
 
 const AppRouter = () => {
   return (
@@ -24,6 +25,7 @@ const AppRouter = () => {
         <Route path="details/:id" element={<FoodDetails />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="search" element={<SearchResult />} />
         {/* <Sidebar /> */}
         <Route path="/dashboard/*" element={<DashboardMain />} />
         <Route path="/" element={<Dashboard />} />

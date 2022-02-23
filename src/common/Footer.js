@@ -1,11 +1,3 @@
-// import {
-//   faFacebook,
-//   faGoogle,
-//   faLinkedin,
-//   faTwitter,
-//   faYoutube,
-// } from "@fortawesome/free-brands-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import ReactSlick from "../components/ReactSlick/ReactSlick";
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
@@ -48,6 +40,7 @@ const Footer = () => {
                   className="mx-3 hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
+                  <Icon name="settings" size="2-xl" />
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
                 <a
@@ -60,12 +53,15 @@ const Footer = () => {
                   className="mx-3 hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
+                  <Icon name="facebook" size="2-xl" />
                   <FontAwesomeIcon icon={faGoogle} />
                 </a>
                 <a
                   className="hover:text-orange-400"
                   href="https://youtu.be/62b9HXn4VnI"
                 >
+                  <Icon name="youtube" size="lg" />
+                </a>
                   <FontAwesomeIcon icon={faYoutube} />
                 </a> */}
               </div>
