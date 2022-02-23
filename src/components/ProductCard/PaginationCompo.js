@@ -13,11 +13,11 @@ const PaginationCompo = ({ postPerPage, totalPosts, paginate }) => {
             {pageNumbers.map((number) => (
               <div
                 key={number}
-                className="mr-3 rounded-full p-3 pr-5 pl-5 bg-red-100 cursor-pointer shadow-md hover:shadow-lg"
+                className="mr-3 rounded- p-3  border border-orange-500 cursor-pointer shadow-md hover:shadow-lg"
               >
                 <p
                   onClick={() => paginate(number)}
-                  className="text-red-500 font-bold"
+                  className="text-black font-bold"
                 >
                   {number}
                 </p>
