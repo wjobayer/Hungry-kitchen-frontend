@@ -4,6 +4,7 @@ import SingleCard from "./SingleCard/SingleCard";
 import PaginationCompo from "./PaginationCompo";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
+
 const ProductCard = () => {
   const [country, setCountry] = useState("Italian");
   const [layout, setLayout] = useState("vertical");
