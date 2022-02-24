@@ -112,7 +112,7 @@ export default function ChartLine() {
 
     return (
         <Card>
-            <CardHeader color="orange" contentPosition="left">
+            <CardHeader className="bg-gradient-to-b from-orange-400 to-orange-600" contentPosition="left">
                 <h6 className="uppercase text-gray-200 text-xs font-medium">
                     Overview
                 </h6>

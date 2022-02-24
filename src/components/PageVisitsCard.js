@@ -2,21 +2,26 @@ import Card from '@material-tailwind/react/Card';
 import CardHeader from '@material-tailwind/react/CardHeader';
 import CardBody from '@material-tailwind/react/CardBody';
 import Button from '@material-tailwind/react/Button';
-
+import {MdOutlineDownloadDone} from 'react-icons/md'
+import {RiDeleteBack2Fill} from 'react-icons/ri'
+import {AiOutlineAlert} from 'react-icons/ai'
 export default function PageVisitsCard() {
     return (
         <Card>
-            <CardHeader color="blue" contentPosition="none">
+            <CardHeader className="bg-blue-600" color="blue" contentPosition="none">
                 <div className="w-full flex items-center justify-between">
-                    <h2 className="text-white text-2xl">Page Visits</h2>
-                    <Button
+                    <div className='inline-flex'>
+                    <h2 className="text-white text-2xl">Incomming Orders</h2>
+                    <h2 className="text-white text-2xl ml-8"><AiOutlineAlert/></h2>
+                    </div>
+                    {/* <Button
                         color="transparent"
                         buttonType="link"
                         size="lg"
-                        style={{ padding: 0 }}
+                        style={{ margin:1 }}
                     >
                         See More
-                    </Button>
+                    </Button> */}
                 </div>
             </CardHeader>
             <CardBody>
@@ -25,74 +30,146 @@ export default function PageVisitsCard() {
                         <thead>
                             <tr>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    ID
+                                    Food Name
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Name
+                                    Image
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Salary
+                                    Price
                                 </th>
                                 <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Country
+                                    Want To
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    1
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Dakota Rice
+                                    
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $36,738
+                                    36 $
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Niger
+                                <div className='inline-flex'><Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Accept"
+                                    style={{ margin:1 }}
+                                >
+                                    <MdOutlineDownloadDone/>
+                                </Button>
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Delete"
+                                    style={{ margin:1 }}
+                                >
+                                    <RiDeleteBack2Fill/>
+                                   
+                                </Button></div>
                                 </td>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Minerva Hooper
+                                    
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $23,789
+                                    36 $
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Curaçao
+                                <div className='inline-flex'><Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Accept"
+                                    style={{ margin:1 }}
+                                >
+                                    <MdOutlineDownloadDone/>
+                                </Button>
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Delete"
+                                    style={{ margin:1 }}
+                                >
+                                    <RiDeleteBack2Fill/>
+                                   
+                                </Button></div>
                                 </td>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    3
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Sage Rodriguez
+                                    
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $56,142
+                                    36 $
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Netherlands
+                                <div className='inline-flex'><Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Accept"
+                                    style={{ margin:1 }}
+                                >
+                                    <MdOutlineDownloadDone/>
+                                </Button>
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Delete"
+                                    style={{ margin:1 }}
+                                >
+                                    <RiDeleteBack2Fill/>
+                                   
+                                </Button></div>
                                 </td>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    4
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Philip Chaney
+                                    
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $38,735
+                                    36 $
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Korea, South
+                                <div className='inline-flex'><Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Accept"
+                                    style={{ margin:1 }}
+                                >
+                                    <MdOutlineDownloadDone/>
+                                </Button>
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Delete"
+                                    style={{ margin:1 }}
+                                >
+                                    <RiDeleteBack2Fill/>
+                                   
+                                </Button></div>
                                 </td>
                             </tr>
                         </tbody>

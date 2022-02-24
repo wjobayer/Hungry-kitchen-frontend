@@ -3,11 +3,11 @@ import React from 'react';
 const HeroSection = () => {
     return (
         <div
-            style={{ backgroundImage: `url("https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png") `, backgroundRepeat: 'cover', height: '85vh', marginTop: "-250px" }}
+            style={{ backgroundImage: `url("https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png") `, backgroundRepeat: 'cover', height: '100vh', marginTop: "-250px" }}
             className='lg:pb-44 sm:pb-40 '>
 
             <main className="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-28 pt-44 p-10">
-                <div className="sm:text-center mt-32 lg:text-left">
+                <div className="sm:text-center lg:text-left">
                     <h1 className="text-4xl tracking-tight font-extrabold  text-white sm:text-5xl md:text-6xl">
                         <span className="block xl:inline">Order Healthy And <br /> Fresh Food</span>{' '}
                         <span className="block text-yellow-500 xl:inline">Any Time</span>

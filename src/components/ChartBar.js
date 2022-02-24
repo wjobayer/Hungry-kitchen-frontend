@@ -103,7 +103,7 @@ export default function ChartBar() {
     }, []);
     return (
         <Card>
-            <CardHeader color="pink" contentPosition="left">
+            <CardHeader className="bg-gradient-to-b from-pink-400 to-pink-600" contentPosition="left">
                 <h6 className="uppercase text-gray-200 text-xs font-medium">
                     Overview
                 </h6>
