@@ -13,7 +13,7 @@ const PaginationCompo = ({ postPerPage, totalPosts, paginate }) => {
             {pageNumbers.map((number) => (
               <div
                 key={number}
-                className="mr-3 rounded- p-3  border border-orange-500 cursor-pointer shadow-md hover:shadow-lg"
+                className="mr-3 round-button hover:bg-orange-50 shadow-md hover:shadow-lg"
               >
                 <p
                   onClick={() => paginate(number)}
