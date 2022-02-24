@@ -47,7 +47,7 @@ const Register = () => {
     }
 
     return (
-        <div className="p-2" >
+        <div className="" >
 
             <div className="w-full flex flex-wrap">
 
