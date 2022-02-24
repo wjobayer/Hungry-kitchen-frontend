@@ -29,6 +29,7 @@ const SearchResult = () => {
       setLoading(false);
     };
     fetchFoods();
+    setCurrentPage(1);
   }, [searchQuery]);
 
   //   const handleFilter = (index) => {
@@ -53,8 +54,9 @@ const SearchResult = () => {
           <div className="h-full py-20 flex flex-col items-center justify-center">
             <AiOutlineFileSearch className="text-[100px]" />
             <p className="text-2xl font-bold py-4">Sorry! No Result Found</p>
-            <p className="text-lg">
-              Your keyword <b>"{searchQuery}"</b> dosen't match to our database.
+            <p className="text-lg text-center">
+              Your keyword <b>"{searchQuery}"</b> dosen't match with our
+              database.
             </p>
           </div>
         </div>
