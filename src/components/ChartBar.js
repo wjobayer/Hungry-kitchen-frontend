@@ -101,19 +101,19 @@ export default function ChartBar() {
     let ctx = document.getElementById("bar-chart").getContext("2d");
     window.myBar = new Chart(ctx, config);
   }, []);
-  return (
-    <Card>
-      <CardHeader color="pink" contentPosition="left">
-        <h6 className="uppercase text-gray-200 text-xs font-medium">
-          Overview
-        </h6>
-        <h2 className="text-white text-2xl">Sales value</h2>
-      </CardHeader>
-      <CardBody>
-        <div className="relative h-96">
-          <canvas id="bar-chart"></canvas>
-        </div>
-      </CardBody>
-    </Card>
-  );
+    return (
+        <Card>
+            <CardHeader className="bg-gradient-to-b from-pink-400 to-pink-600" contentPosition="left">
+                <h6 className="uppercase text-gray-200 text-xs font-medium">
+                    Overview
+                </h6>
+                <h2 className="text-white text-2xl">Sales value</h2>
+            </CardHeader>
+            <CardBody>
+                <div className="relative h-96">
+                    <canvas id="bar-chart"></canvas>
+                </div>
+            </CardBody>
+        </Card>
+    );
 }

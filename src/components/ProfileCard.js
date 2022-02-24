@@ -3,7 +3,10 @@ import CardBody from '@material-tailwind/react/CardBody';
 import CardFooter from '@material-tailwind/react/CardFooter';
 import Image from '@material-tailwind/react/Image';
 import H5 from '@material-tailwind/react/Heading5';
-import Icon from '@material-tailwind/react/Icon';
+import {BsFillMapFill} from 'react-icons/bs';
+import {MdMapsHomeWork,MdAccountBalance} from 'react-icons/md';
+
+
 import LeadText from '@material-tailwind/react/LeadText';
 import Button from '@material-tailwind/react/Button';
 import ProfilePicture from '../assets/images/team-1-800x800.jpg';
@@ -39,15 +42,15 @@ export default function ProfileCard() {
             <div className="text-center">
                 <H5 color="gray">Jobayer</H5>
                 <div className="mt-0 mb-2 text-gray-700 flex items-center justify-center gap-2">
-                    <Icon name="place" size="xl" />
+                    <BsFillMapFill/>
                     Los Angeles, California
                 </div>
                 <div className="mb-2 text-gray-700 mt-10 flex items-center justify-center gap-2">
-                    <Icon name="work" size="xl" />
+                    <MdMapsHomeWork />
                     AltDevs Team Leader
                 </div>
                 <div className="mb-2 text-gray-700 flex items-center justify-center gap-2">
-                    <Icon name="account_balance" size="xl" />
+                    <MdAccountBalance />
                     Govt.Titumir College
                 </div>
             </div>

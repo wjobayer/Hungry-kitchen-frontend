@@ -1,6 +1,10 @@
 import StatusCard from '../components/StatusCard';
 import SettingsForm from '../components/SettingsForm';
 import ProfileCard from '../components/ProfileCard';
+import {BiDollarCircle} from 'react-icons/bi'
+import {GiTakeMyMoney} from 'react-icons/gi'
+import {FcSalesPerformance} from 'react-icons/fc'
+import {VscStarFull} from 'react-icons/vsc'
 
 export default function Dashboard() {
     return (
@@ -8,46 +12,62 @@ export default function Dashboard() {
             <div className="bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto">
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
-                        <StatusCard
-                            color="pink"
-                            icon="trending_up"
-                            title="Traffic"
-                            amount="350,897"
-                            percentage="3.48"
-                            percentageIcon="arrow_upward"
-                            percentageColor="green"
-                            date="Since last month"
-                        />
-                        <StatusCard
-                            color="orange"
-                            icon="groups"
-                            title="New Users"
-                            amount="2,356"
-                            percentage="3.48"
-                            percentageIcon="arrow_downward"
-                            percentageColor="red"
-                            date="Since last week"
-                        />
-                        <StatusCard
-                            color="purple"
-                            icon="paid"
-                            title="Sales"
-                            amount="924"
-                            percentage="1.10"
-                            percentageIcon="arrow_downward"
-                            percentageColor="orange"
-                            date="Since yesterday"
-                        />
-                        <StatusCard
-                            color="blue"
-                            icon="poll"
-                            title="Performance"
-                            amount="49,65%"
-                            percentage="12"
-                            percentageIcon="arrow_upward"
-                            percentageColor="green"
-                            date="Since last month"
-                        />
+                    <div className='divide-y divide-gray-300 border-orange-400 shadow-inner p-8 rounded-lg '>
+                            <div class="grid grid-cols-3">
+                            <div>
+                            <GiTakeMyMoney className='bg-orange-500 text-white  text-4xl col-span-1'/>
+                            </div>
+                            <div class="col-span-2">
+                            <h1 className='text-right'>Net Income</h1>
+                            <h1 className='text-3xl text-right'>1000$</h1>
+                            </div>
+                            </div>
+                            <div className='mt-4'>
+                                <h2 className='text-xs text-center'>Five Starred Food Item</h2>
+                            </div>
+                        </div>
+                        <div className='divide-y divide-gray-300 border-orange-400 shadow-inner p-8 rounded-lg '>
+                            <div class="grid grid-cols-3">
+                            <div>
+                            <BiDollarCircle className='bg-purple-500 text-white  text-4xl col-span-1'/>
+                            </div>
+                            <div class="col-span-2">
+                            <h1 className='text-right'>Current Income</h1>
+                            <h1 className='text-3xl text-right'>600$</h1>
+                            </div>
+                            </div>
+                            <div className='mt-4'>
+                                <h2 className='text-xs text-center'>Five Starred Food Item</h2>
+                            </div>
+                        </div>
+                        <div className='divide-y divide-gray-300 border-orange-400 shadow-inner p-8 rounded-lg '>
+                            <div class="grid grid-cols-3">
+                            <div>
+                            <FcSalesPerformance className='bg-pink-500 text-white  text-4xl col-span-1'/>
+                            </div>
+                            <div class="col-span-2">
+                            <h1 className='text-right'>Total Sales</h1>
+                            <h1 className='text-3xl text-right'>254</h1>
+                            </div>
+                            </div>
+                            <div className='mt-4'>
+                                <h2 className='text-xs text-center'>Five Starred Food Item</h2>
+                            </div>
+                        </div>
+                        <div className='divide-y divide-gray-300 border-orange-400 shadow-inner p-8 rounded-lg '>
+                            <div class="grid grid-cols-3">
+                            <div>
+                            <VscStarFull className='bg-blue-500 text-white  text-4xl col-span-1'/>
+                            </div>
+                            <div class="col-span-2">
+                            <h1 className='text-right'>Five Starred Item</h1>
+                            <h1 className='text-3xl text-right'>24</h1>
+                            </div>
+                            </div>
+                            <div className='mt-4'>
+                                <h2 className='text-xs text-center'>Five Starred Food Item</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
