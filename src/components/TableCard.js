@@ -11,7 +11,7 @@ import Team4 from '../assets/images/team-4-470x470.png';
 export default function CardTable() {
     return (
         <Card>
-            <CardHeader color="purple" contentPosition="left">
+            <CardHeader className="bg-gradient-to-b from-purple-400 to-purple-600" contentPosition="left">
                 <h2 className="text-white text-2xl">Card Table</h2>
             </CardHeader>
             <CardBody>
