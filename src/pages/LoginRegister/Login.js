@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { unstable_HistoryRouter, useLocation, useNavigate, Link } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import {
+    unstable_HistoryRouter,
+    useLocation,
+    useNavigate,
+} from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 
 const Login = () => {
     const { user,
@@ -28,7 +32,7 @@ const Login = () => {
 
         const { email, password } = data;
 
-        // loginUser(email, password, location, history);
+        loginUser(email, password, location, navigate);
 
     };
 
@@ -44,7 +48,7 @@ const Login = () => {
     // console.log(authError);
 
     return (
-        <div className="p-2" >
+        <div className="" >
 
             <div className="w-full flex flex-wrap">
 
@@ -80,7 +84,7 @@ const Login = () => {
                             <input type="submit" value="Log In" className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" />
                         </form>
                         <div className="text-center pt-12 pb-12">
-                            <p>Already have an account? <br /> <Link to="/register" className="underline font-semibold" >Register here.</Link></p>
+                            <p>Already have an account? <br /> <a href="#" className="underline font-semibold" >Register here.</a></p>
                         </div>
                     </div>
 
@@ -116,16 +120,10 @@ const Login = () => {
 
 
                 </div>
-
-                {/* <!-- Image Section --> */}
-                <div className="w-1/2 shadow-2xl">
-                    <img className="object-cover w-full h-screen hidden md:block" src="https://images.unsplash.com/photo-1542866789-4cea91fea23d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
-                </div>
             </div>
+        </div>
 
 
-
-        </div >
     );
 };
 

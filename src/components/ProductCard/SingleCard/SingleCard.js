@@ -11,6 +11,11 @@ const SingleCard = ({ food, loading, layout }) => {
     //push id to the useparams
     navigate(`/details/${id}`);
   };
+  const handleSetCounter = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
   if (loading) {
     return (
       <div className="single-card border rounded-lg border-gray-200 p-7  hover:shadow-lg hover:bg-orange-50">
@@ -61,16 +66,13 @@ const SingleCard = ({ food, loading, layout }) => {
           {food.strMeal}. The food is very popular here.
         </p>
         <div className="flex justify-between">
-          <div className="flex">
-            <div
-              className="rounded-full bg-orange-400 p-0 px-2.5 mr-1 cursor-pointer"
-              onClick={() => setCounter((prev) => counter - 1)}
-            >
+          <div className="flex quantity-section">
+            <div className="quantity-btn" onClick={handleSetCounter}>
               -
             </div>
-            <p>{counter}</p>
+            <p className="quantity-counter">{counter}</p>
             <div
-              className="rounded-full bg-orange-400 p-0 px-2 ml-1 cursor-pointer"
+              className="quantity-btn"
               onClick={() => setCounter((prev) => counter + 1)}
             >
               +
