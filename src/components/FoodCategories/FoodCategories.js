@@ -5,7 +5,10 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Footer from "../../common/Footer";
+import Header from "../../common/Header";
+import SearchFood from "../SearchFood";
 
 const FoodCategories = () => {
   const [category, setCategory] = useState("Seafood");
@@ -53,8 +56,10 @@ const FoodCategories = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container px-7 mx-auto">
-      {/* <div className="my-5 flex justify-center">
+    <>
+      <Header />
+      <div className="container px-7 mx-auto">
+        {/* <div className="my-5 flex justify-center">
         <div className="w-96">
           <p className="text-red-500 font-bold text-sm text-center tracking-wider">
             FRESH FROM OUR VENDORS
@@ -65,10 +70,10 @@ const FoodCategories = () => {
         </div>
       </div> */}
 
-      {/* -------------filter/query buttons ------------- */}
+        {/* -------------filter/query buttons ------------- */}
 
-      {/* ----------------------------------------------------------------------------------------- */}
-      {/* <div className="flex justify-center ">
+        {/* ----------------------------------------------------------------------------------------- */}
+        {/* <div className="flex justify-center ">
         <div className="flex bg-red-50 p-3 rounded-3xl  mb-4">
           <h3 className="font-bold ">Here are all</h3>
           <h3 className="font-bold border-b-2 mx-2 border-red-500 text-red-500 ">
@@ -77,149 +82,171 @@ const FoodCategories = () => {
           <h3 className="font-bold">foods from us</h3>
         </div>
       </div> */}
-      {/* --------------------------------------- */}
-      <div className="grid md:grid-cols-[1fr,_2fr] gap-4">
-        <div>
-          <div className="food-category mb-8">
-            <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
-              Categories
-            </h2>
+        {/* --------------------------------------- */}
+        <div className="grid md:grid-cols-[1fr,_2fr] gap-4">
+          <div>
+            <form>
+              <input
+                type="text"
+                name=""
+                id=""
+                className="placeholder:italic placeholder:text-slate-400 border border-gray-300 px-7 py-3 rounded"
+                placeholder="search here"
+              />
+              <Link to="/search">
+                <input
+                  type="submit"
+                  value="search"
+                  className="bg-yellow-400 px-7 py-3 rounded"
+                />
+              </Link>
+            </form>
 
-            <ul className="category-list-group">
-              <li
-                className="category-list"
-                onClick={() => handleFilter("Chicken")}
-              >
-                <span
-                  className={
-                    category === "Chicken"
-                      ? "flex items-center list-content-active"
-                      : "flex items-center list-content"
-                  }
-                >
-                  <MdOutlineArrowRight />
-                  Chicken
-                </span>
-              </li>
-              <li
-                className="category-list"
-                onClick={() => handleFilter("Pasta")}
-              >
-                <span
-                  className={
-                    category === "Pasta"
-                      ? "flex items-center list-content-active"
-                      : "flex items-center list-content"
-                  }
-                >
-                  <MdOutlineArrowRight />
-                  Pasta
-                </span>
-              </li>
-              <li
-                className="category-list"
-                onClick={() => handleFilter("Dessert")}
-              >
-                <span
-                  className={
-                    category === "Dessert"
-                      ? "flex items-center list-content-active"
-                      : "flex items-center list-content"
-                  }
-                >
-                  <MdOutlineArrowRight />
-                  Dessert
-                </span>
-              </li>
-            </ul>
-          </div>
+            <div className="food-category mb-8">
+              <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
+                Categories
+              </h2>
 
-          <div className="filter-by-price mb-8">
-            <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
-              Filter by Price
-            </h2>
-          </div>
-
-          <div className="best-deals mb-8">
-            <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
-              Today's best deals
-            </h2>
-            {foods
-              .filter((item, index) => index < 4)
-              .map((food) => (
-                <div
-                  key={food.idMeal}
-                  className="best-deals grid grid-cols-[1fr,_2fr] gap-4 border-b-2"
+              <ul className="category-list-group">
+                <li
+                  className="category-list"
+                  onClick={() => handleFilter("Chicken")}
                 >
-                  <div>
-                    <img
-                      className="rounded-full object-cover p-2.5 w-44 mx-auto"
-                      src={food.strMealThumb}
-                      alt={food.strMeal}
-                    />
-                  </div>
-                  <div className="mt-10">
-                    <h3
-                      className="text-xl font-bold cursor-pointer hover:text-red-400 duration-10 hover:underline underline-offset-4"
-                      onClick={() => handleDetails(food.idMeal)}
-                    >
-                      {" "}
-                      {food.strMeal}
-                    </h3>
-                    <p className="font-bold text-red-400">$ 9.99</p>
-                  </div>
-                </div>
-              ))}
-            {/*  */}
-          </div>
-        </div>
-        {/*------------- product showcase section ------------ */}
-        <div>
-          <div className="flex my-2">
-            <div
-              className={
-                layout === "vertical" ? "layout layout-active" : "layout"
-              }
-              onClick={() => setLayout("vertical")}
-            >
-              <RiLayoutGridFill />
+                  <span
+                    className={
+                      category === "Chicken"
+                        ? "flex items-center list-content-active"
+                        : "flex items-center list-content"
+                    }
+                  >
+                    <MdOutlineArrowRight />
+                    Chicken
+                  </span>
+                </li>
+                <li
+                  className="category-list"
+                  onClick={() => handleFilter("Pasta")}
+                >
+                  <span
+                    className={
+                      category === "Pasta"
+                        ? "flex items-center list-content-active"
+                        : "flex items-center list-content"
+                    }
+                  >
+                    <MdOutlineArrowRight />
+                    Pasta
+                  </span>
+                </li>
+                <li
+                  className="category-list"
+                  onClick={() => handleFilter("Dessert")}
+                >
+                  <span
+                    className={
+                      category === "Dessert"
+                        ? "flex items-center list-content-active"
+                        : "flex items-center list-content"
+                    }
+                  >
+                    <MdOutlineArrowRight />
+                    Dessert
+                  </span>
+                </li>
+              </ul>
             </div>
-            <div
-              className={
-                layout === "horizontal" ? "layout layout-active" : "layout"
-              }
-              onClick={() => setLayout("horizontal")}
-            >
-              <FaListAlt />
-            </div>
-          </div>
 
-          <div
-            className={
-              layout == "horizontal"
-                ? "grid grid-cols sm:grid-cols md:grid-cols lg:grid-cols gap-10"
-                : "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
-            }
-          >
-            {currentFoods.map((food) => (
-              <SingleCard
-                key={food.idMeal}
-                food={food}
-                loading={loading}
-                layout={layout}
-              ></SingleCard>
-            ))}
-          </div>
-          <div className="flex justify-center my-4">
-            <PaginationCompo
-              postPerPage={postPerPage}
-              totalPosts={foods.length}
-              paginate={paginate}
+            <div className="filter-by-price mb-8">
+              <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
+                Filter by Price
+              </h2>
+            </div>
+
+            <div className="best-deals mb-8">
+              <h2 className="text-xl font-bold pb-4 border-b-2 border-dashed">
+                Today's best deals
+              </h2>
+              {foods
+                .filter((item, index) => index < 4)
+                .map((food) => (
+                  <div
+                    key={food.idMeal}
+                    className="best-deals grid grid-cols-[1fr,_2fr] gap-4 border-b-2"
+                  >
+                    <div>
+                      <img
+                        className="rounded-full object-cover p-2.5 w-44 mx-auto"
+                        src={food.strMealThumb}
+                        alt={food.strMeal}
+                      />
+                    </div>
+                    <div className="mt-10">
+                      <h3
+                        className="text-xl font-bold cursor-pointer hover:text-red-400 duration-10 hover:underline underline-offset-4"
+                        onClick={() => handleDetails(food.idMeal)}
+                      >
+                        {" "}
+                        {food.strMeal}
+                      </h3>
+                      <p className="font-bold text-red-400">$ 9.99</p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <img
+              src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/add05.jpg"
+              alt=""
             />
+          </div>
+          {/*------------- product showcase section ------------ */}
+          <div>
+            <div className="flex my-2">
+              <div
+                className={
+                  layout === "vertical" ? "layout layout-active" : "layout"
+                }
+                onClick={() => setLayout("vertical")}
+              >
+                <RiLayoutGridFill />
+              </div>
+              <div
+                className={
+                  layout === "horizontal" ? "layout layout-active" : "layout"
+                }
+                onClick={() => setLayout("horizontal")}
+              >
+                <FaListAlt />
+              </div>
+            </div>
+
+            <div
+              className={
+                layout == "horizontal"
+                  ? "grid grid-cols sm:grid-cols md:grid-cols lg:grid-cols gap-10"
+                  : "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
+              }
+            >
+              {currentFoods.map((food) => (
+                <SingleCard
+                  key={food.idMeal}
+                  food={food}
+                  loading={loading}
+                  layout={layout}
+                ></SingleCard>
+              ))}
+            </div>
+            <div className="flex justify-center my-4">
+              <PaginationCompo
+                postPerPage={postPerPage}
+                totalPosts={foods.length}
+                paginate={paginate}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

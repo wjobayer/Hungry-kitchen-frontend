@@ -3,21 +3,26 @@ import CardHeader from '@material-tailwind/react/CardHeader';
 import CardBody from '@material-tailwind/react/CardBody';
 import Button from '@material-tailwind/react/Button';
 import Progress from '@material-tailwind/react/Progress';
-
+import {IoCheckmarkDoneSharp} from 'react-icons/io5'
+import {GiCampCookingPot} from 'react-icons/gi'
 export default function TrafficCard() {
     return (
         <Card>
-            <CardHeader color="purple" contentPosition="none">
+            <CardHeader className="bg-purple-500" contentPosition="none">
                 <div className="w-full flex items-center justify-between">
-                    <h2 className="text-white text-2xl">Social Media</h2>
-                    <Button
+                   
+                    <div className='inline-flex'>
+                    <h2 className="text-white text-2xl">Cooking</h2>
+                    <h2 className="text-white text-2xl ml-8"><GiCampCookingPot/></h2>
+                    </div>
+                    {/* <Button
                         color="transparent"
                         buttonType="link"
                         size="lg"
                         style={{ padding: 0 }}
                     >
                         See More
-                    </Button>
+                    </Button> */}
                 </div>
             </CardHeader>
             <CardBody>
@@ -26,59 +31,101 @@ export default function TrafficCard() {
                         <thead className="thead-light">
                             <tr>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Referral
+                                    Cooking
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Visitors
+                                    Send To
                                 </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left w-56"></th>
+                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left w-56">
+                                    Status
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Facebook
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    1,480
+                                    Banani
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="blue" value="60" />
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Done"
+                                    style={{ margin:1 }}
+                                >
+                                   <IoCheckmarkDoneSharp/>
+                                   
+                                </Button>
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Google
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    4,807
+                                    Banani
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="red" value="80" />
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Done"
+                                    style={{ margin:1 }}
+                                >
+                                   <IoCheckmarkDoneSharp/>
+                                   
+                                </Button>
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Instagram
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    3,678
+                                    Banani
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="indigo" value="75" />
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Done"
+                                    style={{ margin:1 }}
+                                >
+                                   <IoCheckmarkDoneSharp/>
+                                   
+                                </Button>
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Twitter
+                                Chicken Alfredo
                                 </th>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2,645
+                                    Banani
                                 </td>
                                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="lightBlue" value="90" />
+                                <Button
+                                    color="transparent"
+                                    buttonType="link"
+                                    size="lg"
+                                    title="Done"
+                                    style={{ margin:1 }}
+                                >
+                                   <IoCheckmarkDoneSharp/>
+                                   
+                                </Button>
                                 </td>
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>
