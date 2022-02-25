@@ -11,15 +11,16 @@ import Settings from "../src/pages/Settings";
 import Tables from "../src/pages/Tables";
 import Maps from "../src/pages/Maps";
 import DashboardMain from "./pages/DashboardMain";
-
+import AddFood from "./components/AddFood/AddFood";
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/details" element={<FoodDetails />} />
-        <Route path="/courierpartner" element={<CourierPartner />} />
-        <Route path="/resturantpartner" element={<ResturantPartner />} />
+        <Route path="/addFood" element={<AddFood />} />
+        {/* <Route path="/courierpartner" element={<CourierPartner />} />
+        <Route path="/resturantpartner" element={<ResturantPartner />} /> */}
         <Route path="/details/:id" element={<FoodDetails />} />
         <Route path="/home" element={<Home />} />
         <Route path="/details" element={<FoodDetails />} />

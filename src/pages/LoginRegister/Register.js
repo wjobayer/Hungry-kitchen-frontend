@@ -75,7 +75,7 @@ const Register = () => {
                 {/* name */}
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
-                  for="username"
+                  htmlFor="username"
                 >
                   Name <span className="text-red-500 text-xs">*</span>
                 </label>
@@ -92,7 +92,7 @@ const Register = () => {
               <div className="flex flex-col pt-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
-                  for="email"
+                  htmlFor="email"
                 >
                   Email <span className="text-red-500 text-xs">*</span>
                 </label>
@@ -112,7 +112,7 @@ const Register = () => {
               <div className="flex flex-col pt-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
-                  for="email"
+                  htmlFor="email"
                 >
                   Phone Number <span className="text-red-500 text-xs">*</span>
                 </label>
@@ -133,7 +133,7 @@ const Register = () => {
               <div className="mt-4 relative">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
-                  for="username"
+                  htmlFor="username"
                 >
                   Are you? <span className="text-red-500 text-xs">*</span>
                 </label>
@@ -161,7 +161,7 @@ const Register = () => {
 
               <div className="flex pt-4 ">
                 <div className="w-1/2 mr-2">
-                  <label for="password" className="text-lg">
+                  <label htmlFor="password" className="text-lg">
                     Password
                   </label>
                   <input
@@ -174,7 +174,7 @@ const Register = () => {
                 </div>
 
                 <div className="w-1/2 ml-2">
-                  <label for="password" className="text-lg">
+                  <label htmlFor="password" className="text-lg">
                     Re-Type Password
                   </label>
                   <input
