@@ -4,9 +4,9 @@ import ReactSlick from "../components/ReactSlick/ReactSlick";
 const Footer = () => {
   return (
     <div className="pt-8 fontsimplement">
-      <div className="auto-scroll">
+      {/* <div className="auto-scroll">
         <ReactSlick></ReactSlick>
-      </div>
+      </div> */}
       <footer className="bg-slate-100 text-left">
         <div className="container mx-auto sm: px-8 py-16">
           <div className="grid lg:grid-cols-2 ">
