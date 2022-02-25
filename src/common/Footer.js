@@ -1,14 +1,15 @@
 import React from "react";
-import ReactSlick from "../components/ReactSlick/ReactSlick";
+import { FaTwitterSquare, FaYoutube } from "react-icons/fa";
+import { AiOutlineInstagram, AiFillFacebook } from "react-icons/ai";
+// import {MdOutlineTransitEnterexit} from 'react-icons/md'
+import { TiSocialDribbble } from "react-icons/ti";
+
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
 const Footer = () => {
   return (
-    <div className="pt-8 fontsimplement">
-      {/* <div className="auto-scroll">
-        <ReactSlick></ReactSlick>
-      </div> */}
-      <footer className="bg-slate-100 text-left">
-        <div className="container mx-auto sm: px-8 py-16">
+    <footer className="bg-slate-100 pt-8 px-7 mx-auto">
+      <div className="container  text-left">
+        <div className="mx-auto sm: px-8 py-16">
           <div className="grid lg:grid-cols-2 ">
             <div className="grid sm:grid-cols-3">
               <div className="col-span-2">
@@ -30,40 +31,39 @@ const Footer = () => {
                   <span className="font-extrabold">Email:</span>{" "}
                   restaurant@gmail.com
                 </p>
-                {/* <a
-                  className="hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a
-                  className="mx-3 hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <Icon name="settings" size="2-xl" />
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a
-                  className="hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a
-                  className="mx-3 hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <Icon name="facebook" size="2-xl" />
-                  <FontAwesomeIcon icon={faGoogle} />
-                </a>
-                <a
-                  className="hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <Icon name="youtube" size="lg" />
-                </a>
-                  <FontAwesomeIcon icon={faYoutube} />
-                </a> */}
+                <div className="flex">
+                  <a
+                    className="hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <AiFillFacebook />
+                  </a>
+                  <a
+                    className="mx-3 hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <FaYoutube />
+                  </a>
+                  <a
+                    className="hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <TiSocialDribbble />
+                  </a>
+                  <a
+                    className="mx-3 hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <FaTwitterSquare />
+                  </a>
+                  <a
+                    className="hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    {" "}
+                    <AiOutlineInstagram />
+                  </a>
+                </div>
               </div>
               <div>
                 <h1 className="font-extrabold text-xl">Our Services</h1>
@@ -205,8 +205,8 @@ const Footer = () => {
             <span></span> Team All Rights Reserved
           </h1>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 

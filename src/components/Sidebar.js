@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AdminNavbar from '../components/AdminNavbar';
-import Icon from '@material-tailwind/react/Icon';
+import {MdDashboard} from 'react-icons/md';
+import {AiOutlineLogin,AiFillSetting} from 'react-icons/ai';
+import {BsTable} from 'react-icons/bs';
+import {FaPager,FaMapMarkedAlt} from 'react-icons/fa';
+import {GiArchiveRegister} from 'react-icons/gi';
+import {CgProfile} from 'react-icons/cg';
+
 import H6 from '@material-tailwind/react/Heading6';
 
 export default function Sidebar() {
@@ -27,83 +33,82 @@ export default function Sidebar() {
                         <hr className="my-4 min-w-full" />
 
                         <ul className="flex-col min-w-full flex list-none">
-                            <li className="rounded-lg mb-4">
+                            <li className="rounded-lg ">
                                 <NavLink
                                     to="/dashboard"
                                     exact
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                                > <Icon name="dashboard" size="2xl" />
-                                    dashboard
+                                > <MdDashboard />dashboard
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2">
+                            <li className="rounded-lg ">
                                 <NavLink
                                     to="/dashboard/settings"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="settings" size="2xl" />
+                                    <AiFillSetting/>
                                     Settings
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 ">
+                            <li className="rounded-lg  ">
                                 <NavLink
                                     to="/dashboard/tables"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="toc" size="2xl" />
+                                    <BsTable/>
                                     Tables
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 text-gray-700">
+                            <li className="rounded-lg  text-gray-700">
                                 <NavLink
                                     to="/dashboard/maps"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="map" size="2xl" />
+                                    <FaMapMarkedAlt/>
                                     Maps
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 text-gray-700">
+                            <li className="rounded-lg  text-gray-700">
                                 <NavLink
                                     to="/dashboard/maps"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="fingerprint" size="2xl" />
+                                    <AiOutlineLogin/>
                                     Login
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 text-gray-700">
+                            <li className="rounded-lg  text-gray-700">
                                 <NavLink
                                     to="/dashboard/maps"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                     <Icon name="list_alt" size="2xl" />
+                                     <GiArchiveRegister/>
                                     Register
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 text-gray-700">
+                            <li className="rounded-lg  text-gray-700">
                                 <NavLink
                                     to="/dashboard/maps"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="web" size="2xl" />
+                                    <FaPager/>
                                     Landing Page
                                 </NavLink>
                             </li>
-                            <li className="rounded-lg mb-2 text-gray-700">
+                            <li className="rounded-lg  text-gray-700">
                                 <NavLink
                                     to="/dashboard/maps"
                                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="account_circle" size="2xl" />
+                                    <CgProfile/>
                                     Profile Page
                                 </NavLink>
                             </li>
@@ -118,13 +123,13 @@ export default function Sidebar() {
                                 >About Us
                                 </NavLink>
                             </li>
-                            <li className="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 px-4 rounded-lg text-white mb-2">
+                            <li className="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 px-4 rounded-lg text-white mb-2 ">
                             <NavLink
                                     to="/dashboard/maps"
                                     className="flex items-center justify-center gap-4 text-sm font-light py-3"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                 >
-                                    <Icon name="description" size="2xl" />
+                                    
                                     Get Our Apps
                                 </NavLink>
                             </li>
