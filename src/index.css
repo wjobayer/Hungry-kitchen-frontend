@@ -11,3 +11,13 @@
   --fontSize: 16px;
   --transition: 0.6s;
 }
+
+
+@layer components{
+  .add-food-input{
+    @apply border py-2 px-3 text-gray-800
+  }
+  .add-food-label{
+    @apply mb-2 font-bold text-lg text-gray-900
+  }
+}
