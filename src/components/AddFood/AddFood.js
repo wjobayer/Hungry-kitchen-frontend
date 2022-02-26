@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 const AddFood = () => {
   const [foodInfo, setFoodInfo] = useState({
     foodName: "",
@@ -34,8 +34,8 @@ const AddFood = () => {
     formData.append("foodArea", foodArea);
     formData.append("foodDescription", foodDescription);
     formData.append("foodPic", foodPic);
-    await axios.post("http://localhost:5000/food", formData)
-        .then(res => console.log(res.data))
+    // await axios.post("http://localhost:5000/food", formData)
+    //     .then(res => console.log(res.data))
   };
 
   return (
