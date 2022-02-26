@@ -7,7 +7,7 @@ import useFirebase from "../Hooks/useFirebase";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
- const addToCart=useSelector((state)=>state.addToCart)
+  const addToCart = useSelector((state) => state.addToCart)
   const { user, admin, isLoading, authError, registerUser, loginUser, logout } = useFirebase()
   console.log(user.email)
 
@@ -100,7 +100,7 @@ const Header = () => {
                   className="px-3 py-2 flex items-center font-bold leading-snug text-white hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
                 >
-                  <span className="text-2xl"><AiOutlineShoppingCart /></span> <span className="border p-1 mb-8 bg-yellow-400 text-black" >{addToCart.length} </span>
+                  <span className="text-2xl"><AiOutlineShoppingCart /></span> <span className="ml-1 " >{addToCart.length} </span>
                 </NavLink>
               </li>
 
