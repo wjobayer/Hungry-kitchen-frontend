@@ -156,7 +156,7 @@ const Header = () => {
                               >
                                 <div className="px-4 py-3">
                                   <p className="text-sm leading-5">Signed in as</p>
-                                  <p className="text-sm font-medium leading-5 text-gray-900 truncate">
+                                  <p className="text-sm font-medium leading-5 text-white">
                                     {user.email}
                                   </p>
                                 </div>
@@ -166,10 +166,11 @@ const Header = () => {
                                     {({ active }) => (
                                       <Link
                                         to="/dashboard"
-                                        className={`${active
-                                          ? "bg-gray-100 text-gray-900"
-                                          : "text-white"
-                                          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
+                                      // className={`${active
+                                      //   ? "bg-gray-100 text-gray-900"
+                                      //   : "text-white"
+                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Dashboard
                                       </Link>
@@ -179,10 +180,11 @@ const Header = () => {
                                     {({ active }) => (
                                       <a
                                         href="#support"
-                                        className={`${active
-                                          ? "bg-gray-100 text-gray-900"
-                                          : "text-gray-700"
-                                          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
+                                      // className={`${active
+                                      //   ? "bg-gray-100 text-gray-900"
+                                      //   : "text-gray-700"
+                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Support
                                       </a>
@@ -197,10 +199,11 @@ const Header = () => {
                                     {({ active }) => (
                                       <a
                                         href="#sign-out"
-                                        className={`${active
-                                          ? "bg-gray-100 text-gray-900"
-                                          : "text-gray-700"
-                                          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-400 hover:text-black"
+                                      // className={`${active
+                                      //   ? "bg-gray-100 text-gray-900"
+                                      //   : "text-gray-700"
+                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Sign out
                                       </a>
