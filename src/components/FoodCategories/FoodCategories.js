@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../common/Footer";
 import Header from "../../common/Header";
 import SearchFood from "../SearchFood";
+import HeaderBlack from "../../common/HeaderBlack";
 
 const FoodCategories = () => {
   const [category, setCategory] = useState("Seafood");
@@ -57,7 +58,8 @@ const FoodCategories = () => {
 
   return (
     <>
-      <Header />
+
+      <HeaderBlack />
       <div className="container px-7 mx-auto">
         {/* <div className="my-5 flex justify-center">
         <div className="w-96">
