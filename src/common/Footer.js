@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTwitterSquare, FaYoutube } from "react-icons/fa";
 import { AiOutlineInstagram, AiFillFacebook } from "react-icons/ai";
-// import {MdOutlineTransitEnterexit} from 'react-icons/md'
+import { MdOutlineTransitEnterexit } from "react-icons/md";
 import { TiSocialDribbble } from "react-icons/ti";
 
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
@@ -31,43 +31,6 @@ const Footer = () => {
                   <span className="font-extrabold">Email:</span>{" "}
                   restaurant@gmail.com
                 </p>
-<<<<<<< HEAD
-                {/* <a
-                  className="hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                  <Icon name="facebook" size="2-xl" />
-                </a>
-                <a
-                  className="mx-3 hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <Icon name="settings" size="2-xl" />
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a
-                  className="hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a
-                  className="mx-3 hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <Icon name="facebook" size="2-xl" />
-                  <FontAwesomeIcon icon={faGoogle} />
-                </a>
-                <a
-                  className="hover:text-orange-400"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <Icon name="youtube" size="lg" />
-                </a>
-                  <FontAwesomeIcon icon={faYoutube} />
-                </a> */}
-=======
                 <div className="flex">
                   <a
                     className="hover:text-orange-400 text-2xl"
@@ -97,11 +60,9 @@ const Footer = () => {
                     className="hover:text-orange-400 text-2xl"
                     href="https://youtu.be/62b9HXn4VnI"
                   >
-                    {" "}
                     <AiOutlineInstagram />
                   </a>
                 </div>
->>>>>>> develop
               </div>
               <div>
                 <h1 className="font-extrabold text-xl">Our Services</h1>

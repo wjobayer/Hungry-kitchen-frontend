@@ -14,7 +14,7 @@ const PartnerSection = () => {
             </div>
             <div className="absolute left-5 right-5 bottom-6 md:bottom-14 flex items-center justify-between">
               <h2 className="sm:text-3xl md:text-4xl text-white font-semibold hover:text-yellow-500 transition-all duration-300 ease-in-out">
-                <a href="#">Get paid as a courier partner</a>
+                Get paid as a courier partner
               </h2>
               <Link
                 to="/courierForm"

@@ -14,6 +14,8 @@ import Tables from "../src/pages/Tables";
 import Maps from "../src/pages/Maps";
 import DashboardMain from "./pages/DashboardMain";
 import SearchResult from "./components/SearchResult";
+import CourierForm from "./components/PartnerSection/CourierForm";
+import RestaurantForm from "./components/PartnerSection/RestaurantForm";
 
 const AppRouter = () => {
   return (
@@ -26,6 +28,8 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="search" element={<SearchResult />} />
+        <Route path="courierForm" element={<CourierForm />} />
+        <Route path="restaurantForm" element={<RestaurantForm />} />
         {/* <Sidebar /> */}
         <Route path="/dashboard/*" element={<DashboardMain />} />
         <Route path="/" element={<Dashboard />} />

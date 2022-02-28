@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Header from "../../common/Header";
 
 const CourierForm = () => {
   const {
@@ -13,6 +14,7 @@ const CourierForm = () => {
   };
   return (
     <div className="courier-featured">
+      <Header />
       <div className="container">
         <h2 className="text-center sm:text-3xl md:text-4xl pb-12">
           DELIVERY <span className="sub-title">Rider Info</span>
