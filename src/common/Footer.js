@@ -200,7 +200,7 @@ const Footer = () => {
               href="https://docs.google.com/document/d/1o0VtDfH_Hixn8dfcQBbI0sVMUKvVRMBzYnzISIZLAGg/edit"
             >
               AltDevs
-            </a>{" "}
+            </a>
             <span></span> Team All Rights Reserved
           </h1>
         </div>

@@ -3,9 +3,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthState
 import initializeAuthentication from '../Firebase/firebase.init';
 import { useNavigate } from 'react-router-dom';
 
-
-
-
 // initialize firebase app
 initializeAuthentication();
 
