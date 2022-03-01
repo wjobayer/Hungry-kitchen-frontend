@@ -59,9 +59,9 @@ const Footer = () => {
                 <a
                   className="hover:text-orange-400 text-2xl"
                   href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <AiOutlineInstagram/>
+                > <AiOutlineInstagram/>
                 </a>
+                 
                 </div>
               </div>
               <div>
@@ -200,7 +200,7 @@ const Footer = () => {
               href="https://docs.google.com/document/d/1o0VtDfH_Hixn8dfcQBbI0sVMUKvVRMBzYnzISIZLAGg/edit"
             >
               AltDevs
-            </a>{" "}
+            </a>
             <span></span> Team All Rights Reserved
           </h1>
         </div>

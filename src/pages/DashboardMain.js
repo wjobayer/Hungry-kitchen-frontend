@@ -6,6 +6,8 @@ import Maps from '../pages/Maps';
 import Tables from '../pages/Tables';
 import Dashboard from './Dashboard';
 import Footer from '../common/Footer';
+import AddFood from "../components/AddFood/AddFood";
+
 // Tailwind CSS Style Sheet
 import '../assets/styles/tailwind.css';
 const DashboardMain = () => {
@@ -15,6 +17,7 @@ const DashboardMain = () => {
         <div className="md:ml-64">
         <Routes>
             <Route path='settings' element={<Settings></Settings>}/>
+            <Route path='addFood' element={<AddFood></AddFood>}/>
             <Route path='tables' element={<Tables></Tables>}/>
             <Route path='maps' element={<Maps></Maps>}/>
             <Route path='/' element={<Dashboard></Dashboard>}/>

@@ -3,7 +3,7 @@ import React from 'react';
 const HeroSection = () => {
     return (
         <div
-            style={{ backgroundImage: `url("https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png") `, backgroundRepeat: 'cover', height: '100vh', marginTop: "-250px" }}
+            style={{ backgroundImage: `url("https://marketplace.foodotawp.com/wp-content/uploads/2021/05/two.png") `, backgroundRepeat: 'cover', height: '70vh', marginTop: "-250px" }}
             className='lg:pb-44 sm:pb-40 '>
 
             <main className="mx-auto max-w-7xl sm:px-6 lg:px-8 mt-28 pt-44 p-10">
