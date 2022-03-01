@@ -60,7 +60,7 @@ const Register = () => {
       <div className="w-full flex flex-wrap">
 
         {/* <!-- Login Section --> */}
-        <div className="w-full md:w-1/2 flex flex-col">
+        <div className="w-full md:w-1/2 lg:mb-12 sm:mb-4 flex flex-col">
 
           <div className="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
             {/* <a href="#" className="bg-black text-white font-bold text-xl p-4" >Logo</a> */}

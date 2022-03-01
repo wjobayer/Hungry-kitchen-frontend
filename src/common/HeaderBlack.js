@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineBell, AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useFirebase from "../Hooks/useFirebase";
 import { Menu, Transition } from "@headlessui/react";
 
@@ -11,6 +11,14 @@ const HeaderBlack = () => {
     const addToCart = useSelector((state) => state.addToCart)
     const { user, admin, isLoading, authError, registerUser, loginUser, logout } = useFirebase()
     console.log(user.email)
+
+    const navigate = useNavigate()
+
+    const logOutButton = () => {
+        logout();
+        navigate('/login')
+
+    }
 
     return (
         <div className="header">
@@ -187,6 +195,7 @@ const HeaderBlack = () => {
                                                                         <Menu.Item>
                                                                             {({ active }) => (
                                                                                 <a
+                                                                                    onClick={logOutButton}
                                                                                     href="#sign-out"
                                                                                     className={`${active
                                                                                         ? "bg-gray-100 text-gray-900"
