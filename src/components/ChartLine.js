@@ -17,13 +17,14 @@ export default function ChartLine() {
                     'May',
                     'June',
                     'July',
+                    'August',
                 ],
                 datasets: [
                     {
                         label: new Date().getFullYear(),
                         backgroundColor: '#03a9f4',
                         borderColor: '#03a9f4',
-                        data: [65, 78, 66, 44, 56, 67, 75],
+                        data: [65, 78, 66, 44, 56, 67, 75,10],
                         fill: false,
                     },
                     {
@@ -31,7 +32,7 @@ export default function ChartLine() {
                         fill: false,
                         backgroundColor: '#ff9800',
                         borderColor: '#ff9800',
-                        data: [40, 68, 86, 74, 56, 60, 87],
+                        data: [40, 68, 86, 74, 56, 60, 87,90],
                     },
                 ],
             },
