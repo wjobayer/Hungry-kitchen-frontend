@@ -48,7 +48,7 @@ const Login = () => {
     // console.log(authError);
 
     return (
-        <div className="" >
+        <div className="p-2" >
 
             <div className="w-full flex flex-wrap">
 
@@ -67,7 +67,7 @@ const Login = () => {
 
                             {/* Email */}
                             <div className="flex flex-col pt-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" for="email">
                                     Email <span className='text-red-500 text-xs'>*</span>
                                 </label>
                                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
@@ -76,7 +76,7 @@ const Login = () => {
 
                             <div className="pt-4 ">
                                 <div className='w-full mr-2'>
-                                    <label htmlFor="password" className="text-lg">Password</label>
+                                    <label for="password" className="text-lg">Password</label>
                                     <input type="password" id="password" placeholder="Password" {...register("password", { required: true, maxLength: 6 })} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                                 </div>
                             </div>
@@ -122,7 +122,6 @@ const Login = () => {
                 </div>
             </div>
         </div>
-
 
     );
 };

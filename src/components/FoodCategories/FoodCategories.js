@@ -58,8 +58,7 @@ const FoodCategories = () => {
 
   return (
     <>
-
-      <HeaderBlack />
+      <HeaderBlack className='' />
       <div className="container px-7 mx-auto">
         {/* <div className="my-5 flex justify-center">
         <div className="w-96">
