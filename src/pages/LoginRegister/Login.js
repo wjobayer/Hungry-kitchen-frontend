@@ -48,12 +48,12 @@ const Login = () => {
     // console.log(authError);
 
     return (
-        <div className="p-2" >
+        <div className="" >
 
             <div className="w-full flex flex-wrap">
 
                 {/* <!-- Login Section --> */}
-                <div className="w-full md:w-1/2 flex flex-col">
+                <div className="w-full md:w-1/2 lg:mb-32 flex flex-col">
 
                     <div className="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
                         {/* <a href="#" className="bg-black text-white font-bold text-xl p-4" >Logo</a> */}
@@ -83,6 +83,7 @@ const Login = () => {
 
                             <input type="submit" value="Log In" className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" />
                         </form>
+
                         <div className="text-center pt-12 pb-12">
                             <p>Already have an account? <br /> <a href="#" className="underline font-semibold" >Register here.</a></p>
                         </div>
@@ -119,6 +120,11 @@ const Login = () => {
                     </p>
 
 
+                </div>
+
+                {/* image section */}
+                <div className="w-1/2 shadow-2xl">
+                    <img className="object-cover w-full h-screen hidden md:block" src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
                 </div>
             </div>
         </div>
