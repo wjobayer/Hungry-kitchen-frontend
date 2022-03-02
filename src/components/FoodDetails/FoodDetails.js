@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import HeaderBlack from "../../common/HeaderBlack";
 import { addToCart } from "../../redux/slices/foodSlice";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
@@ -9,7 +10,7 @@ import Header from "./../../common/Header";
 
 const FoodDetails = () => {
   const [food, setFood] = useState([]);
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -50,7 +51,7 @@ const FoodDetails = () => {
 
   return (
     <>
-      <Header />
+      <HeaderBlack />
       <div className="container">
         <div className="grid grid-cols md:grid-cols-2">
           <div>
@@ -70,7 +71,7 @@ const FoodDetails = () => {
             </div>
             <hr />
             <p className="text-lg mt-4">{food.strInstructions}</p>
-            <button onClick={()=>dispatch(addToCart(food))} className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4">
+            <button onClick={() => dispatch(addToCart(food))} className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4">
               Add to cart
             </button>
           </div>

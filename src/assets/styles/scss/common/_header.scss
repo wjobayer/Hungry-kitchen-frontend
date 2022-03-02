@@ -2,11 +2,48 @@
   // @apply bg-blue-500;
 }
 
-@media only screen and (max-width: 768px) {
-  .heroSection{
-    margin-top: 250px;
-    margin-left: 180px;
+@media only screen and (max-width:	640px) {
+  .heroSection1{
+    // margin-top: 86%;
+    // margin-left: 40%;
+    top: 62%;
+    right: 9%;
     position: absolute;
-    background-color: black;
+    // background-color: black;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid #FF5722;
+  }
+
+  .heroSection2{
+    // margin-top: 105%;
+    // margin-left: 30%;
+    top: 65%;
+    right: 10%;
+    position: absolute;
+    background-color: rgba(252, 252, 252, 0.582);
+    border: 1px solid #FF5722;
+  }
+}
+
+@media only screen and (min-width:	768px) and (max-width: 900px)  {
+  .heroSection1{
+    // margin-top: 45%;
+    // margin-left: 69%;
+    top: 62%;
+    right: 5%;
+    position: absolute;
+    // background-color: black;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid #FF5722;
+  }
+
+  .heroSection2{
+    // margin-top: 55%;
+    // margin-left: 64%;
+    top: 62%;
+    right: 5%;
+    position: absolute;
+    background-color: rgba(252, 252, 252, 0.950);
+    border: 1px solid #FF5722;
   }
 }
