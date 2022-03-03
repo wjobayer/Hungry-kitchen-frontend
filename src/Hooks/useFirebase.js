@@ -98,7 +98,7 @@ const useFirebase = () => {
             .then(data => setAdmin(data.admin))
     }, [user.email])
 
-
+    
     // send login data to mongodb
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
