@@ -1,22 +1,23 @@
+import Button from '@material-tailwind/react/Button';
 import Card from '@material-tailwind/react/Card';
 import CardBody from '@material-tailwind/react/CardBody';
 import CardFooter from '@material-tailwind/react/CardFooter';
-import Image from '@material-tailwind/react/Image';
 import H5 from '@material-tailwind/react/Heading5';
-import {BsFillMapFill} from 'react-icons/bs';
-import {MdMapsHomeWork,MdAccountBalance} from 'react-icons/md';
-
-
+import Image from '@material-tailwind/react/Image';
 import LeadText from '@material-tailwind/react/LeadText';
-import Button from '@material-tailwind/react/Button';
-import ProfilePicture from '../assets/images/team-1-800x800.jpg';
+import { BsFillMapFill } from 'react-icons/bs';
+import { MdAccountBalance, MdMapsHomeWork } from 'react-icons/md';
+import useFirebase from '../Hooks/useFirebase';
+
+
 
 export default function ProfileCard() {
+    const { user, admin, isLoading, authError, registerUser, loginUser, logout } = useFirebase();
     return (
         <Card>
             <div className="flex flex-wrap justify-center">
                 <div className="w-48 px-4 -mt-24">
-                    <Image src={ProfilePicture} rounded raised />
+                    <Image src={user.photoURL} rounded raised width="600px"/>
                 </div>
                 <div className="w-full flex justify-center py-4 lg:pt-4 pt-8">
                     <div className="p-4 text-center">
@@ -40,7 +41,7 @@ export default function ProfileCard() {
                 </div>
             </div>
             <div className="text-center">
-                <H5 color="gray">Jobayer</H5>
+                <H5 color="gray">{user.displayName}</H5>
                 <div className="mt-0 mb-2 text-gray-700 flex items-center justify-center gap-2">
                     <BsFillMapFill/>
                     Los Angeles, California

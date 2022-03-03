@@ -91,17 +91,6 @@ const Header = () => {
                   <span className="ml-2">Restaurant Search</span>
                 </NavLink>
               </li>
-
-              <li className="nav-item">
-                <NavLink
-                  to="/dashboard"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                >
-                  <span className="ml-2">Dashboard</span>
-                </NavLink>
-              </li>
-
               <li className="nav-item">
                 <NavLink
                   to="/cart"
