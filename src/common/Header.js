@@ -2,22 +2,16 @@ import React from "react";
 import { AiOutlineBell, AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useFirebase from "../Hooks/useFirebase";
 import { Menu, Transition } from "@headlessui/react";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const addToCart = useSelector((state) => state.addToCart)
-  const { user, admin, isLoading, authError, registerUser, loginUser, logout } = useFirebase()
+  const addToCart = useSelector((state) => state.addToCart);
+  const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
+    useFirebase();
   console.log(user.email);
-
-  const navigate = useNavigate()
-
-  const logOutButton = () => {
-    logout();
-    navigate('/login')
-  }
 
   return (
     <div className="header">
@@ -108,7 +102,10 @@ const Header = () => {
                   className="px-3 py-2 flex items-center font-bold leading-snug text-white hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
                 >
-                  <span className="text-2xl"><AiOutlineShoppingCart /></span> <span className="ml-1 " >{addToCart.length} </span>
+                  <span className="text-2xl">
+                    <AiOutlineShoppingCart />
+                  </span>{" "}
+                  <span className="ml-1 ">{addToCart.length} </span>
                 </NavLink>
               </li>
 
@@ -118,15 +115,15 @@ const Header = () => {
                   className="px-3 py-2 flex items-center font-bold leading-snug text-white hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
                 >
-
-                  <span className="text-2xl "><AiOutlineBell /></span>
+                  <span className="text-2xl ">
+                    <AiOutlineBell />
+                  </span>
                 </NavLink>
               </li>
 
               <li className="nav-item">
-
-                {
-                  user.email ? <div className="flex items-center justify-center py-2 px-4">
+                {user.email ? (
+                  <div className="flex items-center justify-center py-2 px-4">
                     <div className="relative inline-block text-left">
                       <Menu>
                         {({ open }) => (
@@ -162,7 +159,9 @@ const Header = () => {
                                 className="absolute right-0 w-56 mt-2 origin-top-right bg-black border border-gray-500 divide-y divide-gray-800 text-white rounded-md shadow-lg outline-none"
                               >
                                 <div className="px-4 py-3">
-                                  <p className="text-sm leading-5">Signed in as</p>
+                                  <p className="text-sm leading-5">
+                                    Signed in as
+                                  </p>
                                   <p className="text-sm font-medium leading-5 text-white">
                                     {user.email}
                                   </p>
@@ -174,10 +173,10 @@ const Header = () => {
                                       <Link
                                         to="/dashboard"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
-                                      // className={`${active
-                                      //   ? "bg-gray-100 text-gray-900"
-                                      //   : "text-white"
-                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        // className={`${active
+                                        //   ? "bg-gray-100 text-gray-900"
+                                        //   : "text-white"
+                                        //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Dashboard
                                       </Link>
@@ -188,30 +187,27 @@ const Header = () => {
                                       <a
                                         href="#support"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
-                                      // className={`${active
-                                      //   ? "bg-gray-100 text-gray-900"
-                                      //   : "text-gray-700"
-                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        // className={`${active
+                                        //   ? "bg-gray-100 text-gray-900"
+                                        //   : "text-gray-700"
+                                        //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Support
                                       </a>
                                     )}
                                   </Menu.Item>
-
-
                                 </div>
 
                                 <div className="py-1">
                                   <Menu.Item>
                                     {({ active }) => (
                                       <a
-                                        onClick={logOutButton}
                                         href="#sign-out"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-400 hover:text-black"
-                                      // className={`${active
-                                      //   ? "bg-gray-100 text-gray-900"
-                                      //   : "text-gray-700"
-                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        // className={`${active
+                                        //   ? "bg-gray-100 text-gray-900"
+                                        //   : "text-gray-700"
+                                        //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Sign out
                                       </a>
@@ -224,17 +220,20 @@ const Header = () => {
                         )}
                       </Menu>
                     </div>
-                  </div> : <a
+                  </div>
+                ) : (
+                  <a
                     className="px-3 py-2 flex  items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="/login"
                   >
-                    <NavLink to='/register' className="leading-lg rounded text-black bg-yellow-400 px-5 py-3 hover:bg-transparent hover:outline hover:text-white hover:outline-offset-2 hover:outline-2">
+                    <NavLink
+                      to="/register"
+                      className="leading-lg rounded text-black bg-yellow-400 px-5 py-3 hover:bg-transparent hover:outline hover:text-white hover:outline-offset-2 hover:outline-2"
+                    >
                       <strong className="animate-pulse">Login/Register</strong>
                     </NavLink>
                   </a>
-                }
-
-
+                )}
               </li>
             </ul>
           </div>
