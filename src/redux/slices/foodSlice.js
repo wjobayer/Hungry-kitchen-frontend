@@ -11,7 +11,6 @@ export const foodSlice = createSlice({
   },
 })
 
-
 export const {addToCart} = foodSlice.actions
 
 export default foodSlice.reducer

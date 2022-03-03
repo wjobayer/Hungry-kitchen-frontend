@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
+import Swal from "sweetalert2";
 const AddFood = () => {
   const [foodInfo, setFoodInfo] = useState({
     foodName: "",
@@ -13,29 +14,51 @@ const AddFood = () => {
   const handleChange = (e) => {
     setFoodInfo({ ...foodInfo, [e.target.name]: e.target.value });
   };
-
-  const handleImage =  (e) => {
-    setFoodPic(e.target.files[0]);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!foodPic) {
       return;
     }
-    
     const { foodName, foodArea, foodCategory, foodDescription, foodPrice } =
-    foodInfo;
+      foodInfo;
+    await axios
+      .post("/food", {
+        foodName,
+        foodArea,
+        foodCategory,
+        foodDescription,
+        foodPrice,
+        foodPic,
+      })
+      .then((res) => {
+        if(res.status === 200){
+          Swal.fire(
+            'Food Added!',
+            'Food successfully Added!',
+            'success'
+          )
+        }
+      })
+      .catch(err => console.log(err.message))
+      e.target.reset();
+  };
 
-    const formData = new FormData();
-    formData.append("foodName", foodName);
-    formData.append("foodPrice", foodPrice);
-    formData.append("foodCategory", foodCategory);
-    formData.append("foodArea", foodArea);
-    formData.append("foodDescription", foodDescription);
-    formData.append("foodPic", foodPic);
-    // await axios.post("http://localhost:5000/food", formData)
-    //     .then(res => console.log(res.data))
+  const handleImage = (pics) => {
+    if (pics.type === "image/jpeg" || pics.type === "image/png") {
+      const data = new FormData();
+      data.append("file", pics);
+      data.append("upload_preset", "hungry-kitchen");
+      data.append("cloud_name", "altdevs");
+      axios
+        .post("https://api.cloudinary.com/v1_1/altdevs/image/upload", data)
+        .then(({ data }) => {
+          setFoodPic(data.url.toString());
+          console.log(data.url.toString());
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   return (
@@ -45,10 +68,7 @@ const AddFood = () => {
           <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">
             Add your food
           </h1>
-          <form
-            onSubmit={handleSubmit}
-            enctype="multipart/form-data"
-          >
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
             <div class="flex flex-col mb-2">
               <label class="add-food-label" htmlFor="foodName">
                 Food Name
@@ -121,7 +141,7 @@ const AddFood = () => {
                 type="file"
                 name="foodImage"
                 id="foodImage"
-                onChange={handleImage}
+                onChange={(e) => handleImage(e.target.files[0])}
               />
             </div>
             <div class="flex flex-col mb-2">
