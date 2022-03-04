@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 const AddFood = () => {
   const [foodInfo, setFoodInfo] = useState({
     foodName: "",
@@ -29,7 +30,15 @@ const AddFood = () => {
         foodPrice,
         foodPic,
       })
-      .then(({ data }) => console.log(data))
+      .then((res) => {
+        if(res.status === 200){
+          Swal.fire(
+            'Food Added!',
+            'Food successfully Added!',
+            'success'
+          )
+        }
+      })
       .catch(err => console.log(err.message))
       e.target.reset();
   };
