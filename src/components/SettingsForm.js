@@ -39,12 +39,8 @@ const SettingsForm = () => {
       };
     return (
         <div className="">
-      <div class="flex justify-center items-center h-screen w-full">
-        <div class="w-1/2 bg-white rounded  p-8 m-4">
-          <h1 class="block w-full text-center text-gray-800 text-4xl font-bold mb-6">
-            Provide Your Restaurant Info
-          </h1>
-          <form
+          <h1 className="text-4xl text-white p-8 rounded-xl mb- text-center bg-gradient-to-r from-orange-400 to-orange-600">Provide Your Business Info</h1>
+      <form
             onSubmit={handleSubmit}
             enctype="multipart/form-data"
           >
@@ -143,8 +139,6 @@ const SettingsForm = () => {
               Add Food
             </button>
           </form>
-        </div>
-      </div>
     </div>
     );
 };
