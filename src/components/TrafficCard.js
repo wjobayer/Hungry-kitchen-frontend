@@ -98,7 +98,7 @@ export default function TrafficCard() {
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                   <h3 className="text-3xl font-semibold">
-                    Deliver Your Food Item
+                    Deliver Your Food Item To Rider
                   </h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -110,100 +110,6 @@ export default function TrafficCard() {
                   </button>
                 </div>
                 {/*body*/}
-                <form className='px-16'
-            // onSubmit={handleSubmit}
-            enctype="multipart/form-data"
-          >
-            <div class="flex flex-col mb-2">
-              <label class="add-food-label" htmlFor="foodName">
-                Food Name
-              </label>
-              <input
-                class="add-food-input"
-                type="text"
-                name="foodName"
-                id="foodName"
-                // onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div class="flex flex-col mb-2">
-              <label class="add-food-label" htmlFor="foodPrice">
-                Food Price
-              </label>
-              <input
-                class="add-food-input"
-                type="number"
-                name="foodPrice"
-                id="foodPrice"
-                // onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div class="flex flex-col mb-2">
-              <label
-                class="mb-2 font-bold text-lg text-gray-900"
-                htmlFor="foodCategory"
-              >
-                Food Category
-              </label>
-              <select
-                name="foodCategory"
-                id="category"
-                className="add-food-input"
-                // onChange={(e) => handleChange(e)}
-              >
-                <option value="category">category</option>
-                <option value="Chicken">Chicken</option>
-                <option value="Pasta">Pasta</option>
-                <option value="Dessert">Dessert</option>
-              </select>
-            </div>
-            <div class="flex flex-col mb-2">
-              <label
-                class="mb-2 font-bold text-lg text-gray-900"
-                htmlFor="foodCategory"
-              >
-                Food Area
-              </label>
-              <select
-                name="foodArea"
-                id="Area"
-                className="add-food-input"
-                // onChange={(e) => handleChange(e)}
-              >
-                <option value="Area">Area</option>
-                <option value="Chinese">Chinese</option>
-                <option value="Indian">Indian</option>
-                <option value="Canadian">Canadian</option>
-                <option value="Portuguese">Portuguese</option>
-              </select>
-            </div>
-            <div class="flex flex-col mb-2">
-              <label class="add-food-label" htmlFor="foodImage">
-                Food Image
-              </label>
-              <input
-                class="add-food-input"
-                type="file"
-                name="foodImage"
-                id="foodImage"
-                // onChange={handleImage}
-              />
-            </div>
-            <div class="flex flex-col mb-2">
-              <label class="add-food-label" htmlFor="foodDescription">
-                Food Description
-              </label>
-              <textarea
-                className="add-food-input"
-                name="foodDescription"
-                id="foodDescription"
-                cols="30"
-                rows="2"
-                // onChange={(e) => handleChange(e)}
-              ></textarea>
-            </div>
-          </form>
-
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                   <button
@@ -211,15 +117,9 @@ export default function TrafficCard() {
                     type="button"
                     onClick={() => setDeliver(false)}
                   >
-                    Close
+                    Ok
                   </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setDeliver(false)}
-                  >
-                    Save Changes
-                  </button>
+                  
                 </div>
               </div>
             </div>

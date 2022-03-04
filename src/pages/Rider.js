@@ -1,10 +1,10 @@
 import React from 'react';
-import {BiDollarCircle} from 'react-icons/bi'
-import {GiTakeMyMoney} from 'react-icons/gi'
-import {FcSalesPerformance} from 'react-icons/fc'
-import {VscStarFull} from 'react-icons/vsc'
-import PageVisitsCard from '../components/PageVisitsCard';
-import TrafficCard from '../components/TrafficCard';
+import { BiDollarCircle } from 'react-icons/bi';
+import { FcSalesPerformance } from 'react-icons/fc';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { VscStarFull } from 'react-icons/vsc';
+import Delivered from '../components/Delivered';
+import PickUpOrder from '../components/PickUpOrder';
 const Rider = () => {
     return (
         <>
@@ -76,10 +76,10 @@ const Rider = () => {
     <div className="container mx-auto max-w-full">
         <div className="grid grid-cols-1 xl:grid-cols-5">
             <div className="xl:col-start-1 xl:col-end-4 px-4 mb-14">
-                <PageVisitsCard />
+                <PickUpOrder />
             </div>
             <div className="xl:col-start-4 xl:col-end-6 px-4 mb-14">
-                <TrafficCard />
+                <Delivered />
             </div>
         </div>
     </div>

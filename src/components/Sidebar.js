@@ -75,7 +75,7 @@ export default function Sidebar() {
                   onClick={() => handleFilter("settings")}
                 >
                   <AiFillSetting />
-                  Settings
+                  Profile
                 </NavLink>
               </li>
               <li className="rounded-lg  ">
