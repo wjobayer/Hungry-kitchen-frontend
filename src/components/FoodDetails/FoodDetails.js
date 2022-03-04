@@ -7,8 +7,10 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
 import Header from "./../../common/Header";
+import Swal from "sweetalert2";
 
 const FoodDetails = () => {
+  const Swal = require("sweetalert2");
   const [food, setFood] = useState([]);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -49,6 +51,16 @@ const FoodDetails = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   //---------------------related products filter //ends:--------------------------
 
+  const handleAddCart = (food) => {
+    dispatch(addToCart(food));
+    Swal.fire({
+      position: "cneter",
+      icon: "success",
+      title: "Your work has been saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
   return (
     <>
       <HeaderBlack />
@@ -71,7 +83,10 @@ const FoodDetails = () => {
             </div>
             <hr />
             <p className="text-lg mt-4">{food.strInstructions}</p>
-            <button onClick={() => dispatch(addToCart(food))} className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4">
+            <button
+              onClick={() => handleAddCart(food)}
+              className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4"
+            >
               Add to cart
             </button>
           </div>
