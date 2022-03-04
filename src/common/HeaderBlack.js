@@ -5,7 +5,6 @@ import { FaHamburger } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useFirebase from "../Hooks/useFirebase";
-import AddToCart from "./AddToCart";
 import Drawer from "./Drawer";
 
 const HeaderBlack = () => {
@@ -243,7 +242,7 @@ const HeaderBlack = () => {
         </div>
       </nav>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <AddToCart />
+        
       </Drawer>
     </div>
   );

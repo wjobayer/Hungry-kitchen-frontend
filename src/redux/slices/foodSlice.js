@@ -9,7 +9,7 @@ export const foodSlice = createSlice({
        state.addToCart.push(payload)
    },
    removeFromCart:(state,{payload})=>{
-     state.addToCart=state.addToCart.filter(food=>food.id !==payload.id)
+     state.addToCart=state.addToCart.filter(food=>food.idMeal !==payload.idMeal)
    }
   },
 })

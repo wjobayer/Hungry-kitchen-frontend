@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import { MdDelete } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../redux/slices/foodSlice";
 
 const CartCard = () => {
+  const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.addToCart);
   const [counter, setCounter] = useState(1);
   const handleSetCounter = () => {
@@ -10,6 +12,12 @@ const CartCard = () => {
       setCounter(counter - 1);
     }
   };
+
+//   const onRemove = (cart, e) => {
+//     dispatch(removeFromCart(cart))
+
+//     e.preventdefault();
+// }
   return (
     <div>
       {cartProducts.map((cart) => (
@@ -41,7 +49,7 @@ const CartCard = () => {
                   </div>
                 </div>
                 <button className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center">
-                  <MdDelete /> Delete
+                  <MdDelete onClick={()=>dispatch(removeFromCart(cart))} /> Delete
                 </button>
               </div>
             </div>
