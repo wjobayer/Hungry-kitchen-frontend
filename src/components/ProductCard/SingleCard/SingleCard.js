@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import { IoMdCart } from "react-icons/io";
-
 import { useNavigate } from "react-router-dom";
 
 const SingleCard = ({ food, loading, layout }) => {
