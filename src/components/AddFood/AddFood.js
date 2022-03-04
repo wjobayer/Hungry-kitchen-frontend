@@ -13,7 +13,6 @@ const AddFood = () => {
   const handleChange = (e) => {
     setFoodInfo({ ...foodInfo, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!foodPic) {
