@@ -1,18 +1,12 @@
 import Card from '@material-tailwind/react/Card';
-import CardHeader from '@material-tailwind/react/CardHeader';
 import CardBody from '@material-tailwind/react/CardBody';
-import Image from '@material-tailwind/react/Image';
-import Progress from '@material-tailwind/react/Progress';
-import Team1 from '../assets/images/team-1-800x800.jpg';
-import Team2 from '../assets/images/team-2-800x800.jpg';
-import Team3 from '../assets/images/team-3-800x800.jpg';
-import Team4 from '../assets/images/team-4-470x470.png';
+import CardHeader from '@material-tailwind/react/CardHeader';
 
 export default function CardTable() {
     return (
         <Card>
             <CardHeader className="bg-gradient-to-b from-purple-400 to-purple-600" contentPosition="left">
-                <h2 className="text-white text-2xl">Card Table</h2>
+                <h2 className="text-white text-2xl">Food Menu</h2>
             </CardHeader>
             <CardBody>
                 <div className="overflow-x-auto">
@@ -20,13 +14,13 @@ export default function CardTable() {
                         <thead>
                             <tr>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Project
+                                    Food Name
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Budget
+                                    Image
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Status
+                                    Price
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Users
@@ -36,7 +30,7 @@ export default function CardTable() {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        {/* <tbody>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     Argon Design System
@@ -225,7 +219,7 @@ export default function CardTable() {
                                     <Progress color="green" value="100" />
                                 </th>
                             </tr>
-                        </tbody>
+                        </tbody> */}
                     </table>
                 </div>
             </CardBody>

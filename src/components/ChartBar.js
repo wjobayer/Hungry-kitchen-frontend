@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { Chart } from "chart.js";
 import Card from "@material-tailwind/react/Card";
-import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
+import CardHeader from "@material-tailwind/react/CardHeader";
+import { Chart } from "chart.js";
+import { useEffect } from "react";
 
 export default function ChartBar() {
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function ChartBar() {
         ],
         datasets: [
           {
-            label: new Date().getFullYear(),
+            label: "Total Sales",
             backgroundColor: "#03a9f4",
             borderColor: "#03a9f4",
             data: [30, 78, 56, 34, 100, 45, 13],
@@ -28,7 +28,7 @@ export default function ChartBar() {
             barThickness: 8,
           },
           {
-            label: new Date().getFullYear() - 1,
+            label: "Total Income",
             fill: false,
             backgroundColor: "#f44336",
             borderColor: "#f44336",

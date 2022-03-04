@@ -16,6 +16,7 @@ import DashboardMain from "./pages/DashboardMain";
 import SearchResult from "./components/SearchResult";
 import CourierForm from "./components/PartnerSection/CourierForm";
 import RestaurantForm from "./components/PartnerSection/RestaurantForm";
+import Rider from "./pages/Rider";
 
 const AppRouter = () => {
   return (
@@ -34,6 +35,7 @@ const AppRouter = () => {
         <Route path="/dashboard/*" element={<DashboardMain />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/rider" element={<Rider />} />
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="category" element={<FoodCategories />} />

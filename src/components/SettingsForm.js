@@ -1,20 +1,151 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const SettingsForm = () => {
+    const [foodInfo, setFoodInfo] = useState({
+        foodName: "",
+        foodPrice: "",
+        foodCategory: "",
+        foodArea: "",
+        foodDescription: "",
+      });
+    
+      const [foodPic, setFoodPic] = useState();
+      const handleChange = (e) => {
+        setFoodInfo({ ...foodInfo, [e.target.name]: e.target.value });
+      };
+    
+      const handleImage =  (e) => {
+        setFoodPic(e.target.files[0]);
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!foodPic) {
+          return;
+        }
+        
+        const { foodName, foodArea, foodCategory, foodDescription, foodPrice } =
+        foodInfo;
+    
+        const formData = new FormData();
+        formData.append("foodName", foodName);
+        formData.append("foodPrice", foodPrice);
+        formData.append("foodCategory", foodCategory);
+        formData.append("foodArea", foodArea);
+        formData.append("foodDescription", foodDescription);
+        formData.append("foodPic", foodPic);
+        // await axios.post("http://localhost:5000/food", formData)
+        //     .then(res => console.log(res.data))
+      };
     return (
-        <div>
-            <form action="">
-
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-        Username
-      </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"/>
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-        Password
-      </label>
-      <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************"></input>
-            </form>
+        <div className="">
+      <div class="flex justify-center items-center h-screen w-full">
+        <div class="w-1/2 bg-white rounded  p-8 m-4">
+          <h1 class="block w-full text-center text-gray-800 text-4xl font-bold mb-6">
+            Provide Your Restaurant Info
+          </h1>
+          <form
+            onSubmit={handleSubmit}
+            enctype="multipart/form-data"
+          >
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodName">
+                Restaurant Name
+              </label>
+              <input
+                class="add-food-input"
+                type="text"
+                name="foodName"
+                id="foodName"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodPrice">
+                Food Price
+              </label>
+              <input
+                class="add-food-input"
+                type="number"
+                name="foodPrice"
+                id="foodPrice"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
+              <label
+                class="mb-2 font-bold text-lg text-gray-900"
+                htmlFor="foodCategory"
+              >
+                Food Category
+              </label>
+              <select
+                name="foodCategory"
+                id="category"
+                className="add-food-input"
+                onChange={(e) => handleChange(e)}
+              >
+                <option value="category">category</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Dessert">Dessert</option>
+              </select>
+            </div>
+            <div class="flex flex-col mb-2">
+              <label
+                class="mb-2 font-bold text-lg text-gray-900"
+                htmlFor="foodCategory"
+              >
+                Food Area
+              </label>
+              <select
+                name="foodArea"
+                id="Area"
+                className="add-food-input"
+                onChange={(e) => handleChange(e)}
+              >
+                <option value="Area">Area</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Indian">Indian</option>
+                <option value="Canadian">Canadian</option>
+                <option value="Portuguese">Portuguese</option>
+              </select>
+            </div>
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodImage">
+                Restaurant Logo
+              </label>
+              <input
+                class="add-food-input"
+                type="file"
+                name="foodImage"
+                id="foodImage"
+                onChange={handleImage}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodDescription">
+                Food Description
+              </label>
+              <textarea
+                className="add-food-input"
+                name="foodDescription"
+                id="foodDescription"
+                cols="30"
+                rows="5"
+                onChange={(e) => handleChange(e)}
+              ></textarea>
+            </div>
+            <button
+              class="block bg-teal-400 hover:bg-teal-600 text-white uppercase text-lg mx-auto p-4 rounded"
+              type="submit"
+            >
+              Add Food
+            </button>
+          </form>
         </div>
+      </div>
+    </div>
     );
 };
 

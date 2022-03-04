@@ -1,15 +1,14 @@
-import { NavLink, useLocation } from 'react-router-dom';
 import Button from '@material-tailwind/react/Button';
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {FaWindowClose} from  'react-icons/fa'
-import {IoExit} from  'react-icons/io5'
-import NavbarInput from '@material-tailwind/react/NavbarInput';
-import Image from '@material-tailwind/react/Image';
 import Dropdown from '@material-tailwind/react/Dropdown';
 import DropdownItem from '@material-tailwind/react/DropdownItem';
-import ProfilePicture from '../assets/images/team-1-800x800.jpg';
+import { FaWindowClose } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { NavLink, useLocation } from 'react-router-dom';
+import useFirebase from '../Hooks/useFirebase';
+
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
+    const { user} = useFirebase();
     const location = useLocation().pathname;
     return (
         <nav className="bg-blue-500 md:ml-64 py-6 px-3">
@@ -50,8 +49,8 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                                     to="/home"
                                     className="uppercase text-white text-sm tracking-wider mt-1"
                                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                                > <div className='flex'><IoExit/>
-                            <h4>Exit</h4></div>
+                                >
+                                    <h4 className='text-lg hover:text-orange-300'>Back...</h4>
                     </NavLink>
                     <h4 className="uppercase text-white text-sm tracking-wider mt-1">
                         {location === '/'
@@ -61,14 +60,18 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                     
 
                     <div className="flex">
-                        <NavbarInput placeholder="Search" />
+                    <div class="mb-4">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-2 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Search"/>
+                    </div>
 
                         <div className="-mr-4 ml-6">
                             <Dropdown
                                 color="transparent"
                                 buttonText={
                                     <div className="w-12">
-                                        <Image src={ProfilePicture} rounded />
+                                        {/* <Image src={user.photoURL} rounded /> */}
+                                        <img src={user.photoURL} className=" rounded-full" alt="" srcSet=""
+              />
                                     </div>
                                 }
                                 rounded
@@ -77,13 +80,13 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                                     color: 'transparent',
                                 }}
                             >
-                                <DropdownItem color="lightBlue">
+                                <DropdownItem>
                                     Action
                                 </DropdownItem>
-                                <DropdownItem color="lightBlue">
+                                <DropdownItem>
                                     Another Action
                                 </DropdownItem>
-                                <DropdownItem color="lightBlue">
+                                <DropdownItem>
                                     Something Else
                                 </DropdownItem>
                             </Dropdown>
