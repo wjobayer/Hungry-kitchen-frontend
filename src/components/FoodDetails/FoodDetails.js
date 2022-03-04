@@ -56,7 +56,7 @@ const FoodDetails = () => {
     Swal.fire({
       position: "cneter",
       icon: "success",
-      title: "Your work has been saved",
+      title: "Food added to the cart",
       showConfirmButton: false,
       timer: 1500,
     });
