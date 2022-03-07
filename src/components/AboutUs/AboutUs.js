@@ -1,11 +1,9 @@
 import React from "react";
 import { AiOutlineMinus } from "react-icons/ai";
-import HeaderBlack from "../../common/HeaderBlack";
 
 const AboutUs = () => {
   return (
     <>
-      <HeaderBlack />
       <div className="about-us">
         <div className="about-us__header">
           <div className="about-us__header__wrapper">
@@ -63,51 +61,59 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="md:col-span-4 col-span-12">
-                  <div className="text-center p-4">
+                  <div className="p-4">
                     <div className="mb-12">
-                      <div className="flex justify-center mb-9">
-                        <img
-                          src="http://my-templates.online/deli-taste/assets/images/icons/discount.svg"
-                          alt=""
-                          className="block"
-                        />
+                      <div className="flex gap-6 items-center mb-5">
+                        <div className="flex justify-center ">
+                          <img
+                            src="http://my-templates.online/deli-taste/assets/images/icons/discount.svg"
+                            alt=""
+                            className="block w-10 h-10"
+                          />
+                        </div>
+                        <h3 className="font-semibold text-lg capitalize">
+                          discount system
+                        </h3>
                       </div>
-                      <h3 className="font-semibold text-lg capitalize">
-                        discount system
-                      </h3>
                       <p className="text-gray-600">
                         We have a favorable discount system for our regular
                         customers delivery to any location of your city.
                       </p>
                     </div>
                     <div className="mb-12">
-                      <div className="flex justify-center mb-9">
-                        <img
-                          src="http://my-templates.online/deli-taste/assets/images/icons/delivery.svg"
-                          alt=""
-                        />
+                      <div className="flex gap-6 items-center mb-5">
+                        <div className="flex justify-center ">
+                          <img
+                            src="http://my-templates.online/deli-taste/assets/images/icons/delivery.svg"
+                            alt=""
+                            className="block w-10 h-10"
+                          />
+                        </div>
+                        <h3 className="font-semibold text-lg capitalize">
+                          50+ Restaurants
+                        </h3>
                       </div>
-                      <h3 className="font-semibold text-lg capitalize">
-                        Express Delivery
-                      </h3>
                       <p className="text-gray-600">
-                        The hottest food &amp; fastest delivery to any location
-                        of your city delivery to any location of your city.
+                        Large selection of restaurants and cafes throughout the
+                        country delivery to any location of your city.
                       </p>
                     </div>
                     <div className="mb-12">
-                      <div className="flex justify-center mb-9">
-                        <img
-                          src="http://my-templates.online/deli-taste/assets/images/icons/food.svg"
-                          alt=""
-                        />
+                      <div className="flex gap-6 items-center mb-5">
+                        <div className="flex justify-center ">
+                          <img
+                            src="http://my-templates.online/deli-taste/assets/images/icons/food.svg"
+                            alt=""
+                            className="block w-10 h-10"
+                          />
+                        </div>
+                        <h3 className="font-semibold text-lg capitalize">
+                          discount system
+                        </h3>
                       </div>
-                      <h3 className="font-semibold text-lg capitalize">
-                        50+ restaurants
-                      </h3>
-                      <p>
-                        Large selection of restaurants and cafes throughout the
-                        country delivery to any location of your city.
+                      <p className="text-gray-600">
+                        We have a favorable discount system for our regular
+                        customers delivery to any location of your city.
                       </p>
                     </div>
                   </div>

@@ -11,17 +11,17 @@ const Review = () => {
 
   return (
     <div>
-      <div className="register">
-        <div className="register__area">
+      <div className="review">
+        <div className="review__area">
           <div className="lg:col-span-5"></div>
-          <div className="register__area__wrapper">
-            <div className="register__area__wrapper__content">
+          <div className="review__area__wrapper">
+            <div className="review__area__wrapper__content">
               <h2 className="text-4xl text-white text-center font-bold pb-8">
                 Add Review
               </h2>
 
               <form
-                className="register__form"
+                className="review__form"
                 onSubmit={handleSubmit(submitHandler)}
               >
                 <label>

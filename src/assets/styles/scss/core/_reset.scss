@@ -89,3 +89,23 @@ body {
     transition: var(--transition);
   }
 }
+
+.carousel .slick-arrow.slick-prev,
+.carousel .slick-arrow.slick-next {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-blue-800;
+  z-index: 1;
+}
+.carousel .slick-arrow.slick-prev:hover,
+.carousel .slick-arrow.slick-next:hover {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-blue-800;
+}
+.carousel .slick-prev {
+  left: -9px;
+}
+.carousel .slick-next {
+  right: -10px;
+}
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
