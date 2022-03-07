@@ -17,6 +17,8 @@ import SearchResult from "./components/SearchResult";
 import CourierForm from "./components/PartnerSection/CourierForm";
 import RestaurantForm from "./components/PartnerSection/RestaurantForm";
 import Rider from "./pages/Rider";
+import ReviewPage from "./pages/ReviewPage";
+import AboutPage from "./pages/AboutPage";
 
 const AppRouter = () => {
   return (
@@ -39,6 +41,8 @@ const AppRouter = () => {
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="category" element={<FoodCategories />} />
+        <Route path="/reviewPage" element={<ReviewPage />} />
+        <Route path="/aboutPage" element={<AboutPage />} />
       </Routes>
     </Router>
   );

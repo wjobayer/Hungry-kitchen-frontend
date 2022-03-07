@@ -1,0 +1,28 @@
+.register {
+  background-image: url(https://res.cloudinary.com/medsy/image/upload/v1645707958/signup_v0bsfz.jpg);
+  @apply bg-no-repeat bg-cover;
+}
+.register__area {
+  @apply grid grid-cols-12 gap-4;
+  &__wrapper {
+    @apply lg:col-span-7 flex items-center min-h-screen py-24 col-span-12;
+    &__content {
+      @apply md:w-7/12 mx-auto;
+      .title {
+        h2 {
+          color: white !important;
+        }
+      }
+      form {
+        label {
+          span {
+            @apply block text-lg tracking-wide py-1 text-white;
+          }
+          input {
+            @apply block w-full px-4 py-3 text-gray-900 placeholder-gray-500 border-gray-300 rounded-md shadow focus:ring-blue-400 focus:border-blue-400 focus:outline-none focus:ring-1 mb-3;
+          }
+        }
+      }
+    }
+  }
+}
