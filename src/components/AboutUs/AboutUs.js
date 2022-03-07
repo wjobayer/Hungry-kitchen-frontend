@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineMinus } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -9,9 +10,11 @@ const AboutUs = () => {
           <div className="about-us__header__wrapper">
             <h2 className="about-us__header__wrapper__title">About Us</h2>
             <p className="about-us__header__wrapper__subtitle">
-              <span>Home</span>
+              <span>
+                <Link to="/">Home</Link>
+              </span>
               <AiOutlineMinus />
-              <span>About</span>
+              <span>About Us</span>
             </p>
           </div>
         </div>
