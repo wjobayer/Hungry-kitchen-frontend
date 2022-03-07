@@ -3,26 +3,26 @@ import CardBody from '@material-tailwind/react/CardBody';
 import CardHeader from '@material-tailwind/react/CardHeader';
 import Image from '@material-tailwind/react/Image';
 import { useEffect, useState } from 'react';
-
-export default function CardTable() {
+import { AiOutlineAlert } from 'react-icons/ai';
+export default function PickUpOrder() {
     const [product , setProduct]=useState([]);
     const [control, setControl] = useState(false);
     const [showModal, setShowModal] = useState(false);
-    const [edit, setEdit] = useState(false);
+    const [Accept, setAccept] = useState(false);
     useEffect(()=>{
         fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian')
         .then(res=>res.json())
         .then(data=>setProduct(data.meals))
     },[control]);
 
-    const handleDelete = (id) => {
-        fetch(`https://aqueous-falls-64682.herokuapp.com/deleteproduct/${id}`, {
-          method: "DELETE",
+    const handleIgnore = (id) => {
+        fetch(`https://aqueous-falls-64682.herokuapp.com/Ignoreproduct/${id}`, {
+          method: "Ignore",
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.deletedCount) {
-              window.confirm("Do you really want to Delete?");
+            if (data.IgnoredCount) {
+              window.confirm("Do you really want to Ignore?");
               setControl(!control);
              
             }
@@ -31,30 +31,37 @@ export default function CardTable() {
       };
     return (
         <Card>
-            <CardHeader className="bg-gradient-to-b from-purple-400 to-purple-600" contentPosition="left">
-                <h2 className="text-white text-2xl">Food Menu</h2>
+            <CardHeader className="bg-blue-500" color="blue" contentPosition="none">
+                <div className="w-full flex items-center justify-between">
+                    <div className='inline-flex'>
+                    <h2 className="text-white text-2xl">Pick Up Order</h2>
+                    <h2 className="text-white text-2xl ml-8"><AiOutlineAlert/></h2>
+                    </div>
+                    {/* <Button
+                        color="transparent"
+                        buttonType="link"
+                        size="lg"
+                        style={{ margin:1 }}
+                    >
+                        See More
+                    </Button> */}
+                </div>
             </CardHeader>
             <CardBody>
                 <div className="overflow-x-auto">
                     <table className="items-center w-full bg-transparent border-collapse">
                         <thead>
                             <tr>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
-                                    Food Code
-                                </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
+                                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Food Name
                                 </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
-                                    Food Category
+                                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                                    Image
                                 </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
+                                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Price
                                 </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
-                                    Food Image
-                                </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
+                                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Want To
                                 </th>
                             </tr>
@@ -63,17 +70,11 @@ export default function CardTable() {
                         <tbody className='hover:bg-gray-200'>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-                                    {product.idMeal}
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                                     {product.strMeal}
                                 </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
+                                {/* <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                                     Italian
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-                                    11 $
-                                </th>
+                                </th> */}
                                 <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                                     <div className="flex">
                                         <div className="w-24 h-24 rounded-full border-2 border-white">
@@ -86,13 +87,17 @@ export default function CardTable() {
                                     </div>
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setEdit(true)}>
-                                    Edit
+                                    11 $
+                                </th>
+                                
+                                <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setAccept(true)}>
+                                    Accept
                                 </button>
                                 <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2" onClick={() => setShowModal(true)}>
                                     Delete
                                 </button>
-                                {edit ? (
+                                {Accept ? (
         <>
           <div
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
@@ -103,11 +108,11 @@ export default function CardTable() {
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                   <h3 className="text-3xl font-semibold">
-                    Edit Your Food Item
+                    Accept Your Food Item
                   </h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setEdit(false)}
+                    onClick={() => setAccept(false)}
                   >
                     <span className=" text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
                       X
@@ -214,14 +219,14 @@ export default function CardTable() {
                   <button
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setEdit(false)}
+                    onClick={() => setAccept(false)}
                   >
                     Close
                   </button>
                   <button
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setEdit(false)}
+                    onClick={() => setAccept(false)}
                   >
                     Save Changes
                   </button>
@@ -243,7 +248,7 @@ export default function CardTable() {
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                   <h3 className="text-3xl font-semibold">
-                    To Confirm Delete
+                    To Confirm Ignore
                   </h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -278,7 +283,7 @@ export default function CardTable() {
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
-                    Delete
+                    Ignore
                   </button>
                 </div>
               </div>

@@ -1,9 +1,9 @@
-import { React, useState, useEffect } from "react";
-import SingleCard from "./SingleCard/SingleCard";
+import { React, useEffect, useState } from "react";
+import { FaListAlt } from "react-icons/fa";
+import { RiLayoutGridFill } from "react-icons/ri";
 // import { BiLoaderCircle } from "react-icons/bi";
 import PaginationCompo from "./PaginationCompo";
-import { RiLayoutGridFill } from "react-icons/ri";
-import { FaListAlt } from "react-icons/fa";
+import SingleCard from "./SingleCard/SingleCard";
 
 const ProductCard = () => {
   const [country, setCountry] = useState("Italian");

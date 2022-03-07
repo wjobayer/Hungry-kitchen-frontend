@@ -1,19 +1,23 @@
+import { Menu, Transition } from "@headlessui/react";
 import React from "react";
 import { AiOutlineBell, AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useFirebase from "../Hooks/useFirebase";
-import { Menu, Transition } from "@headlessui/react";
+import Drawer from "./Drawer";
 
 const HeaderBlack = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const addToCart = useSelector((state) => state.addToCart);
+
   const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
     useFirebase();
-  // console.log(user.email)
+  console.log(user.email);
 
   const navigate = useNavigate();
+
   const logOutButton = () => {
     logout();
     navigate("/login");
@@ -93,16 +97,17 @@ const HeaderBlack = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink
-                  to="/cart"
-                  className="px-3 py-2 flex items-center font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
+                <button
+                  className=" text-dark rounded px-2 py-1"
+                  onClick={() => setIsOpen(true)}
                 >
                   <span className="text-2xl">
                     <AiOutlineShoppingCart />
-                  </span>{" "}
-                  <span className="ml-1 ">{addToCart.length} </span>
-                </NavLink>
+                  </span>
+                </button>
+                <span className="text-dark align-top ">
+                  {addToCart.length}{" "}
+                </span>
               </li>
 
               <li className="nav-item">
@@ -158,7 +163,7 @@ const HeaderBlack = () => {
                                   <p className="text-sm leading-5">
                                     Signed in as
                                   </p>
-                                  <p className="text-sm font-medium leading-5 text-gray-900 truncate break-all">
+                                  <p className="text-sm font-medium leading-5 text-gray-900 truncate">
                                     {user.email}
                                   </p>
                                 </div>
@@ -236,6 +241,8 @@ const HeaderBlack = () => {
           </div>
         </div>
       </nav>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+      </Drawer>
     </div>
   );
 };

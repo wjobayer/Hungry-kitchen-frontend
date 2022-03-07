@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { Chart } from "chart.js";
 import Card from "@material-tailwind/react/Card";
-import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
+import CardHeader from "@material-tailwind/react/CardHeader";
+import { Chart } from "chart.js";
+import { useEffect } from "react";
 
 export default function ChartLine() {
   useEffect(() => {
@@ -20,14 +20,14 @@ export default function ChartLine() {
         ],
         datasets: [
           {
-            label: new Date().getFullYear(),
+            label: "Total Sales",
             backgroundColor: "#03a9f4",
             borderColor: "#03a9f4",
             data: [65, 78, 66, 44, 56, 67, 75],
             fill: false,
           },
           {
-            label: new Date().getFullYear() - 1,
+            label: "Total Income",
             fill: false,
             backgroundColor: "#ff9800",
             borderColor: "#ff9800",
@@ -114,7 +114,7 @@ export default function ChartLine() {
         <Card>
             <CardHeader className="bg-gradient-to-b from-orange-400 to-orange-600" contentPosition="left">
                 <h6 className="uppercase text-gray-200 text-xs font-medium">
-                    Overview
+                    Overview Monthly
                 </h6>
                 <h2 className="text-white text-2xl">Sales value</h2>
             </CardHeader>

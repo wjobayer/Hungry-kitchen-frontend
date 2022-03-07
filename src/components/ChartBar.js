@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { Chart } from "chart.js";
 import Card from "@material-tailwind/react/Card";
-import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
+import CardHeader from "@material-tailwind/react/CardHeader";
+import { Chart } from "chart.js";
+import { useEffect } from "react";
 
 export default function ChartBar() {
   useEffect(() => {
@@ -10,29 +10,52 @@ export default function ChartBar() {
       type: "bar",
       data: {
         labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
         ],
         datasets: [
           {
-            label: new Date().getFullYear(),
+            label: "Total Sales",
             backgroundColor: "#03a9f4",
             borderColor: "#03a9f4",
-            data: [30, 78, 56, 34, 100, 45, 13],
+            data: [30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,20,12],
             fill: false,
             barThickness: 8,
           },
           {
-            label: new Date().getFullYear() - 1,
+            label: "Total Income",
             fill: false,
             backgroundColor: "#f44336",
             borderColor: "#f44336",
-            data: [27, 68, 86, 74, 10, 4, 87],
+            data: [30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,20,12],
             barThickness: 8,
           },
         ],
@@ -105,7 +128,7 @@ export default function ChartBar() {
         <Card>
             <CardHeader className="bg-gradient-to-b from-pink-400 to-pink-600" contentPosition="left">
                 <h6 className="uppercase text-gray-200 text-xs font-medium">
-                    Overview
+                    Overview Daily
                 </h6>
                 <h2 className="text-white text-2xl">Sales value</h2>
             </CardHeader>
