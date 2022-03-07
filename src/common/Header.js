@@ -163,7 +163,7 @@ const Header = () => {
                               >
                                 <div className="px-4 py-3">
                                   <p className="text-sm leading-5">Signed in as</p>
-                                  <p className="text-sm font-medium leading-5 text-white">
+                                  <p className="text-sm font-medium leading-5 text-white break-all">
                                     {user.email}
                                   </p>
                                 </div>

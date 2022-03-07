@@ -10,7 +10,7 @@ const HeaderBlack = () => {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     const addToCart = useSelector((state) => state.addToCart)
     const { user, admin, isLoading, authError, registerUser, loginUser, logout } = useFirebase()
-    console.log(user.email)
+    // console.log(user.email)
 
     const navigate = useNavigate()
 
@@ -155,7 +155,7 @@ const HeaderBlack = () => {
                                                                 >
                                                                     <div className="px-4 py-3">
                                                                         <p className="text-sm leading-5">Signed in as</p>
-                                                                        <p className="text-sm font-medium leading-5 text-gray-900 truncate">
+                                                                        <p className="text-sm font-medium leading-5 text-gray-900 truncate break-all">
                                                                             {user.email}
                                                                         </p>
                                                                     </div>
