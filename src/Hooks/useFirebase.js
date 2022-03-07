@@ -112,7 +112,7 @@ const useFirebase = () => {
   // send login data to mongodb
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://serene-garden-71214.herokuapp.com/users", {
+    fetch("http://localhost:5000/users", {
       method: method,
       headers: {
         "content-type": "application/json",
