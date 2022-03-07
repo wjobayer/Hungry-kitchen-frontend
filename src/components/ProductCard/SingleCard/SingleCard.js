@@ -1,10 +1,9 @@
 import { React, useState } from "react";
 import { IoMdCart } from "react-icons/io";
-import { BiLoaderCircle } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 const SingleCard = ({ food, loading, layout }) => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const navigate = useNavigate();
 
   const handleDetails = (id) => {
@@ -12,7 +11,7 @@ const SingleCard = ({ food, loading, layout }) => {
     navigate(`/details/${id}`);
   };
   const handleSetCounter = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(counter - 1);
     }
   };

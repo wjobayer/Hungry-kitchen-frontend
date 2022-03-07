@@ -7,10 +7,15 @@ export const foodSlice = createSlice({
   reducers: {
    addToCart:(state,{payload})=>{
        state.addToCart.push(payload)
+   },
+   removeFromCart:(state,{payload})=>{
+     state.addToCart=state.addToCart.filter(food=>food.idMeal !==payload.idMeal)
    }
   },
 })
 
-export const {addToCart} = foodSlice.actions
+// export const {addToCart} = foodSlice.actions
+
+export const {addToCart,removeFromCart} = foodSlice.actions
 
 export default foodSlice.reducer
