@@ -71,7 +71,10 @@ const FoodDetails = () => {
             </div>
             <hr />
             <p className="text-lg mt-4">{food.strInstructions}</p>
-            <button onClick={() => dispatch(addToCart(food))} className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4">
+            <button
+              onClick={() => dispatch(addToCart(food))}
+              className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4"
+            >
               Add to cart
             </button>
           </div>
