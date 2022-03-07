@@ -243,7 +243,7 @@ const HeaderBlack = () => {
         </div>
       </nav>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <AddToCart addToCart={addToCart}></AddToCart>
+        <AddToCart />
       </Drawer>
     </div>
   );

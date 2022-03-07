@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import CartCard from "./CartCard";
 
 export default function Drawer({ children, isOpen, setIsOpen }) {
   return (
@@ -17,8 +19,15 @@ export default function Drawer({ children, isOpen, setIsOpen }) {
         }
       >
         <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
-          <header className="p-4 font-bold text-lg">Header</header>
-          {children}
+          <header className="p-4 font-bold text-lg">Cart</header>
+          {/* {children} */}
+          <button
+            className="absolute top-0 right-3 text-red-400 text-2xl"
+            onClick={() => setIsOpen(false)}
+          >
+            x
+          </button>
+          <CartCard />
         </article>
       </section>
       <section
