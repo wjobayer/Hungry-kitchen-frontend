@@ -15,7 +15,7 @@ const HeaderBlack = () => {
 
   const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
     useFirebase();
-  // console.log(user.email);
+  console.log(user.email);
 
   const navigate = useNavigate();
 

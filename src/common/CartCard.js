@@ -40,7 +40,10 @@ const CartCard = () => {
                     </div>
                   </div>
                 </div>
-                <button className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center">
+                <button
+                  onClick={() => console.log("delete")}
+                  className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
+                >
                   <MdDelete /> Delete
                 </button>
               </div>

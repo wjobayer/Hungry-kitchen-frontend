@@ -18,7 +18,7 @@ const FoodDetails = () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data.meals[0]));
-  }, [food]);
+  }, [id]);
 
   //---------------------------related products filter //starts:------------------------------
   //pagination stuff-----------------------------------
