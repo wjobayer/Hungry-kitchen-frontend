@@ -245,7 +245,7 @@ const Header = () => {
         </div>
       </nav>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-       <AddToCart></AddToCart>
+       <AddToCart addToCart={addToCart}></AddToCart>
       </Drawer>
     </div>
   );
