@@ -1,22 +1,15 @@
 # Hungry Kitchen
-Hungry Kitchen Live Preview [Create React App]().
+Hungry Kitchen Live Preview [Create React App](hungrykitchen1.netlify.app).
 
-### প্রকল্পের লক্ষ্য একটি খাবার অর্ডার & ডেলিভারি সার্ভিস হবে। অ্যাডমিন ড্যাশবোর্ডের মতো একটি শক্তিশালী বৈশিষ্ট্য থাকবে যেখানে অ্যাডমিন খাদ্য পোস্ট করতে, খাদ্য সম্পাদনা করতে এবং CRUD অপারেশনের মাধ্যমে খাবার মুছে ফেলতে পারবেন। গ্রাহকরা হোম পেজে খাবার দেখতে পাবেন এবং প্রতিটি ফুড কার্ড যদি ক্লিক করা হয় তাহলে একক খাবারের বিস্তারিত পৃষ্ঠায় পুনঃনির্দেশিত হবে তারপর গ্রাহকরা পেমেন্ট গেটওয়ের সাথে তাদের বিশদ তথ্য দিয়ে অর্ডার করতে পারেন। অথবা একজন গ্রাহকের ড্যাশবোর্ডে আলাদা ড্যাশবোর্ড থাকে। গ্রাহক তার অর্ডার বা নিবন্ধন তথ্য দেখতে পারেন বা গ্রাহক একটি পর্যালোচনা পোস্ট করতে পারেন। হোম পেজে সব খাবার আছে। এবং navbar বা ফুটার বা পরিচিতি বা ব্র্যান্ড বা হিরো বিভাগ।
-## ফিচারঃ
-#### .ওয়েব সাইটটির মাধ্যমে একজন ইউজার কোন খাবার অর্ডর করতে পারবে।
-#### .ওয়েবসাইট টি নির্দিষ্ট এরিয়া (ঢাকা) ভিত্তিক হবে।
-#### .ওয়েবসাইটের মাধ্যমে একজন রেস্টুরেন্ট এর মালিক তাদের একাউন্ট খুলতে পারবে, ( তাদের একাউন্টটি হবে একটা রেস্টুরেন্ট এর নামে)।
-#### .তারা সেখানে তাদের খাবারের (নাম, ক্যাটাগরি(লাঞ্চ/ডিনার) , দাম) ইত্যাদি যোগ করতে পারবে।
-#### .ওয়েবসাইটের হোম পেজ এ গেলে একজন নতুন ইউজার তার পছন্দ মত ক্যাটাগরি(লাঞ্চ/ডিনার) , রেস্টুরেন্ট / সেলার , দাম অনুযায়ী ফিল্টার করতে পারবে।
-#### .কেউ যদি খাবার অরডার করতে চায়, তাহলে তাকে একাউন্ট খুলে অর্ডার করতে হবে।এবং তার লকেশন ট্রাকিং এর মাধ্যমে তার লোকেশনে খাবার পৌছে দেওয়া হবে।
-#### .আমরা এখানে ফিচার হিসাবে খাবারের রেটিং এড করব।
-#### .আমরা এক্সট্রা ফিচার হিসাবে, কোন সেলার এর কেমন সেল হচ্ছে সেটা গ্রাফ আকারে ওয়েবসাইটে দেখাব।
-#### .পেমেন্ট সিস্টেম এড করব।
-#### .লোকেশন ট্রাকিং এড করব খাবার পৌছানোর জন্য।
-
-## অ্যাডমিনঃ
-#### ১.অ্যাডমিন নতুন আইটেম যোগ করতে পারেন, আইটেমগুলি সরাতে পারেন এবং সাইটে আইটেম আপডেট করতে পারেন।
-#### ২.অ্যাডমিন তাদের খাবারের পরিসংখ্যান দেখতে পারে। তারা দেখতে পাবে মোট কতজন গ্রাহক।
-#### ৩.অ্যাডমিন অন্য অ্যাডমিন ক্রিয়েট করতে পারবে।অ্যাডমিন ব্যবহারকারীদের অর্ডার করা আইটেমগুলি পরিচালনা করতে পারে
-#### ৪.সকল ইউজারদের মান্থলি কন্ট্রিবিউশান দেখতে পারবে গ্রাফের মাধ্যমে। 
-#### ৫আমার প্রোফাইল পৃষ্ঠা, সেখানে অ্যাডমিন প্রোফাইল তথ্য এবং তাদের প্রোফাইলের জন্য একটি সম্পাদনা/আপডেট বিকল্প থাকবে।
+### The goal of the project will be a food order & delivery service. There will be a powerful feature like admin dashboard where admin can post food, edit food and delete food through CRUD operation. Customers will see the food on the home page and if each food card is clicked it will be redirected to the single food detail page then customers can order with their payment information along with the payment gateway.Or a customer's dashboard has a separate dashboard. The customer can view his order or registration information or the customer can post a review. The home page has all the food. And navbar or footer or contact or brand or hero section.
+## Featuresঃ
+#### .A user can order any food through the web site.
+#### .The website will be based on specific area (Dhaka).
+#### .The owner of a restaurant will be able to open their account through the website (their account will be in the name of a restaurant).
+#### .They will be able to add their food (name, category (lunch / dinner), price) etc. there.
+#### .By visiting the home page of the website, a new user will be able to filter by category (lunch / dinner), restaurant / seller, price according to his choice.
+#### .If someone wants to order food, he has to open an account and order. And the food will be delivered to his location through his location tracking.
+#### .We will add food ratings as a feature here.
+#### .We will show the website in the form of graphs as an extra feature, what kind of cell of a seller is being sold.
+#### .I will add payment system.
+#### .I will add location tracking to deliver food.
