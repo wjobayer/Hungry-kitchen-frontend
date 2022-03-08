@@ -2,7 +2,7 @@
 Hungry Kitchen Live Preview [HUNGRY KITCHEN](https://hungrykitchen1.netlify.app/).
 
 ### The goal of the project will be a food order & delivery service. There will be a powerful feature like admin dashboard where admin can post food, edit food and delete food through CRUD operation. Customers will see the food on the home page and if each food card is clicked it will be redirected to the single food detail page then customers can order with their payment information along with the payment gateway.Or a customer's dashboard has a separate dashboard. The customer can view his order or registration information or the customer can post a review. The home page has all the food. And navbar or footer or contact or brand or hero section.
-## Featuresঃ
+## Features:
 #### .A user can order any food through the web site.
 #### .The website will be based on specific area (Dhaka).
 #### .The owner of a restaurant will be able to open their account through the website (their account will be in the name of a restaurant).
