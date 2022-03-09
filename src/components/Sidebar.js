@@ -9,7 +9,6 @@ import { MdDashboard, MdDeliveryDining } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 
-
 export default function Sidebar() {
   const [color, setColor] = useState("restaurant");
   const [showSidebar, setShowSidebar] = useState("-left-64");
@@ -42,8 +41,10 @@ export default function Sidebar() {
                 <NavLink
                   to="/dashboard"
                   exact
-                  className={ 
-                    color === "restaurant" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "restaurant"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("restaurant")}
                 >
@@ -56,8 +57,10 @@ export default function Sidebar() {
                 <NavLink
                   to="/dashboard/rider"
                   exact
-                  className={ 
-                    color === "rider" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "rider"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("rider")}
                 >
@@ -69,8 +72,10 @@ export default function Sidebar() {
               <li className="rounded-lg ">
                 <NavLink
                   to="/dashboard/settings"
-                  className={ 
-                    color === "settings" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "settings"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("settings")}
                 >
@@ -78,11 +83,27 @@ export default function Sidebar() {
                   Profile
                 </NavLink>
               </li>
+              <li className="rounded-lg ">
+                <NavLink
+                  to="/dashboard/userProfile"
+                  className={
+                    color === "userProfile"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("userProfile")}
+                >
+                  <AiFillSetting />
+                  User Profile
+                </NavLink>
+              </li>
               <li className="rounded-lg  ">
                 <NavLink
                   to="/dashboard/tables"
-                  className={ 
-                    color === "foodMenu" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "foodMenu"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("foodMenu")}
                 >
@@ -93,8 +114,10 @@ export default function Sidebar() {
               <li className="rounded-lg  text-gray-700">
                 <NavLink
                   to="/dashboard/maps"
-                  className={ 
-                    color === "maps" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "maps"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("maps")}
                 >
@@ -105,8 +128,10 @@ export default function Sidebar() {
               <li className="rounded-lg  text-gray-700">
                 <NavLink
                   to="/dashboard/addFood"
-                  className={ 
-                    color === "addFood" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "addFood"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("addFood")}
                 >
@@ -117,8 +142,10 @@ export default function Sidebar() {
               <li className="rounded-lg  text-gray-700">
                 <NavLink
                   to="/dashboard/maps"
-                  className={ 
-                    color === "register" ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300":"flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  className={
+                    color === "register"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
                   }
                   onClick={() => handleFilter("register")}
                 >

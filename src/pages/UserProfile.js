@@ -5,16 +5,9 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { VscStarFull } from "react-icons/vsc";
 import ProfileCard from "../components/ProfileCard";
 import SettingsForm from "../components/SettingsForm";
+import UserProfileForm from "../components/UserProfileForm";
 
-export default function Dashboard() {
-  //   const [userData, setUserData] = useState([]);
-
-  //   useEffect(() => {
-  //     fetch("https://hungry-kitchen.herokuapp.com/users")
-  //       .then((res) => res.json())
-  //       .then((data) => setUserData(data));
-  //   }, []);
-
+const UserProfile = () => {
   return (
     <>
       <div className="bg-blue-500 px-3 md:px-8 h-40" />
@@ -85,10 +78,7 @@ export default function Dashboard() {
         <div className="container mx-auto max-w-full">
           <div className="grid grid-cols-1 xl:grid-cols-6">
             <div className="xl:col-start-1 xl:col-end-5 px-4 mb-16">
-              {/* {userData.map((data) => (
-                <SettingsForm data={data} key={data._id} />
-              ))} */}
-              <SettingsForm />
+              <UserProfileForm />
             </div>
             <div className="xl:col-start-5 xl:col-end-7 px-4 mb-16 mt-14">
               <ProfileCard />
@@ -98,4 +88,5 @@ export default function Dashboard() {
       </div>
     </>
   );
-}
+};
+export default UserProfile;

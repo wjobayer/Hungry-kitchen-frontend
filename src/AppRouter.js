@@ -19,6 +19,7 @@ import RestaurantForm from "./components/PartnerSection/RestaurantForm";
 import Rider from "./pages/Rider";
 import ReviewPage from "./pages/ReviewPage";
 import AboutPage from "./pages/AboutPage";
+import UserProfile from "./pages/UserProfile";
 
 const AppRouter = () => {
   return (
@@ -43,6 +44,7 @@ const AppRouter = () => {
         <Route path="category" element={<FoodCategories />} />
         <Route path="/reviewPage" element={<ReviewPage />} />
         <Route path="/aboutPage" element={<AboutPage />} />
+        <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
     </Router>
   );

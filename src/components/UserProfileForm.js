@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-const SettingsForm = () => {
-  // const { user } = useAuth();
-  // console.log("user", user);
-  // const userData = data.filter(data.email === user?.email);
-  // console.log(userData, "userData");
+const UserProfileForm = () => {
   const [foodInfo, setFoodInfo] = useState({
     foodName: "",
     foodPrice: "",
@@ -206,4 +202,4 @@ const SettingsForm = () => {
   );
 };
 
-export default SettingsForm;
+export default UserProfileForm;

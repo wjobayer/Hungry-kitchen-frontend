@@ -3,7 +3,7 @@ import React from "react";
 import { AiOutlineBell, AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useFirebase from "../Hooks/useFirebase";
 import Drawer from "./Drawer";
 
@@ -14,6 +14,13 @@ const Header = () => {
   const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
     useFirebase();
   console.log(user.email);
+
+  const navigate = useNavigate();
+
+  const logOutButton = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <div className="header">
@@ -85,15 +92,6 @@ const Header = () => {
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">Restaurant Search</span>
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/aboutPage"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                >
-                  <span className="ml-2">About Us</span>
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -203,6 +201,7 @@ const Header = () => {
                                   <Menu.Item>
                                     {({ active }) => (
                                       <a
+                                        onClick={logOutButton}
                                         href="#sign-out"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-400 hover:text-black"
                                         // className={`${active

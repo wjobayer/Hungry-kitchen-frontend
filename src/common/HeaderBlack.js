@@ -97,16 +97,6 @@ const HeaderBlack = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink
-                  to="/aboutPage"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                >
-                  <span className="ml-2">About Us</span>
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
                 <button
                   className=" text-dark rounded px-2 py-1"
                   onClick={() => setIsOpen(true)}
