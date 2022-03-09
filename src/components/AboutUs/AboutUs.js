@@ -93,7 +93,7 @@ const AboutUs = () => {
                           />
                         </div>
                         <h3 className="font-semibold text-lg capitalize">
-                          50+ Restaurants
+                          Express Delivery
                         </h3>
                       </div>
                       <p className="text-gray-600">
@@ -111,7 +111,7 @@ const AboutUs = () => {
                           />
                         </div>
                         <h3 className="font-semibold text-lg capitalize">
-                          discount system
+                          50+ Restaurantss
                         </h3>
                       </div>
                       <p className="text-gray-600">

@@ -92,12 +92,12 @@ body {
 
 .carousel .slick-arrow.slick-prev,
 .carousel .slick-arrow.slick-next {
-  @apply flex items-center justify-center w-10 h-10 rounded-full bg-blue-800;
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-red-400;
   z-index: 1;
 }
 .carousel .slick-arrow.slick-prev:hover,
 .carousel .slick-arrow.slick-next:hover {
-  @apply flex items-center justify-center w-10 h-10 rounded-full bg-blue-800;
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-red-400 hover:bg-gray-900;
 }
 .carousel .slick-prev {
   left: -9px;

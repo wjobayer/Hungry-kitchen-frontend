@@ -3,7 +3,7 @@ import Footer from "../common/Footer";
 import HeaderBlack from "../common/HeaderBlack";
 import AboutUs from "../components/AboutUs/AboutUs";
 import OurChefs from "../components/AboutUs/OurChefs";
-import ReactSlick from "../components/ReactSlick/ReactSlick";
+import ReviewContent from "../components/Review/ReviewContent";
 
 const AboutPage = () => {
   return (
@@ -11,7 +11,7 @@ const AboutPage = () => {
       <HeaderBlack />
       <AboutUs />
       <OurChefs />
-      <ReactSlick />
+      <ReviewContent />
       <Footer />
     </>
   );

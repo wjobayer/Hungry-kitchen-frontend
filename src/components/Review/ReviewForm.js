@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Review = () => {
+const ReviewForm = () => {
   const {
     handleSubmit,
     register,
@@ -16,7 +16,7 @@ const Review = () => {
           <div className="lg:col-span-5"></div>
           <div className="review__area__wrapper">
             <div className="review__area__wrapper__content">
-              <h2 className="text-4xl text-white text-center font-bold pb-8">
+              <h2 className="text-4xl sub-title text-center font-bold pb-8">
                 Add Review
               </h2>
 
@@ -108,7 +108,7 @@ const Review = () => {
                 <span className="w-full">
                   <input
                     type="submit"
-                    className="w-full text-white rounded py-2 bg-blue-500"
+                    className="w-full bg-yellow-500 btn-brand"
                     value="Add Review"
                   />
                 </span>
@@ -121,4 +121,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default ReviewForm;

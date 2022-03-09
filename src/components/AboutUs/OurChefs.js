@@ -24,9 +24,14 @@ const data = [
     title: "Fish Chef",
   },
   {
-    name: "Richard Mark",
-    img: "https://radiustheme.com/demo/html/redchili/redchili/img/team/1.jpg",
-    title: "Fish Chef",
+    name: "Laizy Paul",
+    img: "https://radiustheme.com/demo/html/redchili/redchili/img/team/3.jpg",
+    title: "Taste Checker",
+  },
+  {
+    name: "Mark Li",
+    img: "https://radiustheme.com/demo/html/redchili/redchili/img/team/2.jpg",
+    title: "Waiter",
   },
   {
     name: "Richard Mark",
@@ -35,12 +40,7 @@ const data = [
   },
   {
     name: "Richard Mark",
-    img: "https://radiustheme.com/demo/html/redchili/redchili/img/team/1.jpg",
-    title: "Fish Chef",
-  },
-  {
-    name: "Richard Mark",
-    img: "https://radiustheme.com/demo/html/redchili/redchili/img/team/1.jpg",
+    img: "https://radiustheme.com/demo/html/redchili/redchili/img/team/2.jpg",
     title: "Fish Chef",
   },
 ];

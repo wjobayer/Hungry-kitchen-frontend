@@ -1,6 +1,6 @@
 .review {
-  background-image: url(https://res.cloudinary.com/medsy/image/upload/v1645707958/signup_v0bsfz.jpg);
-  @apply bg-no-repeat bg-cover;
+  background-image: url(https://i.ibb.co/z5PTXgj/brooke-lark-08b-OYn-H-r-E-unsplash.jpg);
+  @apply bg-no-repeat bg-cover object-cover;
 }
 .review__area {
   @apply grid grid-cols-12 gap-4;
@@ -16,7 +16,7 @@
       form {
         label {
           span {
-            @apply block text-lg tracking-wide py-1 text-white;
+            @apply block text-lg tracking-wide py-1 text-gray-900;
           }
           input {
             @apply block w-full px-4 py-3 text-gray-900 placeholder-gray-500 border-gray-300 rounded-md shadow focus:ring-blue-400 focus:border-blue-400 focus:outline-none focus:ring-1 mb-3;
@@ -25,4 +25,6 @@
       }
     }
   }
+  //   https://i.ibb.co/z5PTXgj/brooke-lark-08b-OYn-H-r-E-unsplash.jpg
+  // https://i.ibb.co/0p50Tks/louis-hansel-ph-Eaeqe555-M-unsplash.jpg
 }
