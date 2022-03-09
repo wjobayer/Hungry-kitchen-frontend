@@ -1,19 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "../src/pages/Dashboard";
+import Maps from "../src/pages/Maps";
+import Settings from "../src/pages/Settings";
+import Tables from "../src/pages/Tables";
+import AboutUs from "./components/AboutUs/AboutUs";
+import ContactUs from "./components/ContactUs/ContactUs";
 // import Footer from "./common/Footer";
 // import Header from "./common/Header";
 import FoodCategories from "./components/FoodCategories/FoodCategories";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
+import SearchResult from "./components/SearchResult";
+import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
-import Sidebar from "../src/components/Sidebar";
-import Dashboard from "../src/pages/Dashboard";
-import Settings from "../src/pages/Settings";
-import Tables from "../src/pages/Tables";
-import Maps from "../src/pages/Maps";
-import DashboardMain from "./pages/DashboardMain";
-import SearchResult from "./components/SearchResult";
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,8 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="search" element={<SearchResult />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
         {/* <Sidebar /> */}
 
         <Route path="/dashboard/*" element={<DashboardMain />} />
@@ -34,6 +37,7 @@ const AppRouter = () => {
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="category" element={<FoodCategories />} />
+        
       </Routes>
     </Router>
   );
