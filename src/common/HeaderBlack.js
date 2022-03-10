@@ -58,7 +58,7 @@ const HeaderBlack = () => {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto sm:p-2 items-center">
               <li className="nav-item">
                 <NavLink
-                  to="/dashboard"
+                  to="/"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
@@ -68,7 +68,7 @@ const HeaderBlack = () => {
 
               <li className="nav-item">
                 <NavLink
-                  to="/dashboard"
+                  to="/category"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
@@ -78,7 +78,7 @@ const HeaderBlack = () => {
 
               <li className="nav-item">
                 <NavLink
-                  to="/dashboard"
+                  to="/allrestaurant"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
@@ -88,7 +88,7 @@ const HeaderBlack = () => {
 
               <li className="nav-item">
                 <NavLink
-                  to="/dashboard"
+                  to="/search"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >

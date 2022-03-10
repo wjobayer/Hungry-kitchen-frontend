@@ -6,8 +6,6 @@ import { addToCart } from "../../redux/slices/foodSlice";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
-import Header from "./../../common/Header";
-import Swal from "sweetalert2";
 
 const FoodDetails = () => {
   const Swal = require("sweetalert2");

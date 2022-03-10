@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { MdOutlineArrowDropDownCircle } from "react-icons/md";
-import { useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useFirebase from "../../Hooks/useFirebase";
 
 const Register = () => {
@@ -136,7 +134,7 @@ const Register = () => {
             </form>
 
             <div className="text-center pt-12 pb-12">
-              <p>Already have an account? <a href="#" className="underline font-semibold" >Login here.</a></p>
+              <p>Already have an account? <Link to="/login" className="underline font-semibold" >Login here.</Link></p>
             </div>
           </div>
 

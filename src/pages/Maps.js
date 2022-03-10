@@ -1,9 +1,8 @@
-import StatusCard from '../components/StatusCard';
+import { BiDollarCircle } from 'react-icons/bi';
+import { FcSalesPerformance } from 'react-icons/fc';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { VscStarFull } from 'react-icons/vsc';
 import MapExample from '../components/MapExample';
-import {BiDollarCircle} from 'react-icons/bi'
-import {GiTakeMyMoney} from 'react-icons/gi'
-import {FcSalesPerformance} from 'react-icons/fc'
-import {VscStarFull} from 'react-icons/vsc'
 
 export default function Dashboard() {
     return (
