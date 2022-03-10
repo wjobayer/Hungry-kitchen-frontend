@@ -4,7 +4,10 @@ import CardHeader from "@material-tailwind/react/CardHeader";
 import Image from "@material-tailwind/react/Image";
 import { useEffect, useState } from "react";
 import { getFoods } from "../redux/actions/foodAction";
+import { getFood } from "../redux/actions/foodAction";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function CardTable() {
   const [control, setControl] = useState(false);
@@ -12,9 +15,71 @@ export default function CardTable() {
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
   const { loading, foods } = useSelector((state) => state);
+  // get all food
   useEffect(() => {
     dispatch(getFoods());
   }, [control]);
+  const { loading: isLoading, food } = useSelector((state) => state);
+  const updateFood = (id) => {
+    setEdit(true);
+    dispatch(getFood(id));
+  };
+  // food update form control
+  const [foodInfo, setFoodInfo] = useState({
+    foodName: "",
+    foodPrice: "",
+    foodCategory: "",
+    foodArea: "",
+    foodDescription: "",
+    resturantName: "",
+  });
+
+  const [foodPic, setFoodPic] = useState();
+  const handleChange = (e) => {
+    setFoodInfo({ ...foodInfo, [e.target.name]: e.target.defaultValue });
+  };
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    if (!foodPic) {
+      return;
+    }
+    const { foodName, foodArea, foodCategory, foodDescription, foodPrice } =
+      foodInfo;
+    await axios
+      .post("/food", {
+        foodName,
+        foodArea,
+        foodCategory,
+        foodDescription,
+        foodPrice,
+        foodPic,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          Swal.fire("Food Added!", "Food successfully Added!", "success");
+        }
+      })
+      .catch((err) => console.log(err.message));
+    e.target.reset();
+  };
+
+  const handleImage = (pics) => {
+    if (pics.type === "image/jpeg" || pics.type === "image/png") {
+      const data = new FormData();
+      data.append("file", pics);
+      data.append("upload_preset", "hungry-kitchen");
+      data.append("cloud_name", "altdevs");
+      axios
+        .post("https://api.cloudinary.com/v1_1/altdevs/image/upload", data)
+        .then(({ data }) => {
+          setFoodPic(data.url.toString());
+          console.log(data.url.toString());
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
 
   const handleDelete = (id) => {
     fetch(`https://aqueous-falls-64682.herokuapp.com/deleteproduct/${id}`, {
@@ -65,7 +130,7 @@ export default function CardTable() {
             {loading
               ? "Loading"
               : foods?.map((food) => (
-                  <tbody className="hover:bg-gray-200">
+                  <tbody className="hover:bg-gray-200" key={food._id}>
                     <tr>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         {food._id}
@@ -89,7 +154,7 @@ export default function CardTable() {
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         <button
                           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                          onClick={() => setEdit(true)}
+                          onClick={() => updateFood(food._id)}
                         >
                           Edit
                         </button>
@@ -122,8 +187,8 @@ export default function CardTable() {
                                   {/*body*/}
                                   <form
                                     className="px-16"
-                                    // onSubmit={handleSubmit}
-                                    enctype="multipart/form-data"
+                                    onSubmit={handleUpdate}
+                                    encType="multipart/form-data"
                                   >
                                     <div class="flex flex-col mb-2">
                                       <label
@@ -136,8 +201,9 @@ export default function CardTable() {
                                         class="add-food-input"
                                         type="text"
                                         name="foodName"
+                                        defaultValue={food.foodName}
                                         id="foodName"
-                                        // onChange={(e) => handleChange(e)}
+                                        onChange={(e) => handleChange(e)}
                                       />
                                     </div>
                                     <div class="flex flex-col mb-2">
@@ -151,8 +217,9 @@ export default function CardTable() {
                                         class="add-food-input"
                                         type="number"
                                         name="foodPrice"
+                                        defaultValue={food.price}
                                         id="foodPrice"
-                                        // onChange={(e) => handleChange(e)}
+                                        onChange={(e) => handleChange(e)}
                                       />
                                     </div>
                                     <div class="flex flex-col mb-2">
@@ -165,15 +232,22 @@ export default function CardTable() {
                                       <select
                                         name="foodCategory"
                                         id="category"
+                                        defaultValue={food.category}
                                         className="add-food-input"
-                                        // onChange={(e) => handleChange(e)}
+                                        onChange={(e) => handleChange(e)}
                                       >
-                                        <option value="category">
+                                        <option defaultValue="category">
                                           category
                                         </option>
-                                        <option value="Chicken">Chicken</option>
-                                        <option value="Pasta">Pasta</option>
-                                        <option value="Dessert">Dessert</option>
+                                        <option defaultValue="Chicken">
+                                          Chicken
+                                        </option>
+                                        <option defaultValue="Pasta">
+                                          Pasta
+                                        </option>
+                                        <option defaultValue="Dessert">
+                                          Dessert
+                                        </option>
                                       </select>
                                     </div>
                                     <div class="flex flex-col mb-2">
@@ -187,15 +261,21 @@ export default function CardTable() {
                                         name="foodArea"
                                         id="Area"
                                         className="add-food-input"
-                                        // onChange={(e) => handleChange(e)}
+                                        onChange={(e) => handleChange(e)}
                                       >
-                                        <option value="Area">Area</option>
-                                        <option value="Chinese">Chinese</option>
-                                        <option value="Indian">Indian</option>
-                                        <option value="Canadian">
+                                        <option defaultValue="Area">
+                                          Area
+                                        </option>
+                                        <option defaultValue="Chinese">
+                                          Chinese
+                                        </option>
+                                        <option defaultValue="Indian">
+                                          Indian
+                                        </option>
+                                        <option defaultValue="Canadian">
                                           Canadian
                                         </option>
-                                        <option value="Portuguese">
+                                        <option defaultValue="Portuguese">
                                           Portuguese
                                         </option>
                                       </select>
@@ -211,8 +291,9 @@ export default function CardTable() {
                                         class="add-food-input"
                                         type="file"
                                         name="foodImage"
+                                        defaultValue={food.foodPic}
                                         id="foodImage"
-                                        // onChange={handleImage}
+                                        onChange={handleImage}
                                       />
                                     </div>
                                     <div class="flex flex-col mb-2">
@@ -226,9 +307,10 @@ export default function CardTable() {
                                         className="add-food-input"
                                         name="foodDescription"
                                         id="foodDescription"
+                                        defaultValue={food.foodDescription}
                                         cols="30"
                                         rows="2"
-                                        // onChange={(e) => handleChange(e)}
+                                        onChange={(e) => handleChange(e)}
                                       ></textarea>
                                     </div>
                                   </form>
