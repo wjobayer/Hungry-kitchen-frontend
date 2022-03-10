@@ -10,6 +10,7 @@ import ContactUs from "./components/ContactUs/ContactUs";
 // import Header from "./common/Header";
 import FoodCategories from "./components/FoodCategories/FoodCategories";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
+import NotFound from "./components/NotFound/NotFound";
 import SearchResult from "./components/SearchResult";
 import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
@@ -29,6 +30,7 @@ const AppRouter = () => {
         <Route path="search" element={<SearchResult />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="*" element={<NotFound />} />
         {/* <Sidebar /> */}
 
         <Route path="/dashboard/*" element={<DashboardMain />} />
