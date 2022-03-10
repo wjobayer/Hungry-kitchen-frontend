@@ -10,14 +10,23 @@ import Header from "./../../common/Header";
 import Swal from "sweetalert2";
 
 const FoodDetails = () => {
+  // counter
+  const [counter, setCounter] = useState(1);
+  const handleSetCounter = () => {
+    if (counter > 1) {
+      setCounter(counter - 1);
+    }
+  };
+
   const Swal = require("sweetalert2");
   const [food, setFood] = useState([]);
   const dispatch = useDispatch();
   const { id } = useParams();
+  console.log(id);
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+    fetch(`https://hungry-kitchen.herokuapp.com/food/${id}`)
       .then((res) => res.json())
-      .then((data) => setFood(data.meals[0]));
+      .then((data) => setFood(data));
   }, [id]);
 
   //---------------------------related products filter //starts:------------------------------
@@ -33,10 +42,10 @@ const FoodDetails = () => {
       setLoading(true);
 
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian`
+        `https://hungry-kitchen.herokuapp.com/food/`
       );
       const json = await response.json();
-      setFoods(json.meals);
+      setFoods(json);
       setLoading(false);
     };
     fetchFoods();
@@ -60,6 +69,7 @@ const FoodDetails = () => {
       showConfirmButton: false,
       timer: 1500,
     });
+    setCounter(1);
   };
   return (
     <>
@@ -67,24 +77,40 @@ const FoodDetails = () => {
       <div className="container">
         <div className="grid grid-cols md:grid-cols-2">
           <div>
-            <img className="rounded-3xl pr-3" src={food.strMealThumb} alt="" />
+            <img className="rounded-3xl pr-3" src={food.foodImage} alt="" />
           </div>
           {/* details grid section  */}
           <div>
-            <h3 className="text-3xl font-bold">{food.strMeal}</h3>
+            <h3 className="text-3xl font-bold">{food.foodName}</h3>
             <h3 className="text-3xl font-bold my-3 text-red-500">$9.99</h3>
             <div className="flex my-2">
               <p className="text-2xl mr-3">
-                <span className="font-bold">Category:</span> {food.strCategory}
+                <span className="font-bold">Category:</span> {food.type}
               </p>
               <p className="text-2xl mr-3">
-                <span className="font-bold">Area:</span> {food.strArea}
+                <span className="font-bold">Area:</span> {food.category}
               </p>
             </div>
             <hr />
-            <p className="text-lg mt-4">{food.strInstructions}</p>
+            <p className="text-lg mt-4">{food.foodDescription}</p>
+            {/* counter design  */}
+            <div className="flex justify-between">
+              <div className="flex quantity-section">
+                <div className="quantity-btn" onClick={handleSetCounter}>
+                  -
+                </div>
+                <p className="quantity-counter">{counter}</p>
+                <div
+                  className="quantity-btn"
+                  onClick={() => setCounter((prev) => counter + 1)}
+                >
+                  +
+                </div>
+              </div>
+              <p className="text-xl font-bold text-red-500">${food.price}</p>
+            </div>
             <button
-              onClick={() => handleAddCart(food)}
+              onClick={() => handleAddCart({ ...food, cartQuantity: counter })}
               className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4"
             >
               Add to cart
@@ -97,7 +123,7 @@ const FoodDetails = () => {
         <div className="grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10">
           {currentFoods.map((food) => (
             <SingleCard
-              key={food.idMeal}
+              key={food._id}
               food={food}
               loading={loading}
             ></SingleCard>

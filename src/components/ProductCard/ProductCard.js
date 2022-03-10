@@ -23,11 +23,9 @@ const ProductCard = () => {
     const fetchFoods = async () => {
       setLoading(true);
 
-      const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`
-      );
+      const response = await fetch(`https://hungry-kitchen.herokuapp.com/food`);
       const json = await response.json();
-      setFoods(json.meals);
+      setFoods(json);
       // .then((res) => res.json())
       // .then((data) => setFoods(data.meals));
       setLoading(false);
