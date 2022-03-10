@@ -1,12 +1,11 @@
-import StatusCard from '../components/StatusCard';
-import ChartLine from '../components/ChartLine';
+import { BiDollarCircle } from 'react-icons/bi';
+import { FcSalesPerformance } from 'react-icons/fc';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { VscStarFull } from 'react-icons/vsc';
 import ChartBar from '../components/ChartBar';
+import ChartLine from '../components/ChartLine';
 import PageVisitsCard from '../components/PageVisitsCard';
 import TrafficCard from '../components/TrafficCard';
-import {BiDollarCircle} from 'react-icons/bi'
-import {GiTakeMyMoney} from 'react-icons/gi'
-import {FcSalesPerformance} from 'react-icons/fc'
-import {VscStarFull} from 'react-icons/vsc'
 export default function Dashboard() {
     return (
         <>
@@ -15,10 +14,10 @@ export default function Dashboard() {
             <div className="px-3 md:px-8 -mt-24">
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 xl:grid-cols-5">
-                        <div className="xl:col-start-1 xl:col-end-4 px-4 mb-14">
+                        <div className="xl:col-start-1 xl:col-end-3 px-4 mb-14">
                             <ChartLine />
                         </div>
-                        <div className="xl:col-start-4 xl:col-end-6 px-4 mb-14">
+                        <div className="xl:col-start-3 xl:col-end-6 px-4 mb-14">
                             <ChartBar />
                         </div>
                     </div>

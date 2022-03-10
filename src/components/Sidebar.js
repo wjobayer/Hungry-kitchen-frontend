@@ -1,18 +1,20 @@
+import H6 from "@material-tailwind/react/Heading6";
 import { useState } from "react";
+import { AiFillSetting } from "react-icons/ai";
+import { BsTable } from "react-icons/bs";
+import { FaMapMarkedAlt } from "react-icons/fa";
+import { GiArchiveRegister } from "react-icons/gi";
+import { IoFastFoodOutline } from "react-icons/io5";
+import { MdDashboard, MdDeliveryDining } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
-import { MdDashboard } from "react-icons/md";
-import { AiOutlineLogin, AiFillSetting } from "react-icons/ai";
-import { BsTable } from "react-icons/bs";
-import { FaPager, FaMapMarkedAlt } from "react-icons/fa";
-import { GiArchiveRegister } from "react-icons/gi";
-import { CgProfile } from "react-icons/cg";
-import { IoFastFoodOutline } from "react-icons/io5";
-
-import H6 from "@material-tailwind/react/Heading6";
 
 export default function Sidebar() {
+  const [color, setColor] = useState("restaurant");
   const [showSidebar, setShowSidebar] = useState("-left-64");
+  const handleFilter = (index) => {
+    setColor(index);
+  };
   return (
     <>
       <AdminNavbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
@@ -23,7 +25,7 @@ export default function Sidebar() {
           <NavLink
             to="/dashboard"
             exact
-            className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+            className="flex items-center gap-4 text-xl text-gray-700 font-light px-4 py-3 rounded-lg"
             activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
           >
             {" "}
@@ -39,39 +41,71 @@ export default function Sidebar() {
                 <NavLink
                   to="/dashboard"
                   exact
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  className={
+                    color === "restaurant"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("restaurant")}
                 >
                   {" "}
                   <MdDashboard />
-                  dashboard
+                  Restaurant
+                </NavLink>
+              </li>
+              <li className="rounded-lg ">
+                <NavLink
+                  to="/dashboard/rider"
+                  exact
+                  className={
+                    color === "rider"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("rider")}
+                >
+                  {" "}
+                  <MdDeliveryDining />
+                  Rider
                 </NavLink>
               </li>
               <li className="rounded-lg ">
                 <NavLink
                   to="/dashboard/settings"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  className={
+                    color === "settings"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("settings")}
                 >
                   <AiFillSetting />
-                  Settings
+                  Profile
                 </NavLink>
               </li>
               <li className="rounded-lg  ">
                 <NavLink
                   to="/dashboard/tables"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  className={
+                    color === "foodMenu"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("foodMenu")}
                 >
                   <BsTable />
-                  Tables
+                  Food Menu
                 </NavLink>
               </li>
               <li className="rounded-lg  text-gray-700">
                 <NavLink
                   to="/dashboard/maps"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  className={
+                    color === "maps"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("maps")}
                 >
                   <FaMapMarkedAlt />
                   Maps
@@ -80,8 +114,12 @@ export default function Sidebar() {
               <li className="rounded-lg  text-gray-700">
                 <NavLink
                   to="/dashboard/addFood"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  className={
+                    color === "addFood"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("addFood")}
                 >
                   <IoFastFoodOutline />
                   Add Food
@@ -90,31 +128,15 @@ export default function Sidebar() {
               <li className="rounded-lg  text-gray-700">
                 <NavLink
                   to="/dashboard/maps"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  className={
+                    color === "register"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("register")}
                 >
                   <GiArchiveRegister />
                   Register
-                </NavLink>
-              </li>
-              <li className="rounded-lg  text-gray-700">
-                <NavLink
-                  to="/dashboard/maps"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                >
-                  <FaPager />
-                  Landing Page
-                </NavLink>
-              </li>
-              <li className="rounded-lg  text-gray-700">
-                <NavLink
-                  to="/dashboard/maps"
-                  className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                >
-                  <CgProfile />
-                  Profile Page
                 </NavLink>
               </li>
             </ul>
@@ -123,7 +145,7 @@ export default function Sidebar() {
               <li className="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 px-4 rounded-lg text-white mb-2">
                 <NavLink
                   to="/dashboard/maps"
-                  className="flex items-center justify-center gap-4 text-sm font-light py-3"
+                  className="flex items-center justify-center gap-4 text-xl font-light py-3"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   About Us
@@ -132,7 +154,7 @@ export default function Sidebar() {
               <li className="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 px-4 rounded-lg text-white mb-2 ">
                 <NavLink
                   to="/dashboard/maps"
-                  className="flex items-center justify-center gap-4 text-sm font-light py-3"
+                  className="flex items-center justify-center gap-4 text-xl font-light py-3"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   Get Our Apps

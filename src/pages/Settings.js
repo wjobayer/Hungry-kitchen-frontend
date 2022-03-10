@@ -1,14 +1,13 @@
-import StatusCard from '../components/StatusCard';
-import SettingsForm from '../components/SettingsForm';
+import { BiDollarCircle } from 'react-icons/bi';
+import { FcSalesPerformance } from 'react-icons/fc';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { VscStarFull } from 'react-icons/vsc';
 import ProfileCard from '../components/ProfileCard';
-import {BiDollarCircle} from 'react-icons/bi'
-import {GiTakeMyMoney} from 'react-icons/gi'
-import {FcSalesPerformance} from 'react-icons/fc'
-import {VscStarFull} from 'react-icons/vsc'
+import SettingsForm from '../components/SettingsForm';
 
 export default function Dashboard() {
     return (
-        <>
+        <><div className="bg-blue-500 px-3 md:px-8 h-40" />
             <div className="bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto">
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
