@@ -242,7 +242,6 @@ const HeaderBlack = () => {
         </div>
       </nav>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        
       </Drawer>
     </div>
   );
