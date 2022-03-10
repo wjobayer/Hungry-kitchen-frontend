@@ -19,7 +19,7 @@ export default function PickUpOrder() {
   }, [control]);
 
   const handleIgnore = (id) => {
-    fetch(`https://aqueous-falls-64682.herokuapp.com/Ignoreproduct/${id}`, {
+    fetch(`https://hungry-kitchen.herokuapp.com/deleteproduct/${id}`, {
       method: "Ignore",
     })
       .then((res) => res.json())
@@ -30,10 +30,6 @@ export default function PickUpOrder() {
         }
       });
     console.log(id);
-  };
-  const defaultCenter = {
-    lat: 23.7835446,
-    lng: 90.3988686,
   };
   return (
     <>

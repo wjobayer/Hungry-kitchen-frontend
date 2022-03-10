@@ -4,10 +4,13 @@ import Dashboard from "../src/pages/Dashboard";
 import Maps from "../src/pages/Maps";
 import Settings from "../src/pages/Settings";
 import Tables from "../src/pages/Tables";
+import AboutUs from "./components/AboutUs/AboutUs";
+import ContactUs from "./components/ContactUs/ContactUs";
 // import Footer from "./common/Footer";
 // import Header from "./common/Header";
 import FoodCategories from "./components/FoodCategories/FoodCategories";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
+import NotFound from "./components/NotFound/NotFound";
 import SearchResult from "./components/SearchResult";
 import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
@@ -26,6 +29,9 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="search" element={<SearchResult />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="*" element={<NotFound />} />
         {/* <Sidebar /> */}
 
         <Route path="/dashboard/*" element={<DashboardMain />} />
@@ -37,6 +43,7 @@ const AppRouter = () => {
         <Route path="/riderprofile" element={<Maps />} />
         <Route path="/userprofile" element={<Maps />} />
         <Route path="category" element={<FoodCategories />} />
+        
       </Routes>
     </Router>
   );
