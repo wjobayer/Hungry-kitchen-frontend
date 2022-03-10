@@ -99,6 +99,7 @@ const AddFood = () => {
                 type="number"
                 name="foodPrice"
                 id="foodPrice"
+                step="any"
                 onChange={(e) => handleChange(e)}
               />
             </div>
