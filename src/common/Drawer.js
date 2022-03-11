@@ -1,9 +1,6 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import { useSelector } from "react-redux";
 import CartCalculation from "../components/CartCalculation";
->>>>>>> 7e2d50aaf2451032f135af9f9d985cbcb55bb9be
 import CartCard from "./CartCard";
 
 export default function Drawer({ children, isOpen, setIsOpen }) {

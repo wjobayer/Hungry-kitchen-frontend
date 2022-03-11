@@ -1,18 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-<<<<<<< HEAD
 import { getFoods } from "../actions/foodAction";
-=======
->>>>>>> 7e2d50aaf2451032f135af9f9d985cbcb55bb9be
 export const foodSlice = createSlice({
   name: "food",
   initialState: {
     addToCart: [],
-<<<<<<< HEAD
     loading:false,
     foods:[],
     error:{}
-=======
->>>>>>> 7e2d50aaf2451032f135af9f9d985cbcb55bb9be
   },
   reducers: {
     addToCart(state, { payload }) {
@@ -38,7 +32,6 @@ export const foodSlice = createSlice({
       );
     },
   },
-<<<<<<< HEAD
   extraReducers:(builder)=>{
     builder
     .addCase(getFoods.pending, (state, {payload})=>{
@@ -55,14 +48,8 @@ export const foodSlice = createSlice({
   }
 });
 
-// export const {addToCart} = foodSlice.actions
 
-export const {addToCart,removeFromCart} = foodSlice.actions
-
-=======
-});
 
 export const { addToCart, removeFromCart, cartQuantity } = foodSlice.actions;
 
->>>>>>> 7e2d50aaf2451032f135af9f9d985cbcb55bb9be
 export default foodSlice.reducer;
