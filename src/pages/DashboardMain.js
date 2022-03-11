@@ -22,8 +22,6 @@ const DashboardMain = () => {
             <Route path='addFood' element={<AddFood></AddFood>}/>
             <Route path='tables' element={<Tables></Tables>}/>
             <Route path='maps' element={<Maps></Maps>}/>
-            <Route path='riderprofile' element={<Maps></Maps>}/>
-            <Route path='userprofile' element={<Maps></Maps>}/>
             <Route path='/' element={<Dashboard></Dashboard>}/>
         </Routes>
         <Footer></Footer>
