@@ -69,20 +69,7 @@ export default function Sidebar() {
                   Rider
                 </NavLink>
               </li>
-              <li className="rounded-lg ">
-                <NavLink
-                  to="/dashboard/settings"
-                  className={
-                    color === "settings"
-                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
-                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
-                  }
-                  onClick={() => handleFilter("settings")}
-                >
-                  <AiFillSetting />
-                  Profile
-                </NavLink>
-              </li>
+
               <li className="rounded-lg ">
                 <NavLink
                   to="/dashboard/userProfile"
@@ -95,6 +82,34 @@ export default function Sidebar() {
                 >
                   <AiFillSetting />
                   User Profile
+                </NavLink>
+              </li>
+              <li className="rounded-lg ">
+                <NavLink
+                  to="/dashboard/settings"
+                  className={
+                    color === "settings"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("settings")}
+                >
+                  <AiFillSetting />
+                  Rest.. Profile
+                </NavLink>
+              </li>
+              <li className="rounded-lg ">
+                <NavLink
+                  to="/dashboard/riderProfile"
+                  className={
+                    color === "riderProfile"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("riderProfile")}
+                >
+                  <AiFillSetting />
+                  Rider Profile
                 </NavLink>
               </li>
               <li className="rounded-lg  ">

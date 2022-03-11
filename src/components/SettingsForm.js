@@ -43,7 +43,7 @@ const SettingsForm = () => {
   };
   return (
     <div>
-      <h1 className="text-4xl text-white p-8 rounded-xl mb- text-center bg-gradient-to-r from-orange-400 to-orange-600">
+      <h1 className="rider__wrapper__area__title">
         Provide Your Business Info
       </h1>
       <form class="w-full mt-10 mx-auto max-w-3xl">
@@ -197,9 +197,7 @@ const SettingsForm = () => {
           </label>
         </div>
         <div className="w-full text-center">
-          <button class="w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-8 border border-blue-500 hover:border-transparent rounded">
-            Submit
-          </button>
+          <button class="w-full btn-brand-secondary rounded">Submit</button>
         </div>
       </form>
     </div>

@@ -12,6 +12,7 @@ import Rider from "../pages/Rider";
 // Tailwind CSS Style Sheet
 import "../assets/styles/tailwind.css";
 import UserProfile from "./UserProfile";
+import RiderProfile from "./RiderProfile";
 const DashboardMain = () => {
   return (
     <div>
@@ -24,6 +25,7 @@ const DashboardMain = () => {
           <Route path="tables" element={<Tables></Tables>} />
           <Route path="maps" element={<Maps></Maps>} />
           <Route path="userProfile" element={<UserProfile />} />
+          <Route path="riderProfile" element={<RiderProfile />} />
           <Route path="/" element={<Dashboard></Dashboard>} />
         </Routes>
         <Footer></Footer>

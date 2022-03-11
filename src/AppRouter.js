@@ -42,9 +42,9 @@ const AppRouter = () => {
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="category" element={<FoodCategories />} />
-        <Route path="/reviewPage" element={<ReviewPage />} />
-        <Route path="/aboutPage" element={<AboutPage />} />
-        <Route path="/userProfile" element={<UserProfile />} />
+        {/* <Route path="/reviewPage" element={<ReviewPage />} /> */}
+        {/* <Route path="/aboutPage" element={<AboutPage />} /> */}
+        {/* <Route path="/userProfile" element={<UserProfile />} /> */}
       </Routes>
     </Router>
   );

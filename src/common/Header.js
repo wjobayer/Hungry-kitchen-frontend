@@ -94,6 +94,7 @@ const Header = () => {
                   <span className="ml-2">Restaurant Search</span>
                 </NavLink>
               </li>
+
               <li className="nav-item">
                 <button
                   className=" text-white rounded px-2 py-1"

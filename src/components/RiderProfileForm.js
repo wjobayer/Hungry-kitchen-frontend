@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UserProfileForm = () => {
+const RiderProfileForm = () => {
   const [foodInfo, setFoodInfo] = useState({
     foodName: "",
     foodPrice: "",
@@ -40,10 +40,10 @@ const UserProfileForm = () => {
   return (
     <div>
       <h1 className="rider__wrapper__area__title">
-        Provide Your Update User Profile Info
+        Provide Your Update Rider Info
       </h1>
       <form className="rider__wrapper__area__form">
-        <label for="grid-first-name">User Name</label>
+        <label for="grid-first-name">Rider Name</label>
         <input
           className=""
           id="grid-first-name"
@@ -55,7 +55,7 @@ const UserProfileForm = () => {
         </p>
 
         <div className="mb-3 w-full">
-          <label for="formFile">User Image</label>
+          <label for="formFile">Rider Image</label>
           <input type="file" id="formFile" />
         </div>
         <p className="text-gray-600 text-xs italic mb-4">
@@ -137,4 +137,4 @@ const UserProfileForm = () => {
   );
 };
 
-export default UserProfileForm;
+export default RiderProfileForm;
