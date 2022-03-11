@@ -53,17 +53,18 @@ const SingleCard = ({ food, loading, layout }) => {
     >
       <div>
         <img
-          className="rounded-full object-cover p-2.5 w-60 mx-auto"
-          src={food.strMealThumb}
-          alt={food.strMeal}
+          className="rounded rounded-[50%] object-cover h-60 p-2 w-60 mx-auto"
+          src={food.foodImage}
+          alt="food pic"
         />
       </div>
       {/* ........................................................ */}
       <div>
-        <h3 className="text-xl font-bold"> {food.strMeal}</h3>
+        <h3 className="text-xl font-bold"> {food.foodName.slice(0, 40)}</h3>
         <p className="my-3.5 text-gray-600">
-          {food.strMeal}. The food is very popular here.
+          {food.foodDescription.slice(0, 150)}...
         </p>
+        {/* counter design  */}
         <div className="flex justify-between">
           <div className="flex quantity-section">
             <div className="quantity-btn" onClick={handleSetCounter}>
@@ -77,11 +78,11 @@ const SingleCard = ({ food, loading, layout }) => {
               +
             </div>
           </div>
-          <p className="text-xl font-bold text-red-500">$11.99</p>
+          <p className="text-xl font-bold text-red-500">${food.price}</p>
         </div>
 
         <div className="flex justify-center">
-          <button onClick={() => handleDetails(food.idMeal)}>
+          <button onClick={() => handleDetails(food._id)}>
             <p className="flex items-center">
               <IoMdCart className="mr-1" /> VIEW OPTIONS
             </p>

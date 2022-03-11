@@ -1,7 +1,13 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+import { useSelector } from "react-redux";
+import CartCalculation from "../components/CartCalculation";
+>>>>>>> 7e2d50aaf2451032f135af9f9d985cbcb55bb9be
 import CartCard from "./CartCard";
 
 export default function Drawer({ children, isOpen, setIsOpen }) {
+  const cartProducts = useSelector((state) => state.addToCart);
   return (
     <main
       className={
@@ -26,7 +32,13 @@ export default function Drawer({ children, isOpen, setIsOpen }) {
           >
             x
           </button>
-          <CartCard />
+          {cartProducts.map((cart) => (
+            <CartCard cart={cart} />
+          ))}
+
+          <div className="fixed bottom-0 w-full">
+            <CartCalculation />
+          </div>
         </article>
       </section>
       <section
