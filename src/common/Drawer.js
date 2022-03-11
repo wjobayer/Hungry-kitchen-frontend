@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import CartCard from "./CartCard";
 
 export default function Drawer({ children, isOpen, setIsOpen }) {

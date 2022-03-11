@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import {
-    unstable_HistoryRouter,
-    useLocation,
-    useNavigate,
+    Link, useLocation,
+    useNavigate
 } from "react-router-dom";
 import useFirebase from "../../Hooks/useFirebase";
 
@@ -85,7 +84,7 @@ const Login = () => {
                         </form>
 
                         <div className="text-center pt-12 pb-12">
-                            <p>Already have an account? <br /> <a href="#" className="underline font-semibold" >Register here.</a></p>
+                            <p>Already have an account? <br /> <Link to="/register" className="underline font-semibold" >Register here.</Link></p>
                         </div>
                     </div>
 

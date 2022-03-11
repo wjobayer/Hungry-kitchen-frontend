@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import Settings from '../pages/Settings';
-import Maps from '../pages/Maps';
-import Tables from '../pages/Tables';
-import Dashboard from './Dashboard';
-import Footer from '../common/Footer';
-import AddFood from "../components/AddFood/AddFood";
-import Rider from "../pages/Rider";
-
 // Tailwind CSS Style Sheet
 import '../assets/styles/tailwind.css';
+import Footer from '../common/Footer';
+import AddFood from "../components/AddFood/AddFood";
+import Sidebar from '../components/Sidebar';
+import Maps from '../pages/Maps';
+import Rider from "../pages/Rider";
+import Settings from '../pages/Settings';
+import Tables from '../pages/Tables';
+import Dashboard from './Dashboard';
+
 const DashboardMain = () => {
     return (
         <div>
@@ -22,6 +22,8 @@ const DashboardMain = () => {
             <Route path='addFood' element={<AddFood></AddFood>}/>
             <Route path='tables' element={<Tables></Tables>}/>
             <Route path='maps' element={<Maps></Maps>}/>
+            <Route path='riderprofile' element={<Maps></Maps>}/>
+            <Route path='userprofile' element={<Maps></Maps>}/>
             <Route path='/' element={<Dashboard></Dashboard>}/>
         </Routes>
         <Footer></Footer>

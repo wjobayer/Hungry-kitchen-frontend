@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import SearchFood from "./SearchFood";
-import SingleCard from "./ProductCard/SingleCard/SingleCard";
-import PaginationCompo from "./ProductCard/PaginationCompo";
-import { RiLayoutGridFill } from "react-icons/ri";
-import { FaListAlt } from "react-icons/fa";
 import { AiOutlineFileSearch } from "react-icons/ai";
-import Header from "../common/Header";
+import { FaListAlt } from "react-icons/fa";
+import { RiLayoutGridFill } from "react-icons/ri";
 import Footer from "../common/Footer";
+import HeaderBlack from "../common/HeaderBlack";
+import PaginationCompo from "./ProductCard/PaginationCompo";
+import SingleCard from "./ProductCard/SingleCard/SingleCard";
+import SearchFood from "./SearchFood";
 
 const SearchResult = () => {
   const [loading, setLoading] = useState(true);
@@ -48,7 +48,7 @@ const SearchResult = () => {
   if (currentFoods === null) {
     return (
       <>
-        <Header />
+        <HeaderBlack />
         <div className="container">
           <SearchFood setSearchQuery={setSearchQuery} />
           <div className="h-full py-20 flex flex-col items-center justify-center">
@@ -66,7 +66,7 @@ const SearchResult = () => {
   }
   return (
     <>
-      <Header />
+      <HeaderBlack/>
       <div className="container">
         <SearchFood setSearchQuery={setSearchQuery} />
         <div className="flex my-2">

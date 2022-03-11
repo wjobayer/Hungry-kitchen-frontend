@@ -110,19 +110,22 @@ export default function ChartLine() {
     window.myLine = new Chart(ctx, config);
   }, []);
 
-    return (
-        <Card>
-            <CardHeader className="bg-gradient-to-b from-orange-400 to-orange-600" contentPosition="left">
-                <h6 className="uppercase text-gray-200 text-xs font-medium">
-                    Overview Monthly
-                </h6>
-                <h2 className="text-white text-2xl">Sales value</h2>
-            </CardHeader>
-            <CardBody>
-                <div className="relative h-96">
-                    <canvas id="line-chart"></canvas>
-                </div>
-            </CardBody>
-        </Card>
-    );
+  return (
+    <Card>
+      <CardHeader
+        className="bg-gradient-to-b from-orange-400 to-orange-600"
+        contentPosition="left"
+      >
+        <h6 className="uppercase text-gray-200 text-xs font-medium">
+          Overview Monthly
+        </h6>
+        <h2 className="text-white text-2xl">Sales value</h2>
+      </CardHeader>
+      <CardBody>
+        <div className="relative h-96">
+          <canvas id="line-chart"></canvas>
+        </div>
+      </CardBody>
+    </Card>
+  );
 }
