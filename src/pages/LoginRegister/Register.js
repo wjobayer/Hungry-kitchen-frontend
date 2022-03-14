@@ -23,19 +23,20 @@ const Register = () => {
     logout,
   } = useFirebase();
 
+
   // register
   const onSubmit = (data, e) => {
     e.target.reset();
     console.log(data);
 
-    const { name, email, password, retypePassword } = data;
+    const { name, email, userType, phoneNumber, password, retypePassword } = data;
 
     if (password !== retypePassword) {
       // console.log('not matched')
       alert("Your password did not match");
     } else {
       console.log("matched");
-      registerUser(name, email, password, navigate);
+      registerUser(email, name, userType, phoneNumber, password, navigate);
     }
   };
 
@@ -92,7 +93,7 @@ const Register = () => {
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="email">
                   Phone Number <span className='text-red-500 text-xs'>*</span>
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" placeholder="Mobile-number" {...register("Mobile-number", { required: true, minLength: 11, maxLength: 11 })} />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" placeholder="Mobile-number" {...register("phoneNumber", { required: true, minLength: 11, maxLength: 11 })} />
               </div>
 
               {/* Option Selection */}
