@@ -16,8 +16,8 @@ const AboutUs = () => {
                   <img src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about01.jpg" alt="" />
                   <div className='ml-20'>
                         <p style={{color:'#F43127'}} className='text-1xl font-bold mb-5'>PANPIE HISTORY</p>
-                        <p className='text-3xl font-bold mb-5'>Serving Pizzas By The <br />
-                        <span style={{color:'#FDB702'}}>Slice Since 1987</span></p>
+                        <p className='text-3xl font-bold mb-5'>Order Food, Get Instant Delivery<br />
+                        <span style={{color:'#FDB702'}}>AnyTime 24/7</span></p>
                         <p style={{color:'#646464'}} className='text-1xl'>Our Pizzahen an unknown printer took a galley type and scrambled make type <br /> specimen book. It has survived not only five centuries, but also the leap into <br />electronic typesetting, remaining essentially unchanged. It was <br /> popularisedsheets containing.</p>
                   </div>
               </div>

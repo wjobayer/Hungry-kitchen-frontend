@@ -3,8 +3,8 @@ import CardBody from "@material-tailwind/react/CardBody";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import Image from "@material-tailwind/react/Image";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getFoods } from "../redux/actions/foodAction";
-import { useSelector, useDispatch } from "react-redux";
 
 export default function CardTable() {
   const [control, setControl] = useState(false);
@@ -43,9 +43,6 @@ export default function CardTable() {
             <thead>
               <tr>
                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
-                  Food Code
-                </th>
-                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
                   Food Name
                 </th>
                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-lg whitespace-nowrap font-light text-left">
@@ -68,21 +65,18 @@ export default function CardTable() {
                   <tbody className="hover:bg-gray-200">
                     <tr>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-                        {food._id}
-                      </th>
-                      <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         {food.foodName}
                       </th>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         {food.category}
                       </th>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-                        {food.type}
+                        {food.price}
                       </th>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         <div className="flex">
-                          <div className="w-24 h-24 rounded-full border-2 border-white">
-                            <Image src={food.foodImage} rounded alt="..." />
+                          <div className="w-24 h-24 rounded-full flex">
+                            <Image className="self-center" src={food.foodImage} alt="..." />
                           </div>
                         </div>
                       </th>
