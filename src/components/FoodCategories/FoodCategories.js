@@ -36,7 +36,7 @@ const FoodCategories = () => {
       setLoading(true);
 
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+        `https://hungry-kitchen-app.herokuapp.com/category?category=${category}`
       );
       const json = await response.json();
       setFoods(json.meals);
@@ -58,7 +58,7 @@ const FoodCategories = () => {
 
   return (
     <>
-      <HeaderBlack className='' />
+      <HeaderBlack className="" />
       <div className="container px-7 mx-auto">
         {/* <div className="my-5 flex justify-center">
         <div className="w-96">

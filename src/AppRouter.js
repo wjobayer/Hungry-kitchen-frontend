@@ -14,6 +14,7 @@ import Tables from "../src/pages/Tables";
 import Maps from "../src/pages/Maps";
 import DashboardMain from "./pages/DashboardMain";
 import SearchResult from "./components/SearchResult";
+import PopularResturants from "./components/PopularResturants/PopularResturants";
 
 const AppRouter = () => {
   return (
@@ -25,6 +26,7 @@ const AppRouter = () => {
         <Route path="details/:id" element={<FoodDetails />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="carts" element={<PopularResturants />} />
         <Route path="search" element={<SearchResult />} />
         {/* <Sidebar /> */}
 

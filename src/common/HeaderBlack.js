@@ -12,8 +12,7 @@ const HeaderBlack = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const addToCart = useSelector((state) => state.addToCart);
 
-  const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
-    useFirebase();
+  const { user, logout } = useFirebase();
   console.log(user.email);
 
   const navigate = useNavigate();
@@ -241,9 +240,7 @@ const HeaderBlack = () => {
           </div>
         </div>
       </nav>
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        
-      </Drawer>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}></Drawer>
     </div>
   );
 };
