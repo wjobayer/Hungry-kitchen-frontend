@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import HeaderBlack from "../../common/HeaderBlack";
 import { addToCart } from "../../redux/slices/foodSlice";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
-import Header from "./../../common/Header";
-import Swal from "sweetalert2";
-import CartCard from "../../common/CartCard";
-import Drawer from "../../common/Drawer";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const FoodDetails = () => {

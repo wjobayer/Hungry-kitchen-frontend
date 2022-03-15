@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { cartQuantity, removeFromCart } from "../redux/slices/foodSlice";
 
 const CartCard = ({ cart }) => {
+  const Swal = require("sweetalert2");
   const dispatch = useDispatch();
   // const cartProducts = useSelector((state) => state.addToCart);
   const [counter, setCounter] = useState(cart.cartQuantity);
@@ -17,7 +18,16 @@ const CartCard = ({ cart }) => {
     setCounter((prev) => counter + 1);
     dispatch(cartQuantity({ ...cart, cartQuantity: cart.cartQuantity + 1 }));
   };
-
+  const removeHandler = (cart) => {
+    dispatch(removeFromCart(cart));
+    Swal.fire({
+      position: "cneter",
+      icon: "success",
+      title: "food deleted successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
   return (
     <div>
       <div className="flex border rounded m-2 p-2 items-center">
@@ -49,8 +59,11 @@ const CartCard = ({ cart }) => {
               </div>
             </div>
 
-            <button className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center">
-              <MdDelete onClick={() => console.log("delete")} /> Delete
+            <button
+              className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
+              onClick={() => removeHandler(cart)}
+            >
+              <MdDelete /> Delete
             </button>
           </div>
         </div>
