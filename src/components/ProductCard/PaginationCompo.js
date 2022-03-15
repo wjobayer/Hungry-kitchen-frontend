@@ -9,7 +9,7 @@ const PaginationCompo = ({ postPerPage, totalPosts, paginate }) => {
     <div>
       <nav>
         <div className="flex justify-center">
-          <div className="flex mt-5">
+          <div className="flex my-5">
             {pageNumbers.map((number) => (
               <div
                 key={number}

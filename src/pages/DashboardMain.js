@@ -13,6 +13,7 @@ import Rider from "../pages/Rider";
 import "../assets/styles/tailwind.css";
 import UserProfile from "./UserProfile";
 import RiderProfile from "./RiderProfile";
+
 const DashboardMain = () => {
   return (
     <div>

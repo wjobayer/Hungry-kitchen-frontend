@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-redundant-roles */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";

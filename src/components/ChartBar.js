@@ -39,14 +39,17 @@ export default function ChartBar() {
           "27",
           "28",
           "29",
-          "30"
+          "30",
         ],
         datasets: [
           {
             label: "Total Sales",
             backgroundColor: "#03a9f4",
             borderColor: "#03a9f4",
-            data: [30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,20,12],
+            data: [
+              30, 78, 56, 34, 100, 45, 13, 30, 78, 56, 34, 100, 45, 13, 30, 78,
+              56, 34, 100, 45, 13, 30, 78, 56, 34, 100, 45, 13, 20, 12,
+            ],
             fill: false,
             barThickness: 8,
           },
@@ -55,7 +58,10 @@ export default function ChartBar() {
             fill: false,
             backgroundColor: "#f44336",
             borderColor: "#f44336",
-            data: [30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,30, 78, 56, 34, 100, 45, 13,20,12],
+            data: [
+              30, 78, 56, 34, 100, 45, 13, 30, 78, 56, 34, 100, 45, 13, 30, 78,
+              56, 34, 100, 45, 13, 30, 78, 56, 34, 100, 45, 13, 20, 12,
+            ],
             barThickness: 8,
           },
         ],
@@ -124,19 +130,22 @@ export default function ChartBar() {
     let ctx = document.getElementById("bar-chart").getContext("2d");
     window.myBar = new Chart(ctx, config);
   }, []);
-    return (
-        <Card>
-            <CardHeader className="bg-gradient-to-b from-pink-400 to-pink-600" contentPosition="left">
-                <h6 className="uppercase text-gray-200 text-xs font-medium">
-                    Overview Daily
-                </h6>
-                <h2 className="text-white text-2xl">Sales value</h2>
-            </CardHeader>
-            <CardBody>
-                <div className="relative h-96">
-                    <canvas id="bar-chart"></canvas>
-                </div>
-            </CardBody>
-        </Card>
-    );
+  return (
+    <Card>
+      <CardHeader
+        className="bg-gradient-to-b from-pink-400 to-pink-600"
+        contentPosition="left"
+      >
+        <h6 className="uppercase text-gray-200 text-xs font-medium">
+          Overview Daily
+        </h6>
+        <h2 className="text-white text-2xl">Sales value</h2>
+      </CardHeader>
+      <CardBody>
+        <div className="relative h-96">
+          <canvas id="bar-chart"></canvas>
+        </div>
+      </CardBody>
+    </Card>
+  );
 }

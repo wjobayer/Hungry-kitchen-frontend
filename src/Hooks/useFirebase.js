@@ -1,16 +1,9 @@
-import { useState, useEffect } from "react";
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithPopup,
-  GoogleAuthProvider,
-  updateProfile,
-  signOut,
-  getAuth,
+  createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile
 } from "firebase/auth";
-import initializeAuthentication from "../Firebase/firebase.init";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import initializeAuthentication from "../Firebase/firebase.init";
 
 // initialize firebase app
 initializeAuthentication();
@@ -104,7 +97,7 @@ const useFirebase = () => {
 
   // isAdmin
   useEffect(() => {
-    fetch(`https://serene-garden-71214.herokuapp.com/users/${user.email}`)
+    fetch(`https://hungry-kitchen.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -112,7 +105,7 @@ const useFirebase = () => {
   // send login data to mongodb
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://serene-garden-71214.herokuapp.com/users", {
+    fetch("https://hungry-kitchen.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

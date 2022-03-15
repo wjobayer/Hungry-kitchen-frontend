@@ -56,14 +56,12 @@ const SettingsForm = () => {
               Restaurant Name
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
               placeholder="Your Restaurant Name"
             />
-            <p class="text-red-500 text-xs italic">
-              Please fill out this field.
-            </p>
+            <p class=" text-xs italic">Please fill out this field.</p>
           </div>
           <div class="w-full md:w-1/2 px-3">
             <label
@@ -189,14 +187,14 @@ const SettingsForm = () => {
             />
           </div>
         </div>
-        <div class="md:flex md:items-center mt-8 mb-6">
+        {/* <div class="md:flex md:items-center mt-8 mb-6">
           <div class="md:w-1/3"></div>
           <label class="md:w-2/3 block text-gray-500 font-bold">
             <input class="mr-2 leading-tight text-center" type="checkbox" />
             <span class="text-md">Send me your newsletter!</span>
           </label>
-        </div>
-        <div className="w-full text-center">
+        </div> */}
+        <div className="w-full text-center mt-8">
           <button class="w-full btn-brand-secondary rounded">Submit</button>
         </div>
       </form>

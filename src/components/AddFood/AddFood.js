@@ -8,6 +8,7 @@ const AddFood = () => {
     foodCategory: "",
     foodArea: "",
     foodDescription: "",
+    resturantName: "",
   });
 
   const [foodPic, setFoodPic] = useState();
@@ -31,16 +32,12 @@ const AddFood = () => {
         foodPic,
       })
       .then((res) => {
-        if(res.status === 200){
-          Swal.fire(
-            'Food Added!',
-            'Food successfully Added!',
-            'success'
-          )
+        if (res.status === 200) {
+          Swal.fire("Food Added!", "Food successfully Added!", "success");
         }
       })
-      .catch(err => console.log(err.message))
-      e.target.reset();
+      .catch((err) => console.log(err.message));
+    e.target.reset();
   };
 
   const handleImage = (pics) => {
@@ -82,6 +79,18 @@ const AddFood = () => {
               />
             </div>
             <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodName">
+                Resturant Name
+              </label>
+              <input
+                class="add-food-input"
+                type="text"
+                name="resturantName"
+                id="resturantName"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
               <label class="add-food-label" htmlFor="foodPrice">
                 Food Price
               </label>
@@ -90,6 +99,7 @@ const AddFood = () => {
                 type="number"
                 name="foodPrice"
                 id="foodPrice"
+                step="any"
                 onChange={(e) => handleChange(e)}
               />
             </div>
