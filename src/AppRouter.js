@@ -17,6 +17,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
 import Rider from "./pages/Rider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const AppRouter = () => {
   return (
@@ -30,7 +31,7 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<SearchResult />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contact" element={<PrivateRoute><ContactUs/></PrivateRoute>} />
         <Route path="*" element={<NotFound />} />
         {/* <Sidebar /> */}
 

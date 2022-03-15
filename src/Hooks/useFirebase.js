@@ -97,15 +97,15 @@ const useFirebase = () => {
 
   // isAdmin
   useEffect(() => {
-    fetch(`https://hungry-kitchen.herokuapp.com/users/${user.email}`)
+    fetch(`https://hungry-kitchen-app.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
+      .then((data) => console.log(data.admin));
   }, [user.email]);
 
   // send login data to mongodb
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://hungry-kitchen.herokuapp.com/users", {
+    fetch("https://hungry-kitchen-app.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
