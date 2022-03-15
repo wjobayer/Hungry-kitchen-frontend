@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeAllFromCart } from "../redux/slices/foodSlice";
 
 const CartCalculation = () => {
+  //state of latitude and longitude
+  // const [latitude, setLatitude] = useState();
+  // const [longitude, setLongitude] = useState();
+  //end state of latitude and longitude
   const cartProducts = useSelector((state) => state.addToCart);
   const dispatch = useDispatch();
   let subTotal = cartProducts.reduce(function (prev, current) {
@@ -12,11 +16,22 @@ const CartCalculation = () => {
   const total = deleveryFee + subTotal;
 
   const handleCheckout = () => {
-    const docs = [
-      { name: "cake", healthy: false },
-      { name: "lettuce", healthy: true },
-      { name: "donut", healthy: false },
-    ];
+   //Location tracking from order
+
+  //  function getLocation() {
+  //    if (navigator.geolocation) {
+  //      navigator.geolocation.getCurrentPosition(showPosition);
+  //    } 
+  //  }
+   
+  //  function showPosition(position) {
+  //    setLatitude (position.coords.latitude);
+  //    setLongitude(position.coords.longitude);
+  //    console.log(position)
+  //  }
+  //  getLocation();
+
+   //end Location tracking from order
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
