@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 export const foodSlice = createSlice({
   name: "food",
   initialState: {
@@ -33,9 +34,13 @@ export const foodSlice = createSlice({
         (food) => food._id !== payload._id
       );
     },
+    removeAllFromCart(state, { payload }) {
+      state.addToCart = [];
+    },
   },
 });
 
-export const { addToCart, removeFromCart, cartQuantity } = foodSlice.actions;
+export const { addToCart, removeFromCart, cartQuantity, removeAllFromCart } =
+  foodSlice.actions;
 
 export default foodSlice.reducer;

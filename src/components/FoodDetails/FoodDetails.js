@@ -7,7 +7,7 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
+import useFirebase from "../../Hooks/useFirebase";
 const FoodDetails = () => {
   // counter
   const [counter, setCounter] = useState(1);
@@ -16,7 +16,7 @@ const FoodDetails = () => {
       setCounter(counter - 1);
     }
   };
-
+  const { user } = useFirebase();
   const Swal = require("sweetalert2");
   const [food, setFood] = useState([]);
   const dispatch = useDispatch();
@@ -60,7 +60,8 @@ const FoodDetails = () => {
   //---------------------related products filter //ends:--------------------------
 
   const handleAddCart = (food) => {
-    dispatch(addToCart(food));
+    const newFood = { ...food, userEmail: user.email };
+    dispatch(addToCart(newFood));
     Swal.fire({
       position: "cneter",
       icon: "success",
@@ -70,6 +71,7 @@ const FoodDetails = () => {
     });
     setCounter(1);
   };
+
   return (
     <>
       <HeaderBlack />

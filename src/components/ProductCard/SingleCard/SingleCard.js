@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { addToCart } from "../../../redux/slices/foodSlice";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import useFirebase from "../../../Hooks/useFirebase";
 
 const SingleCard = ({ food, loading, layout }) => {
   const [counter, setCounter] = useState(1);
@@ -14,8 +15,10 @@ const SingleCard = ({ food, loading, layout }) => {
     //push id to the useparams
     navigate(`/details/${id}`);
   };
+  const { user } = useFirebase();
   const handleAddCart = (food) => {
-    dispatch(addToCart(food));
+    const newFood = { ...food, userEmail: user.email };
+    dispatch(addToCart(newFood));
     Swal.fire({
       position: "cneter",
       icon: "success",
