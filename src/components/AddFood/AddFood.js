@@ -4,32 +4,46 @@ import Swal from "sweetalert2";
 const AddFood = () => {
   const [foodInfo, setFoodInfo] = useState({
     foodName: "",
-    foodPrice: "",
-    foodCategory: "",
-    foodArea: "",
+    price: "",
+    type: "",
+    category: "",
     foodDescription: "",
     resturantName: "",
+    resturantName: "",
+    resturantOpen: "",
+    resturantClose: "",
   });
 
-  const [foodPic, setFoodPic] = useState();
+  const [foodImage, setFoodImage] = useState();
   const handleChange = (e) => {
     setFoodInfo({ ...foodInfo, [e.target.name]: e.target.value });
   };
+  const {
+    foodName,
+    category,
+    type,
+    foodDescription,
+    price,
+    resturantName,
+    resturantOpen,
+    resturantClose,
+  } = foodInfo;
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!foodPic) {
+    if (!foodImage) {
       return;
     }
-    const { foodName, foodArea, foodCategory, foodDescription, foodPrice } =
-      foodInfo;
     await axios
-      .post("/food", {
+      .post("http://localhost:5000/foods", {
         foodName,
-        foodArea,
-        foodCategory,
+        type,
+        category,
         foodDescription,
-        foodPrice,
-        foodPic,
+        price,
+        foodImage,
+        resturantName,
+        resturantOpen,
+        resturantClose,
       })
       .then((res) => {
         if (res.status === 200) {
@@ -49,8 +63,7 @@ const AddFood = () => {
       axios
         .post("https://api.cloudinary.com/v1_1/altdevs/image/upload", data)
         .then(({ data }) => {
-          setFoodPic(data.url.toString());
-          console.log(data.url.toString());
+          setFoodImage(data.url.toString());
         })
         .catch((err) => {
           console.log(err);
@@ -74,6 +87,7 @@ const AddFood = () => {
                 class="add-food-input"
                 type="text"
                 name="foodName"
+                placeholder="Food Name"
                 id="foodName"
                 onChange={(e) => handleChange(e)}
               />
@@ -86,6 +100,7 @@ const AddFood = () => {
                 class="add-food-input"
                 type="text"
                 name="resturantName"
+                placeholder="Resturant Name"
                 id="resturantName"
                 onChange={(e) => handleChange(e)}
               />
@@ -97,7 +112,8 @@ const AddFood = () => {
               <input
                 class="add-food-input"
                 type="number"
-                name="foodPrice"
+                name="price"
+                placeholder="Food Price"
                 id="foodPrice"
                 step="any"
                 onChange={(e) => handleChange(e)}
@@ -155,6 +171,30 @@ const AddFood = () => {
               />
             </div>
             <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodImage">
+                Resturant Open
+              </label>
+              <input
+                class="add-food-input"
+                type="date"
+                name="resturantOpen"
+                id="resturantOpen"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodImage">
+                Resturant Close
+              </label>
+              <input
+                class="add-food-input"
+                type="date"
+                name="resturantClose"
+                id="resturantClose"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
               <label class="add-food-label" htmlFor="foodDescription">
                 Food Description
               </label>
@@ -162,6 +202,7 @@ const AddFood = () => {
                 className="add-food-input"
                 name="foodDescription"
                 id="foodDescription"
+                placeholder="Food Description"
                 cols="30"
                 rows="5"
                 onChange={(e) => handleChange(e)}
