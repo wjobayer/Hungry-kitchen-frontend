@@ -19,13 +19,19 @@ const CartCard = ({ cart }) => {
     dispatch(cartQuantity({ ...cart, cartQuantity: cart.cartQuantity + 1 }));
   };
   const removeHandler = (cart) => {
-    dispatch(removeFromCart(cart));
     Swal.fire({
-      position: "cneter",
-      icon: "success",
-      title: "food deleted successfully",
-      showConfirmButton: false,
-      timer: 1500,
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeFromCart(cart));
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
     });
   };
   return (

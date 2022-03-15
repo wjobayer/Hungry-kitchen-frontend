@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 import { removeAllFromCart } from "../redux/slices/foodSlice";
 
 const CartCalculation = () => {
-  //state of latitude and longitude
-  // const [latitude, setLatitude] = useState();
-  // const [longitude, setLongitude] = useState();
-  //end state of latitude and longitude
   const cartProducts = useSelector((state) => state.addToCart);
   const dispatch = useDispatch();
   let subTotal = cartProducts.reduce(function (prev, current) {
@@ -16,40 +13,33 @@ const CartCalculation = () => {
   const total = deleveryFee + subTotal;
 
   const handleCheckout = () => {
-   //Location tracking from order
-
-  //  function getLocation() {
-  //    if (navigator.geolocation) {
-  //      navigator.geolocation.getCurrentPosition(showPosition);
-  //    } 
-  //  }
-   
-  //  function showPosition(position) {
-  //    setLatitude (position.coords.latitude);
-  //    setLongitude(position.coords.longitude);
-  //    console.log(position)
-  //  }
-  //  getLocation();
-
-   //end Location tracking from order
-    fetch("http://localhost:5000/orders", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(cartProducts),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          alert("success!");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-    alert("data added succesfully");
-    dispatch(removeAllFromCart(cartProducts));
+    Swal.fire({
+      title: "Do you want to conferm order?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Conferm!",
+      denyButtonText: `Order Letter`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        fetch("http://localhost:5000/orders", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(cartProducts),
+        })
+          .then((res) => res.json())
+          .then((data) => {})
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+        dispatch(removeAllFromCart(cartProducts));
+        Swal.fire("Ordered successfully!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Order is not placed!", "", "info");
+      }
+    });
   };
   return (
     <div className="container pb-4 pt-2 bg-white ]">

@@ -8,6 +8,24 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import useFirebase from "../../../Hooks/useFirebase";
 
 const SingleCard = ({ food, loading, layout }) => {
+  //Location tracking from order
+  const [latitude, setLatitude] = useState();
+  const [longitude, setLongitude] = useState();
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  }
+
+  function showPosition(position) {
+    setLatitude(position.coords.latitude);
+    setLongitude(position.coords.longitude);
+    console.log(position);
+  }
+
+  setTimeout(() => {
+    getLocation();
+  }, 100);
   const [counter, setCounter] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,7 +35,12 @@ const SingleCard = ({ food, loading, layout }) => {
   };
   const { user } = useFirebase();
   const handleAddCart = (food) => {
-    const newFood = { ...food, userEmail: user.email };
+    const newFood = {
+      ...food,
+      userEmail: user.email,
+      latitude: latitude,
+      longitude: longitude,
+    };
     dispatch(addToCart(newFood));
     Swal.fire({
       position: "cneter",
