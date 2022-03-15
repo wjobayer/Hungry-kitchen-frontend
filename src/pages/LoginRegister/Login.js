@@ -19,7 +19,7 @@ const Login = () => {
         logout, } = useFirebase();
 
     const location = useLocation();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const redirect_uri = location.state?.from || "/"
 
 

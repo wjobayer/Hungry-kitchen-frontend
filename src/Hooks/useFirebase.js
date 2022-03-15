@@ -21,13 +21,53 @@ const useFirebase = () => {
 
   // login with google
   const loginWithGoogle = () => {
-    return signInWithPopup(auth, googleProvider);
+
+    const test = () => {
+      signInWithPopup(auth, googleProvider)
+        .then(result => {
+          console.log(result)
+          console.log(result.user.email)
+          console.log(result.user.displayName)
+          setUser(result.user);
+          const phoneNumber = '';
+          const role = 'customer'
+          saveUser(result.user.email, result.user.displayName, role, phoneNumber, "POST");
+          console.log(result.user.displayName);
+        })
+        .catch((error) => { setAuthError(error.message) })
+    }
+
+
+    return test();
+
+    // return signInWithPopup(auth, googleProvider);
 
     // navigate('/');
   };
 
+  // const loginWithGoogle = () => {
+
+  //   setIsLoading(true);
+  //   signInWithPopup(auth, googleProvider)
+  //     .then((result) => {
+  //       const user = result.user;
+  //       // const phoneNumber = '';
+  //       // const role = 'customer'
+  //       saveUser(user.email, user.displayName, "PUT");
+  //       setAuthError("");
+  //     })
+  //     .catch((error) => {
+  //       setAuthError(error.message);
+  //     })
+  //     .finally(() => setIsLoading(false));
+  // };
+
+
+
+
+
   // register
-  const registerUser = (name, email, password, history) => {
+  const registerUser = (email, name, role, phoneNumber, password, history) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -35,13 +75,13 @@ const useFirebase = () => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         // send and save user to mongodb
-        saveUser(email, name, "POST");
+        saveUser(email, name, role, phoneNumber, "POST");
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => {})
-          .catch((error) => {});
+          .then(() => { })
+          .catch((error) => { });
         navigate("/");
       })
       .catch((error) => {
@@ -113,6 +153,11 @@ const useFirebase = () => {
       body: JSON.stringify(user),
     }).then();
   };
+
+  // send login with google data to mongodb
+  // const phoneNumber = '';
+  // const role = 'customer'
+  // saveUser(user.email, user.displayName, role, phoneNumber, "POST");
 
   // console.log(authError);
 
