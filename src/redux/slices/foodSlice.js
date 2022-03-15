@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFoods } from "../actions/foodAction";
+
 export const foodSlice = createSlice({
   name: "food",
   initialState: {
     addToCart: [],
-    loading:false,
-    foods:[],
-    error:{}
   },
   reducers: {
     addToCart(state, { payload }) {
@@ -37,25 +34,13 @@ export const foodSlice = createSlice({
         (food) => food._id !== payload._id
       );
     },
+    removeAllFromCart(state, { payload }) {
+      state.addToCart = [];
+    },
   },
-  extraReducers:(builder)=>{
-    builder
-    .addCase(getFoods.pending, (state, {payload})=>{
-        state.loading = true;
-    })
-    .addCase(getFoods.fulfilled, (state, {payload})=>{
-      state.loading = false;
-      state.foods = payload;
-    })
-    .addCase(getFoods.rejected, (state, {payload})=>{
-      state.loading = false;
-      state.error = payload
-    })
-  }
 });
 
-
-
-export const { addToCart, removeFromCart, cartQuantity } = foodSlice.actions;
+export const { addToCart, removeFromCart, cartQuantity, removeAllFromCart } =
+  foodSlice.actions;
 
 export default foodSlice.reducer;
