@@ -1,19 +1,32 @@
 import { React, useState } from "react";
 import { IoMdCart } from "react-icons/io";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { addToCart } from "../../../redux/slices/foodSlice";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import useFirebase from "../../../Hooks/useFirebase";
 
 const SingleCard = ({ food, loading, layout }) => {
   const [counter, setCounter] = useState(1);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleDetails = (id) => {
     //push id to the useparams
     navigate(`/details/${id}`);
   };
-  const handleSetCounter = () => {
-    if (counter > 1) {
-      setCounter(counter - 1);
-    }
+  const { user } = useFirebase();
+  const handleAddCart = (food) => {
+    const newFood = { ...food, userEmail: user.email };
+    dispatch(addToCart(newFood));
+    Swal.fire({
+      position: "cneter",
+      icon: "success",
+      title: "Food added to the cart",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    setCounter(1);
   };
   if (loading) {
     return (
@@ -65,18 +78,12 @@ const SingleCard = ({ food, loading, layout }) => {
           {food.foodDescription.slice(0, 150)}...
         </p>
         {/* counter design  */}
-        <div className="flex justify-between">
-          <div className="flex quantity-section">
-            <div className="quantity-btn" onClick={handleSetCounter}>
-              -
-            </div>
-            <p className="quantity-counter">{counter}</p>
-            <div
-              className="quantity-btn"
-              onClick={() => setCounter((prev) => counter + 1)}
-            >
-              +
-            </div>
+        <div className="flex justify-between items-center">
+          <div
+            onClick={() => handleAddCart({ ...food, cartQuantity: counter })}
+            className="rounded ... px-4 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-2 duration-100 my-2 flex items-center"
+          >
+            <AiOutlineShoppingCart className="text-lg mr-2" /> Order now !
           </div>
           <p className="text-xl font-bold text-red-500">${food.price}</p>
         </div>

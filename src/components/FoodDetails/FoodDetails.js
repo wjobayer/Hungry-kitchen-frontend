@@ -6,7 +6,8 @@ import { addToCart } from "../../redux/slices/foodSlice";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import useFirebase from "../../Hooks/useFirebase";
 const FoodDetails = () => {
   // counter
   const [counter, setCounter] = useState(1);
@@ -15,14 +16,14 @@ const FoodDetails = () => {
       setCounter(counter - 1);
     }
   };
-
+  const { user } = useFirebase();
   const Swal = require("sweetalert2");
   const [food, setFood] = useState([]);
   const dispatch = useDispatch();
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`https://hungry-kitchen.herokuapp.com/food/${id}`)
+    fetch(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data));
   }, [id]);
@@ -40,7 +41,7 @@ const FoodDetails = () => {
       setLoading(true);
 
       const response = await fetch(
-        `https://hungry-kitchen.herokuapp.com/food/`
+        `https://hungry-kitchen-app.herokuapp.com/foods/`
       );
       const json = await response.json();
       setFoods(json);
@@ -59,7 +60,8 @@ const FoodDetails = () => {
   //---------------------related products filter //ends:--------------------------
 
   const handleAddCart = (food) => {
-    dispatch(addToCart(food));
+    const newFood = { ...food, userEmail: user.email };
+    dispatch(addToCart(newFood));
     Swal.fire({
       position: "cneter",
       icon: "success",
@@ -69,6 +71,7 @@ const FoodDetails = () => {
     });
     setCounter(1);
   };
+
   return (
     <>
       <HeaderBlack />
@@ -78,9 +81,11 @@ const FoodDetails = () => {
             <img className="rounded-3xl pr-3" src={food.foodImage} alt="" />
           </div>
           {/* details grid section  */}
-          <div>
+          <div className="h-full">
             <h3 className="text-3xl font-bold">{food.foodName}</h3>
-            <h3 className="text-3xl font-bold my-3 text-red-500">$9.99</h3>
+            <h3 className="text-3xl font-bold my-3 text-red-500">
+              ${food.price}
+            </h3>
             <div className="flex my-2">
               <p className="text-2xl mr-3">
                 <span className="font-bold">Category:</span> {food.type}
@@ -92,7 +97,7 @@ const FoodDetails = () => {
             <hr />
             <p className="text-lg mt-4">{food.foodDescription}</p>
             {/* counter design  */}
-            <div className="flex justify-between">
+            <div className="flex justify-between mt-4">
               <div className="flex quantity-section">
                 <div className="quantity-btn" onClick={handleSetCounter}>
                   -
@@ -107,11 +112,12 @@ const FoodDetails = () => {
               </div>
               <p className="text-xl font-bold text-red-500">${food.price}</p>
             </div>
+
             <button
               onClick={() => handleAddCart({ ...food, cartQuantity: counter })}
-              className="rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 mt-7 duration-100 my-4"
+              className=" rounded ... px-6 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-4 duration-100 my-4 flex items-center"
             >
-              Add to cart
+              <AiOutlineShoppingCart className="text-lg mr-2" /> Add to cart
             </button>
           </div>
         </div>

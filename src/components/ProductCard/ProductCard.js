@@ -6,7 +6,7 @@ import PaginationCompo from "./PaginationCompo";
 import SingleCard from "./SingleCard/SingleCard";
 
 const ProductCard = () => {
-  const [country, setCountry] = useState("Italian");
+  const [country, setCountry] = useState("indian");
   const [layout, setLayout] = useState("vertical");
 
   //pagination stuff-----------------------------------
@@ -23,7 +23,9 @@ const ProductCard = () => {
     const fetchFoods = async () => {
       setLoading(true);
 
-      const response = await fetch(`https://hungry-kitchen.herokuapp.com/food`);
+      const response = await fetch(
+        `https://hungry-kitchen-app.herokuapp.com/category?category=${country}`
+      );
       const json = await response.json();
       setFoods(json);
       // .then((res) => res.json())
@@ -59,42 +61,42 @@ const ProductCard = () => {
       <div className="flex justify-center flex-wrap">
         <button
           className={
-            country === "Italian" ? "product-btn-active" : "product-btn"
+            country === "italian" ? "product-btn-active" : "product-btn"
           }
-          onClick={() => handleFilter("Italian")}
+          onClick={() => handleFilter("italian")}
         >
           Italian
         </button>
         <button
           className={
-            country === "Chinese" ? "product-btn-active" : "product-btn"
+            country === "chinese" ? "product-btn-active" : "product-btn"
           }
-          onClick={() => handleFilter("Chinese")}
+          onClick={() => handleFilter("chinese")}
         >
           Chinese
         </button>
         <button
           className={
-            country === "Indian" ? "product-btn-active" : "product-btn"
+            country === "indian" ? "product-btn-active" : "product-btn"
           }
-          onClick={() => handleFilter("Indian")}
+          onClick={() => handleFilter("indian")}
         >
           Indian
         </button>
 
         <button
           className={
-            country === "Canadian" ? "product-btn-active" : "product-btn"
+            country === "canadian" ? "product-btn-active" : "product-btn"
           }
-          onClick={() => handleFilter("Canadian")}
+          onClick={() => handleFilter("canadian")}
         >
           Canadian
         </button>
         <button
           className={
-            country === "Portuguese" ? "product-btn-active" : "product-btn"
+            country === "portuguese" ? "product-btn-active" : "product-btn"
           }
-          onClick={() => handleFilter("Portuguese")}
+          onClick={() => handleFilter("portuguese")}
         >
           Portuguese
         </button>
@@ -134,7 +136,7 @@ const ProductCard = () => {
         className={
           layout == "horizontal"
             ? "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
-            : "grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10"
+            : "grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-3 gap-10"
         }
       >
         {currentFoods.map((food) => (

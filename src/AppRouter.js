@@ -23,6 +23,7 @@ import Rider from "./pages/Rider";
 // import ReviewPage from "./pages/ReviewPage";
 // import AboutPage from "./pages/AboutPage";
 // import UserProfile from "./pages/UserProfile";
+import PopularResturants from "./components/PopularResturants/PopularResturants";
 
 const AppRouter = () => {
   return (
@@ -34,6 +35,7 @@ const AppRouter = () => {
         <Route path="details/:id" element={<FoodDetails />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="carts" element={<PopularResturants />} />
         <Route path="search" element={<SearchResult />} />
         <Route path="courierForm" element={<CourierForm />} />
         <Route path="restaurantForm" element={<RestaurantForm />} />
