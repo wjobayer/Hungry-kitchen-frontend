@@ -16,7 +16,11 @@ export const foodSlice = createSlice({
       if (itemIndex >= 0) {
         state.addToCart[itemIndex].cartQuantity += payload.cartQuantity;
       } else {
-        const cartItem = { ...payload, cartQuantity: payload.cartQuantity };
+        const cartItem = {
+          ...payload,
+          cartQuantity: payload.cartQuantity,
+          totalPrice: payload.price * payload.cartQuantity,
+        };
         state.addToCart.push(cartItem);
       }
     },
@@ -25,6 +29,8 @@ export const foodSlice = createSlice({
         (item) => item._id === payload._id
       );
       state.addToCart[itemIndex].cartQuantity = payload.cartQuantity;
+      state.addToCart[itemIndex].totalPrice =
+        payload.price * payload.cartQuantity;
     },
     removeFromCart(state, { payload }) {
       state.addToCart = state.addToCart.filter(

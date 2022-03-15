@@ -29,11 +29,13 @@ export default function Drawer({ children, isOpen, setIsOpen }) {
           >
             x
           </button>
-          {cartProducts.map((cart) => (
-            <CartCard cart={cart} />
-          ))}
+          <div className="h-full">
+            {cartProducts.map((cart) => (
+              <CartCard cart={cart} />
+            ))}
+          </div>
 
-          <div className="fixed bottom-0 w-full">
+          <div className="bottom-0 w-full">
             <CartCalculation />
           </div>
         </article>

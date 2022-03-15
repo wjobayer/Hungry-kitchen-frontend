@@ -12,8 +12,7 @@ const HeaderBlack = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const addToCart = useSelector((state) => state.addToCart);
 
-  const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
-    useFirebase();
+  const { user, logout } = useFirebase();
   console.log(user.email);
 
   const navigate = useNavigate();
