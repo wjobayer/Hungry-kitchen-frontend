@@ -13,6 +13,7 @@ import Rider from "../pages/Rider";
 import "../assets/styles/tailwind.css";
 import UserProfile from "./UserProfile";
 import RiderProfile from "./RiderProfile";
+import MakeAdmin from "./MakeAdmin";
 
 const DashboardMain = () => {
   return (
@@ -20,6 +21,7 @@ const DashboardMain = () => {
       <Sidebar></Sidebar>
       <div className="md:ml-64">
         <Routes>
+          <Route path="admin" element={<MakeAdmin></MakeAdmin>} />
           <Route path="settings" element={<Settings></Settings>} />
           <Route path="rider" element={<Rider></Rider>} />
           <Route path="addFood" element={<AddFood></AddFood>} />

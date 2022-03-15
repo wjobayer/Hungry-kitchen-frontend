@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import {
+  Link,
   unstable_HistoryRouter,
   useLocation,
   useNavigate,
@@ -113,9 +114,9 @@ const Login = () => {
             <div className="text-center pt-12 pb-12">
               <p>
                 Already have an account? <br />{" "}
-                <a href="#" className="underline font-semibold">
+                <Link to="/register" className="underline font-semibold">
                   Register here.
-                </a>
+                </Link>
               </p>
             </div>
           </div>

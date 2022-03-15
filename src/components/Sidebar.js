@@ -5,6 +5,7 @@ import { BsTable } from "react-icons/bs";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { GiArchiveRegister } from "react-icons/gi";
 import { IoFastFoodOutline } from "react-icons/io5";
+import { AiOutlineUser } from "react-icons/ai";
 import { MdDashboard, MdDeliveryDining } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
@@ -26,7 +27,7 @@ export default function Sidebar() {
             to="/dashboard"
             exact
             className="flex items-center gap-4 text-xl text-gray-700 font-light px-4 py-3 rounded-lg"
-            activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+            activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
           >
             {" "}
             <H6 color="gray">
@@ -67,6 +68,22 @@ export default function Sidebar() {
                   {" "}
                   <MdDeliveryDining />
                   Rider
+                </NavLink>
+              </li>
+              <li className="rounded-lg ">
+                <NavLink
+                  to="/dashboard/admin"
+                  exact
+                  className={
+                    color === "admin"
+                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                  }
+                  onClick={() => handleFilter("admin")}
+                >
+                  {" "}
+                  <AiOutlineUser />
+                  Make Admin
                 </NavLink>
               </li>
 
@@ -175,7 +192,7 @@ export default function Sidebar() {
                 <NavLink
                   to="/dashboard/maps"
                   className="flex items-center justify-center gap-4 text-xl font-light py-3"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   About Us
                 </NavLink>
@@ -184,7 +201,7 @@ export default function Sidebar() {
                 <NavLink
                   to="/dashboard/maps"
                   className="flex items-center justify-center gap-4 text-xl font-light py-3"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   Get Our Apps
                 </NavLink>

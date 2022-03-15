@@ -59,7 +59,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
                   <span className="ml-2">Home</span>
                 </NavLink>
@@ -69,7 +69,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/category"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
                   <span className="ml-2">All Items</span>
                 </NavLink>
@@ -79,7 +79,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/allrestaurant"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
                   <span className="ml-2">All Restaurant</span>
                 </NavLink>
@@ -89,7 +89,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/search"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
                   <span className="ml-2">Restaurant Search</span>
                 </NavLink>
@@ -98,7 +98,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/contact"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
                   <span className="ml-2">Contact Us</span>
                 </NavLink>
@@ -107,7 +107,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/about"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
                   <span className="ml-2">About Us</span>
                 </NavLink>
@@ -131,7 +131,7 @@ const HeaderBlack = () => {
                 <NavLink
                   to="/cart"
                   className="px-3 py-2 flex items-center font-bold leading-snug text-black hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
                 >
                   <span className="text-2xl ">
                     <AiOutlineBell />
