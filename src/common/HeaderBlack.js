@@ -95,6 +95,24 @@ const HeaderBlack = () => {
                   <span className="ml-2">Restaurant Search</span>
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/contact"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                >
+                  <span className="ml-2">Contact Us</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/about"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
+                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
+                >
+                  <span className="ml-2">About Us</span>
+                </NavLink>
+              </li>
 
               <li className="nav-item">
                 <button

@@ -24,11 +24,11 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="details" element={<FoodDetails />} />
-        <Route path="details/:id" element={<FoodDetails />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
-        <Route path="search" element={<SearchResult />} />
+        <Route path="/details" element={<FoodDetails />} />
+        <Route path="/details/:id" element={<FoodDetails />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/search" element={<SearchResult />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />
@@ -40,9 +40,7 @@ const AppRouter = () => {
         <Route path="/rider" element={<Rider />} />
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
-        <Route path="/riderprofile" element={<Maps />} />
-        <Route path="/userprofile" element={<Maps />} />
-        <Route path="category" element={<FoodCategories />} />
+        <Route path="/category" element={<FoodCategories />} />
         
       </Routes>
     </Router>

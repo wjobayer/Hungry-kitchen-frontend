@@ -176,7 +176,7 @@ const AddFood = () => {
               </label>
               <input
                 class="add-food-input"
-                type="date"
+                type="time"
                 name="resturantOpen"
                 id="resturantOpen"
                 onChange={(e) => handleChange(e)}
@@ -188,7 +188,7 @@ const AddFood = () => {
               </label>
               <input
                 class="add-food-input"
-                type="date"
+                type="time"
                 name="resturantClose"
                 id="resturantClose"
                 onChange={(e) => handleChange(e)}
