@@ -10,8 +10,9 @@ import SearchFood from "./SearchFood";
 
 const SearchResult = () => {
   const [loading, setLoading] = useState(true);
-  const [searchResult, setSearchResult] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("chicken");
+  // const [searchResult, setSearchResult] = useState([]);
+  const [allFoods, setAllFoods] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   //pagination stuff-----------------------------------
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(12);
@@ -22,20 +23,25 @@ const SearchResult = () => {
       setLoading(true);
 
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`
+        `https://hungry-kitchen-app.herokuapp.com/foods`
       );
       const json = await response.json();
-      setSearchResult(json.meals);
+      setAllFoods(json);
       setLoading(false);
     };
     fetchFoods();
     setCurrentPage(1);
   }, [searchQuery]);
 
-  //   const handleFilter = (index) => {
-  //     setCategory(index);
-  //   };
-
+  const searchResult = allFoods.filter((result) => {
+    if (searchQuery === "") {
+      return result;
+    } else if (
+      result.foodName.toLowerCase().includes(searchQuery.toLocaleLowerCase())
+    ) {
+      return result;
+    }
+  });
   // Get Current Posts
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -66,7 +72,7 @@ const SearchResult = () => {
   }
   return (
     <>
-      <HeaderBlack/>
+      <HeaderBlack />
       <div className="container">
         <SearchFood setSearchQuery={setSearchQuery} />
         <div className="flex my-2">
@@ -93,13 +99,13 @@ const SearchResult = () => {
         <div
           className={
             layout === "horizontal"
-              ? "grid grid-cols sm:grid-cols md:grid-cols lg:grid-cols gap-10"
+              ? "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
               : "grid grid-cols sm:grid-cols md:grid-cols-3 lg:grid-cols-4 gap-10"
           }
         >
           {currentFoods.map((food) => (
             <SingleCard
-              key={food.idMeal}
+              key={food._id}
               food={food}
               loading={loading}
               layout={layout}

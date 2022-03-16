@@ -7,8 +7,6 @@ import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Footer from "../../common/Footer";
-import Header from "../../common/Header";
-import SearchFood from "../SearchFood";
 import HeaderBlack from "../../common/HeaderBlack";
 
 const FoodCategories = () => {
@@ -185,9 +183,9 @@ const FoodCategories = () => {
                     key={food._id}
                     className="best-deals grid grid-cols-[1fr,_2fr] gap-4 border-b-2"
                   >
-                    <div>
+                    <div className="w-full">
                       <img
-                        className="rounded-full object-cover p-2.5 w-44 mx-auto"
+                        className="rounded-full object-cover p-2.5 h-40 w-44 mx-auto"
                         src={food.foodImage}
                         alt={food.foodName}
                       />
@@ -233,7 +231,7 @@ const FoodCategories = () => {
 
             <div
               className={
-                layout == "horizontal"
+                layout === "horizontal"
                   ? "grid grid-cols sm:grid-cols md:grid-cols lg:grid-cols gap-10"
                   : "grid grid-cols sm:grid-cols md:grid-cols-2 lg:grid-cols-2 gap-10"
               }

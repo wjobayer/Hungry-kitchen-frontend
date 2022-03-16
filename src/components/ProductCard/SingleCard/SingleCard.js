@@ -82,12 +82,12 @@ const SingleCard = ({ food, loading, layout }) => {
   return (
     <div
       className={
-        layout == "horizontal"
+        layout === "horizontal"
           ? "single-card single-card-horizontal "
           : "single-card"
       }
     >
-      <div>
+      <div className="w-full">
         <img
           className="rounded rounded-[50%] object-cover h-60 p-2 w-60 mx-auto"
           src={food.foodImage}
