@@ -5,7 +5,6 @@ const SearchFood = ({ setSearchQuery }) => {
 
   const handleSearch = (e) => {
     setSearchQuery(search);
-    setSearch("");
     e.preventDefault();
   };
   return (

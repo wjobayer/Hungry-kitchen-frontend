@@ -8,8 +8,10 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { MdDashboard, MdDeliveryDining } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
+import useFirebase from "../Hooks/useFirebase";
 
 export default function Sidebar() {
+  const { role } = useFirebase();
   const [color, setColor] = useState("restaurant");
   const [showSidebar, setShowSidebar] = useState("-left-64");
   const handleFilter = (index) => {
@@ -112,18 +114,21 @@ export default function Sidebar() {
                 </NavLink>
               </li>
               <li className="rounded-lg  text-gray-700">
-                <NavLink
-                  to="/dashboard/addFood"
-                  className={
-                    color === "addFood"
-                      ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
-                      : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
-                  }
-                  onClick={() => handleFilter("addFood")}
-                >
-                  <IoFastFoodOutline />
-                  Add Food
-                </NavLink>
+                {role === "admin" ||
+                  ("rider" && (
+                    <NavLink
+                      to="/dashboard/addFood"
+                      className={
+                        color === "addFood"
+                          ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
+                          : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
+                      }
+                      onClick={() => handleFilter("addFood")}
+                    >
+                      <IoFastFoodOutline />
+                      Add Food
+                    </NavLink>
+                  ))}
               </li>
               <li className="rounded-lg  text-gray-700">
                 <NavLink

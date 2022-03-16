@@ -5,14 +5,14 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Footer from "../../common/Footer";
 import Header from "../../common/Header";
 import SearchFood from "../SearchFood";
 import HeaderBlack from "../../common/HeaderBlack";
 
 const FoodCategories = () => {
-  const [category, setCategory] = useState("Seafood");
+  const [category, setCategory] = useState("indian");
 
   //pagination stuff-----------------------------------
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,21 +27,32 @@ const FoodCategories = () => {
     //push id to the useparams
     navigate(`/details/${id}`);
   };
-
+  const { mealTime } = useParams();
   const handleFilter = (index) => {
     setCategory(index);
   };
   useEffect(() => {
     const fetchFoods = async () => {
       setLoading(true);
-
       const response = await fetch(
-        `https://hungry-kitchen-app.herokuapp.com/category?category=${category}`
+        `http://localhost:5000/mealTime?mealTime=${mealTime}`
       );
       const json = await response.json();
-      setFoods(json.meals);
-      // .then((res) => res.json())
-      // .then((data) => setFoods(data.meals));
+      setFoods(json);
+      setLoading(false);
+    };
+    fetchFoods();
+    setCurrentPage(1);
+  }, []);
+  // ----------------------------------------------------------
+  useEffect(() => {
+    const fetchFoods = async () => {
+      setLoading(true);
+      const response = await fetch(
+        `http://localhost:5000/category?category=portuguese`
+      );
+      const json = await response.json();
+      setFoods(json);
       setLoading(false);
     };
     fetchFoods();
@@ -86,7 +97,7 @@ const FoodCategories = () => {
         {/* --------------------------------------- */}
         <div className="grid md:grid-cols-[1fr,_2fr] gap-4">
           <div>
-            <form>
+            <form className="flex">
               <input
                 type="text"
                 name=""
@@ -171,23 +182,23 @@ const FoodCategories = () => {
                 .filter((item, index) => index < 4)
                 .map((food) => (
                   <div
-                    key={food.idMeal}
+                    key={food._id}
                     className="best-deals grid grid-cols-[1fr,_2fr] gap-4 border-b-2"
                   >
                     <div>
                       <img
                         className="rounded-full object-cover p-2.5 w-44 mx-auto"
-                        src={food.strMealThumb}
-                        alt={food.strMeal}
+                        src={food.foodImage}
+                        alt={food.foodName}
                       />
                     </div>
                     <div className="mt-10">
                       <h3
                         className="text-xl font-bold cursor-pointer hover:text-red-400 duration-10 hover:underline underline-offset-4"
-                        onClick={() => handleDetails(food.idMeal)}
+                        onClick={() => handleDetails(food._id)}
                       >
                         {" "}
-                        {food.strMeal}
+                        {food.foodName}
                       </h3>
                       <p className="font-bold text-red-400">$ 9.99</p>
                     </div>
@@ -229,7 +240,7 @@ const FoodCategories = () => {
             >
               {currentFoods.map((food) => (
                 <SingleCard
-                  key={food.idMeal}
+                  key={food._id}
                   food={food}
                   loading={loading}
                   layout={layout}

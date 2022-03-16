@@ -1,5 +1,12 @@
 import {
-  createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -12,8 +19,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
-  const [admin, setAdmin] = useState(false);
-
+  const [role, setRole] = useState("Customer");
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
@@ -21,22 +27,28 @@ const useFirebase = () => {
 
   // login with google
   const loginWithGoogle = () => {
-
     const test = () => {
       signInWithPopup(auth, googleProvider)
-        .then(result => {
-          console.log(result)
-          console.log(result.user.email)
-          console.log(result.user.displayName)
+        .then((result) => {
+          console.log(result);
+          console.log(result.user.email);
+          console.log(result.user.displayName);
           setUser(result.user);
-          const phoneNumber = '';
-          const role = 'customer'
-          saveUser(result.user.email, result.user.displayName, role, phoneNumber, "POST");
+          const phoneNumber = "";
+          const role = "customer";
+          saveUser(
+            result.user.email,
+            result.user.displayName,
+            role,
+            phoneNumber,
+            "POST"
+          );
           console.log(result.user.displayName);
         })
-        .catch((error) => { setAuthError(error.message) })
-    }
-
+        .catch((error) => {
+          setAuthError(error.message);
+        });
+    };
 
     return test();
 
@@ -62,10 +74,6 @@ const useFirebase = () => {
   //     .finally(() => setIsLoading(false));
   // };
 
-
-
-
-
   // register
   const registerUser = (email, name, role, phoneNumber, password, history) => {
     setIsLoading(true);
@@ -80,8 +88,8 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => { })
-          .catch((error) => { });
+          .then(() => {})
+          .catch((error) => {});
         navigate("/");
       })
       .catch((error) => {
@@ -139,8 +147,8 @@ const useFirebase = () => {
   useEffect(() => {
     fetch(`https://hungry-kitchen-app.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
-      .then((data) => console.log(data.admin));
-  }, [user.email]);
+      .then((data) => setRole(data.admin));
+  }, []);
 
   // send login data to mongodb
   const saveUser = (email, displayName, method) => {
@@ -163,7 +171,7 @@ const useFirebase = () => {
 
   return {
     user,
-    admin,
+    role,
     isLoading,
     authError,
     loginWithGoogle,

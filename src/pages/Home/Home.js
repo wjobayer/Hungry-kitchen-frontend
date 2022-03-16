@@ -9,7 +9,10 @@ import ReactSlick from "../../components/ReactSlick/ReactSlick";
 import Header from "../../common/Header";
 import Footer from "../../common/Footer";
 import FoodTime from "../../components/FoodTime/FoodTime";
+import useFirebase from "../../Hooks/useFirebase";
 const Home = () => {
+  const { role } = useFirebase();
+  console.log("my role of the website:" + role);
   return (
     <div>
       <Header></Header>

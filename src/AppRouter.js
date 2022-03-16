@@ -31,7 +31,14 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<SearchResult />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<PrivateRoute><ContactUs/></PrivateRoute>} />
+        <Route
+          path="/contact"
+          element={
+            <PrivateRoute>
+              <ContactUs />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
         {/* <Sidebar /> */}
 
@@ -41,8 +48,7 @@ const AppRouter = () => {
         <Route path="/rider" element={<Rider />} />
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
-        <Route path="/category" element={<FoodCategories />} />
-        
+        <Route path="/category/:mealTime" element={<FoodCategories />} />
       </Routes>
     </Router>
   );

@@ -2,9 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 const FoodTime = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const handleClick = (mealTime) => {
     // go to category page
-    navigate("/category");
+    navigate(`/category/${mealTime}`);
   };
   return (
     <div className="container">
@@ -14,7 +14,7 @@ const FoodTime = () => {
             <h2>See Our Breakfast Menu</h2>
             <button
               className="p-3 text-xl mt-4 rounded bg-yellow-400 hover:bg-black hover:text-white font-bold"
-              onClick={handleClick}
+              onClick={() => handleClick("breakfast")}
             >
               Order now
             </button>
@@ -31,7 +31,7 @@ const FoodTime = () => {
             <h2>See Our Lunch Menu Items</h2>
             <button
               className="p-3 text-xl mt-4 rounded bg-yellow-400 hover:bg-black hover:text-white font-bold"
-              onClick={handleClick}
+              onClick={() => handleClick("lunch")}
             >
               Order now
             </button>
@@ -48,7 +48,7 @@ const FoodTime = () => {
             <h2>See Our Dinner Menu</h2>
             <button
               className="p-3 text-xl mt-4 rounded bg-yellow-400 hover:bg-black hover:text-white font-bold"
-              onClick={handleClick}
+              onClick={() => handleClick("dinner")}
             >
               Order now
             </button>
