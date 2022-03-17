@@ -30,7 +30,7 @@ const MakeAdmin = () => {
     e.preventDefault();
   };
   return (
-    <div className="bg-gray-900" style={{ height: "70vh" }}>
+    <div className="bg-gray-900" style={{ height: "85vh" }}>
       <div className="py-24  w-3/5 mx-auto text-center">
         <h2 className="text-3xl font-bold mb-3 text-white">Make an Admin</h2>
         <form onSubmit={handleAdminSubmit}>

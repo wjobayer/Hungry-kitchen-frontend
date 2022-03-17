@@ -21,7 +21,7 @@ import CourierForm from "./components/PartnerSection/CourierForm";
 import RestaurantForm from "./components/PartnerSection/RestaurantForm";
 import Rider from "./pages/Rider";
 // import ReviewPage from "./pages/ReviewPage";
-// import AboutPage from "./pages/AboutPage";
+import AboutPage from "./pages/AboutPage";
 // import UserProfile from "./pages/UserProfile";
 import PopularResturants from "./components/PopularResturants/PopularResturants";
 
@@ -51,7 +51,7 @@ const AppRouter = () => {
         <Route path="/maps" element={<Maps />} />
         <Route path="category" element={<FoodCategories />} />
         {/* <Route path="/reviewPage" element={<ReviewPage />} /> */}
-        {/* <Route path="/aboutPage" element={<AboutPage />} /> */}
+        <Route path="/aboutPage" element={<AboutPage />} />
         {/* <Route path="/userProfile" element={<UserProfile />} /> */}
       </Routes>
     </Router>
