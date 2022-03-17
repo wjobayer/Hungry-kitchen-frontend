@@ -12,8 +12,8 @@ const AboutUs = () => {
                 </div>
                <h2 style={{marginTop:'-150px',marginBottom:'150px'}} className='text-3xl font-bold flex justify-center'>ABout Us</h2>
 
-              <div className='flex container  justify-center'>
-                  <img src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about01.jpg" alt="" />
+              <div className='flex container justify-center'>
+                  <img className='about-img1  ' src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about01.jpg" alt="" />
                   <div className='ml-20'>
                         <p style={{color:'#F43127'}} className='text-1xl font-bold mb-5'>PANPIE HISTORY</p>
                         <p className='text-3xl font-bold mb-5'>Order Food, Get Instant Delivery<br />
@@ -22,10 +22,10 @@ const AboutUs = () => {
                   </div>
               </div>
               <div style={{alignItems: 'flex-end'}} className='flex justify-evenly mt-8 mb-20'>
-                  <img src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/shape24.png" alt="" />
-                  <img src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about02.jpg" alt="" />
-                  <img src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about03.jpg" alt="" />
-                  <img src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/shape23.png" alt="" />
+                  <img className= ' responsive-img about-img1'  src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/shape24.png" alt="" />
+                  <img className='responsive-img  about-img1  ' src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about02.jpg" alt="" />
+                  <img className='responsive-img '  src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/about03.jpg" alt="" />
+                  <img className='responsive-img  about-img1' src="https://radiustheme.com/demo/wordpress/themes/panpie/wp-content/uploads/2021/01/shape23.png" alt="" />
               </div>
              
                
