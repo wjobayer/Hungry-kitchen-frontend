@@ -104,7 +104,7 @@ const useFirebase = () => {
 
   // isAdmin
   useEffect(() => {
-    fetch(`https://serene-garden-71214.herokuapp.com/users/${user.email}`)
+    fetch(`https://hungry-kitchen-app.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -112,7 +112,7 @@ const useFirebase = () => {
   // send login data to mongodb
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://serene-garden-71214.herokuapp.com/users", {
+    fetch("https://hungry-kitchen-app.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

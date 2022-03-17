@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
@@ -196,7 +197,7 @@ const Register = () => {
             <div className="text-center pt-12 pb-12">
               <p>
                 Already have an account?{" "}
-                <a href="#" className="underline font-semibold">
+                <a href="/login" className="underline font-semibold">
                   Login here.
                 </a>
               </p>

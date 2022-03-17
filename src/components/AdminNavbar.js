@@ -58,9 +58,9 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
           </h4>
 
           <div className="flex">
-            <div class="mb-4">
+            <div className="mb-4">
               <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-2 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-2 leading-tight focus:outline-none focus:shadow-outline"
                 id="username"
                 type="text"
                 placeholder="Search"
