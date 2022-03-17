@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import HeaderBlack from "../../common/HeaderBlack";
 import useFirebase from "../../Hooks/useFirebase";
 import { addToCart } from "../../redux/slices/foodSlice";
+import OfferModal from "../OfferModal";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
@@ -99,6 +100,7 @@ const FoodDetails = () => {
   return (
     <>
       <HeaderBlack />
+      <OfferModal />
       <div className="container">
         <div className="grid grid-cols md:grid-cols-2">
           <div>

@@ -23,10 +23,14 @@ const SingleCard = ({ food, loading, layout }) => {
     setLongitude(position.coords.longitude);
     console.log(position);
   }
+  const [closeTimeOut, setCloseTimeOut] = useState(0);
+  if (closeTimeOut === 0) {
+    setTimeout(() => {
+      getLocation();
+      setCloseTimeOut(1);
+    }, 100);
+  }
 
-  setTimeout(() => {
-    getLocation();
-  }, 100);
   const [counter, setCounter] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();

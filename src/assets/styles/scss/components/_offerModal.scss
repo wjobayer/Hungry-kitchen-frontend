@@ -1,0 +1,9 @@
+.modal-content {
+  @apply relative w-[60rem] -ml-20 rounded rounded-xl h-[20rem];
+  background: rgba(255, 255, 255, 0.83);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+  border: 1px solid rgba(255, 255, 255, 0.47);
+}

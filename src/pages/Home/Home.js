@@ -10,6 +10,7 @@ import Header from "../../common/Header";
 import Footer from "../../common/Footer";
 import FoodTime from "../../components/FoodTime/FoodTime";
 import useFirebase from "../../Hooks/useFirebase";
+import OfferModal from "../../components/OfferModal";
 const Home = () => {
   const { role } = useFirebase();
   console.log("my role of the website:" + role);
@@ -17,6 +18,7 @@ const Home = () => {
     <div>
       <Header></Header>
       <HeroSection></HeroSection>
+      <OfferModal />
       <FoodTime />
       {/* <PopularResturants /> */}
       <ProductCard />
