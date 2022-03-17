@@ -11,6 +11,7 @@ import HeaderBlack from "../../common/HeaderBlack";
 
 const FoodCategories = () => {
   const [category, setCategory] = useState("indian");
+  const [search, setSearch] = useState("");
 
   //pagination stuff-----------------------------------
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +21,10 @@ const FoodCategories = () => {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-
+  const handleSearch = (e) => {
+    navigate(`/search/${search}`);
+    e.preventDefault();
+  };
   const handleDetails = (id) => {
     //push id to the useparams
     navigate(`/details/${id}`);
@@ -95,21 +99,23 @@ const FoodCategories = () => {
         {/* --------------------------------------- */}
         <div className="grid md:grid-cols-[1fr,_2fr] gap-4">
           <div>
-            <form className="flex">
+            <form onSubmit={handleSearch} className="flex">
               <input
                 type="text"
                 name=""
                 id=""
+                value={search}
+                required
+                onChange={(e) => setSearch(e.target.value)}
                 className="placeholder:italic placeholder:text-slate-400 border border-gray-300 px-7 py-3 rounded"
-                placeholder="search here"
+                placeholder="search here....."
               />
-              <Link to="/search">
-                <input
-                  type="submit"
-                  value="search"
-                  className="bg-yellow-400 px-7 py-3 rounded"
-                />
-              </Link>
+
+              <input
+                type="submit"
+                value="search"
+                className="bg-yellow-400 px-7 py-3 rounded w-60"
+              />
             </form>
 
             <div className="food-category mb-8">

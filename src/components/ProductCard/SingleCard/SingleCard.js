@@ -9,6 +9,7 @@ import useFirebase from "../../../Hooks/useFirebase";
 
 const SingleCard = ({ food, loading, layout }) => {
   //Location tracking from order
+  const offer = 10;
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   function getLocation() {
@@ -87,6 +88,9 @@ const SingleCard = ({ food, loading, layout }) => {
           : "single-card"
       }
     >
+      <div className="bg-red-500 text-white font-bold absolute -right-4 top-4 px-2 py-1">
+        -{offer}%
+      </div>
       <div className="w-full">
         <img
           className="rounded rounded-[50%] object-cover h-60 p-2 w-60 mx-auto"
@@ -108,7 +112,14 @@ const SingleCard = ({ food, loading, layout }) => {
           >
             <AiOutlineShoppingCart className="text-lg mr-2" /> Order now !
           </div>
-          <p className="text-xl font-bold text-red-500">${food.price}</p>
+          <div>
+            <p className="text-xl text-gray-400">
+              <del> ${food.price} </del>
+            </p>
+            <p className="text-xl font-bold text-red-500">
+              ${(food.price - (food.price * offer) / 100).toFixed(2)}
+            </p>
+          </div>
         </div>
 
         <div className="flex justify-center">

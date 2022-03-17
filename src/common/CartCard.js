@@ -7,15 +7,12 @@ const CartCard = ({ cart }) => {
   const Swal = require("sweetalert2");
   const dispatch = useDispatch();
   // const cartProducts = useSelector((state) => state.addToCart);
-  const [counter, setCounter] = useState(cart.cartQuantity);
   const decreaseCounter = () => {
-    if (counter > 1) {
-      setCounter(counter - 1);
+    if (cart.cartQuantity > 1) {
       dispatch(cartQuantity({ ...cart, cartQuantity: cart.cartQuantity - 1 }));
     }
   };
   const increaseCounter = () => {
-    setCounter((prev) => counter + 1);
     dispatch(cartQuantity({ ...cart, cartQuantity: cart.cartQuantity + 1 }));
   };
   const removeHandler = (cart) => {

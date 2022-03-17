@@ -58,13 +58,12 @@ const CartCalculation = () => {
             <td className="border p-4 w-full">
               <form className="col-span-2">
                 <div className="flex justify-between items-center">
-                  <label htmlFor="home_delevery" className="mr-4">
-                    Home delevery: $ 5
-                  </label>
+                  <label htmlFor="home_delevery">Home delevery: $ 5</label>
                   <input
                     onClick={() => setDeleveryFee(5)}
                     type="radio"
                     name="home_delevery"
+                    className="w-10"
                     id=""
                   />
                 </div>
@@ -77,6 +76,7 @@ const CartCalculation = () => {
                     type="radio"
                     name="home_delevery"
                     id=""
+                    className="w-10"
                     defaultChecked
                   />
                 </div>
@@ -90,12 +90,18 @@ const CartCalculation = () => {
         <p className="text-lg font-bold">${total.toFixed(2)}</p>
       </div>
       <div className="flex justify-center">
-        <button
-          className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
-          onClick={handleCheckout}
-        >
-          Proceed to checkout
-        </button>
+        {cartProducts.length === 0 ? (
+          <button className="py-2 px-4 border rounded mr-3 font-bold bg-gray-100 hover:bg-gray-200 text-gray-400 border-gray-300 duration-100 flex items-center">
+            Proceed to checkout
+          </button>
+        ) : (
+          <button
+            className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
+            onClick={handleCheckout}
+          >
+            Proceed to checkout
+          </button>
+        )}
       </div>
     </div>
   );

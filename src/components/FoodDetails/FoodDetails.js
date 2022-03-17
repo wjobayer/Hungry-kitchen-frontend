@@ -10,6 +10,7 @@ import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
 const FoodDetails = () => {
   //Location tracking from order
+  const offer = 15;
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   function getLocation() {
@@ -106,9 +107,15 @@ const FoodDetails = () => {
           {/* details grid section  */}
           <div className="h-full">
             <h3 className="text-3xl font-bold">{food.foodName}</h3>
-            <h3 className="text-3xl font-bold my-3 text-red-500">
-              ${food.price}
-            </h3>
+            <div className="flex">
+              <p className="text-3xl text-gray-400 mr-4">
+                <del> ${food.price} </del>
+              </p>
+              <p className="text-3xl font-bold text-red-500 mr-4">
+                ${(food.price - (food.price * offer) / 100).toFixed(2)}
+              </p>
+              <p className="text-red-500 font-bold">(-{offer}% off)</p>
+            </div>
             <div className="flex my-2">
               <p className="text-2xl mr-3">
                 <span className="font-bold">Category:</span> {food.type}
