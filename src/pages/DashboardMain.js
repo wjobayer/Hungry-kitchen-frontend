@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import '../assets/styles/tailwind.css';
 import Footer from '../common/Footer';
 import AddFood from "../components/AddFood/AddFood";
+import UpdateFood from "../components/UpdateFood/UpdateFood";
 import Sidebar from '../components/Sidebar';
 import Maps from '../pages/Maps';
 import Rider from "../pages/Rider";
@@ -20,6 +21,7 @@ const DashboardMain = () => {
             <Route path='settings' element={<Settings></Settings>}/>
             <Route path='rider' element={<Rider></Rider>}/>
             <Route path='addFood' element={<AddFood></AddFood>}/>
+            <Route path='addFood/:id' element={<UpdateFood></UpdateFood>}/>
             <Route path='tables' element={<Tables></Tables>}/>
             <Route path='maps' element={<Maps></Maps>}/>
             <Route path='/' element={<Dashboard></Dashboard>}/>
