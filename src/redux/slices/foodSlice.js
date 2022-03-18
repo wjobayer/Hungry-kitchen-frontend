@@ -17,6 +17,7 @@ export const foodSlice = createSlice({
           ...payload,
           cartQuantity: payload.cartQuantity,
           totalPrice: payload.price * payload.cartQuantity,
+          orderStatus: "pending",
         };
         state.addToCart.push(cartItem);
       }

@@ -12,6 +12,7 @@ import FoodCategories from "./components/FoodCategories/FoodCategories";
 import FoodDetails from "./components/FoodDetails/FoodDetails";
 import NotFound from "./components/NotFound/NotFound";
 import SearchResult from "./components/SearchResult";
+import TestCompo from "./components/TestCompo";
 import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
 import Login from "./pages/LoginRegister/Login";
@@ -45,6 +46,7 @@ const AppRouter = () => {
         <Route path="*" element={<NotFound />} />
         {/* <Sidebar /> */}
 
+        <Route path="/test" element={<TestCompo />} />
         <Route path="/dashboard/*" element={<DashboardMain />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/settings" element={<Settings />} />
