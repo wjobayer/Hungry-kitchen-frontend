@@ -19,7 +19,7 @@ const HeaderBlack = () => {
 
   const logOutButton = () => {
     logout();
-    navigate("/login");
+    navigate("/home");
   };
 
   return (
