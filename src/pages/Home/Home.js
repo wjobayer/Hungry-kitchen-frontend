@@ -11,6 +11,7 @@ import Footer from "../../common/Footer";
 import FoodTime from "../../components/FoodTime/FoodTime";
 import useFirebase from "../../Hooks/useFirebase";
 import OfferModal from "../../components/OfferModal";
+// import PopularResturants from "../../components/PopularResturants/PopularResturants";
 const Home = () => {
   const { role } = useFirebase();
   console.log("my role of the website:" + role);

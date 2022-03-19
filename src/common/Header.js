@@ -10,20 +10,21 @@ import Drawer from "./Drawer";
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const addToCart = useSelector((state) => state.addToCart)
-  const { user, admin, isLoading, authError, registerUser, loginUser, logout } = useFirebase()
+  const addToCart = useSelector((state) => state.addToCart);
+  const { user, admin, isLoading, authError, registerUser, loginUser, logout } =
+    useFirebase();
   console.log(user.email);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const logOutButton = () => {
     logout();
-    navigate('/login')
-  }
+    navigate("/home");
+  };
 
   return (
-    <div className="header">
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3  mb-3">
+    <div className="header ">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-4 mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <NavLink
@@ -58,7 +59,7 @@ const Header = () => {
                 <NavLink
                   to="/"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">Home</span>
                 </NavLink>
@@ -68,7 +69,7 @@ const Header = () => {
                 <NavLink
                   to="/category"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">All Items</span>
                 </NavLink>
@@ -78,7 +79,7 @@ const Header = () => {
                 <NavLink
                   to="/allrestaurant"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">All Restaurant</span>
                 </NavLink>
@@ -88,25 +89,18 @@ const Header = () => {
                 <NavLink
                   to="/search"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">Restaurant Search</span>
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/contact"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                >
-                  <span className="ml-2">Contact Us</span>
-                </NavLink>
-              </li>
+
+
               <li className="nav-item">
                 <NavLink
                   to="/about"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">About Us</span>
                 </NavLink>
@@ -121,31 +115,31 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-            <button
-                className=" text-white rounded px-2 py-1"
-                onClick={() => setIsOpen(true)}
-               >
-              <span className="text-2xl"><AiOutlineShoppingCart /></span> 
-              </button>
-              <span className="text-white align-top ">{addToCart.length} </span>
-                
+                <button
+                  className=" text-white rounded px-2 py-1"
+                  onClick={() => setIsOpen(true)}
+                >
+                  <span className="text-2xl"><AiOutlineShoppingCart /></span>
+                </button>
+                <span className="text-white align-top ">{addToCart.length} </span>
+
               </li>
 
               <li className="nav-item">
                 <NavLink
                   to="/cart"
                   className="px-3 py-2 flex items-center font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 shadow-md"
                 >
-
-                  <span className="text-2xl "><AiOutlineBell /></span>
+                  <span className="text-2xl ">
+                    <AiOutlineBell />
+                  </span>
                 </NavLink>
               </li>
 
               <li className="nav-item">
-
-                {
-                  user.email ? <div className="flex items-center justify-center py-2 px-4">
+                {user.email ? (
+                  <div className="flex items-center justify-center py-2 px-4">
                     <div className="relative inline-block text-left">
                       <Menu>
                         {({ open }) => (
@@ -181,7 +175,9 @@ const Header = () => {
                                 className="absolute right-0 w-56 mt-2 origin-top-right bg-black border border-gray-500 divide-y divide-gray-800 text-white rounded-md shadow-lg outline-none"
                               >
                                 <div className="px-4 py-3">
-                                  <p className="text-sm leading-5">Signed in as</p>
+                                  <p className="text-sm leading-5">
+                                    Signed in as
+                                  </p>
                                   <p className="text-sm font-medium leading-5 text-white break-all">
                                     {user.email}
                                   </p>
@@ -204,8 +200,8 @@ const Header = () => {
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <a
-                                        href="#support"
+                                      <Link
+                                        to="/contact"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
                                       // className={`${active
                                       //   ? "bg-gray-100 text-gray-900"
@@ -213,11 +209,9 @@ const Header = () => {
                                       //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Support
-                                      </a>
+                                      </Link>
                                     )}
                                   </Menu.Item>
-
-
                                 </div>
 
                                 <div className="py-1">
@@ -243,25 +237,26 @@ const Header = () => {
                         )}
                       </Menu>
                     </div>
-                  </div> : <a
+                  </div>
+                ) : (
+                  <a
                     className="px-3 py-2 flex  items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="/login"
                   >
-                    <NavLink to='/register' className="leading-lg rounded text-black bg-yellow-400 px-5 py-3 hover:bg-transparent hover:outline hover:text-white hover:outline-offset-2 hover:outline-2">
+                    <NavLink
+                      to="/register"
+                      className="leading-lg rounded text-black bg-yellow-400 px-5 py-3 hover:bg-transparent hover:outline hover:text-white hover:outline-offset-2 hover:outline-2"
+                    >
                       <strong className="animate-pulse">Login/Register</strong>
                     </NavLink>
                   </a>
-                }
-
-
+                )}
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-       
-      </Drawer>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}></Drawer>
     </div>
   );
 };

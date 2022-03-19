@@ -9,6 +9,7 @@ import OfferModal from "../OfferModal";
 import PaginationCompo from "../ProductCard/PaginationCompo";
 import SingleCard from "../ProductCard/SingleCard/SingleCard";
 import Footer from "./../../common/Footer";
+
 const FoodDetails = () => {
   //Location tracking from order
   const offer = 15;

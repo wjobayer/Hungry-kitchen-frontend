@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const ParallaxSection = () => {
   return (
     <div className="py-20">
@@ -42,9 +43,11 @@ const ParallaxSection = () => {
               Read More
             </button>
             <span className="ml-7">
-              <button className=" px-6  bg-black p-4 hover:bg-yellow-400 hover:text-black text-white font-bold rounded">
-                Search Now
-              </button>
+              <Link to='/search'>
+                <button className=" px-6  bg-black p-4 hover:bg-yellow-400 hover:text-black text-white font-bold rounded">
+                  Search Now
+                </button>
+              </Link>
             </span>
           </div>
         </div>

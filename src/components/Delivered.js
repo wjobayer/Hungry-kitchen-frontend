@@ -1,9 +1,9 @@
-import Card from '@material-tailwind/react/Card';
-import CardBody from '@material-tailwind/react/CardBody';
-import CardHeader from '@material-tailwind/react/CardHeader';
-import Image from '@material-tailwind/react/Image';
-import { useEffect, useState } from 'react';
-import { GiCampCookingPot } from 'react-icons/gi';
+import Card from "@material-tailwind/react/Card";
+import CardBody from "@material-tailwind/react/CardBody";
+import CardHeader from "@material-tailwind/react/CardHeader";
+import Image from "@material-tailwind/react/Image";
+import { useEffect, useState } from "react";
+import { GiCampCookingPot } from "react-icons/gi";
 export default function Delivered() {
   const [product, setProduct] = useState([]);
   const [control, setControl] = useState(false);
@@ -24,7 +24,6 @@ export default function Delivered() {
         if (data.deletedCount) {
           window.confirm("Do you really want to Delete?");
           setControl(!control);
-
         }
       });
     console.log(id);

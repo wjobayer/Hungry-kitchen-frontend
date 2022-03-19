@@ -1,12 +1,16 @@
+import { useEffect, useState } from "react";
 import { BiDollarCircle } from "react-icons/bi";
 import { FcSalesPerformance } from "react-icons/fc";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { VscStarFull } from "react-icons/vsc";
-import MapExample from "../components/MapExample";
+import ProfileCard from "../components/ProfileCard";
+import SettingsForm from "../components/SettingsForm";
+import UserProfileForm from "../components/UserProfileForm";
 
-export default function Dashboard() {
+const UserProfile = () => {
   return (
     <>
+      <div className="bg-blue-500 px-3 md:px-8 h-40" />
       <div className="bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto">
         <div className="container mx-auto max-w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
@@ -70,13 +74,19 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="px-3 md:px-8 h-auto -mt-28 mb-16">
+      <div className="px-3 md:px-8 h-auto -mt-24">
         <div className="container mx-auto max-w-full">
-          <div className="grid grid-cols-1 px-4 h-[600px]">
-            <MapExample />
+          <div className="grid grid-cols-1 xl:grid-cols-6">
+            <div className="xl:col-start-1 xl:col-end-5 px-4 mb-16">
+              <UserProfileForm />
+            </div>
+            <div className="xl:col-start-5 xl:col-end-7 px-4 mb-16 mt-14">
+              <ProfileCard />
+            </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
+export default UserProfile;

@@ -76,19 +76,23 @@ export default function CardTable() {
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         <div className="flex">
                           <div className="w-24 h-24 rounded-full flex">
-                            <Image className="self-center" src={food.foodImage} alt="..." />
+                            <Image
+                              className="self-center"
+                              src={food.foodImage}
+                              alt="..."
+                            />
                           </div>
                         </div>
                       </th>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         <button
-                          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                           onClick={() => setEdit(true)}
                         >
                           Edit
                         </button>
                         <button
-                          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
+                          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
                           onClick={() => setShowModal(true)}
                         >
                           Delete
@@ -119,39 +123,39 @@ export default function CardTable() {
                                     // onSubmit={handleSubmit}
                                     enctype="multipart/form-data"
                                   >
-                                    <div class="flex flex-col mb-2">
+                                    <div className="flex flex-col mb-2">
                                       <label
-                                        class="add-food-label"
+                                        className="add-food-label"
                                         htmlFor="foodName"
                                       >
                                         Food Name
                                       </label>
                                       <input
-                                        class="add-food-input"
+                                        className="add-food-input"
                                         type="text"
                                         name="foodName"
                                         id="foodName"
                                         // onChange={(e) => handleChange(e)}
                                       />
                                     </div>
-                                    <div class="flex flex-col mb-2">
+                                    <div className="flex flex-col mb-2">
                                       <label
-                                        class="add-food-label"
+                                        className="add-food-label"
                                         htmlFor="foodPrice"
                                       >
                                         Food Price
                                       </label>
                                       <input
-                                        class="add-food-input"
+                                        className="add-food-input"
                                         type="number"
                                         name="foodPrice"
                                         id="foodPrice"
                                         // onChange={(e) => handleChange(e)}
                                       />
                                     </div>
-                                    <div class="flex flex-col mb-2">
+                                    <div className="flex flex-col mb-2">
                                       <label
-                                        class="mb-2 font-bold text-lg text-gray-900"
+                                        className="mb-2 font-bold text-lg text-gray-900"
                                         htmlFor="foodCategory"
                                       >
                                         Food Category
@@ -170,9 +174,9 @@ export default function CardTable() {
                                         <option value="Dessert">Dessert</option>
                                       </select>
                                     </div>
-                                    <div class="flex flex-col mb-2">
+                                    <div className="flex flex-col mb-2">
                                       <label
-                                        class="mb-2 font-bold text-lg text-gray-900"
+                                        className="mb-2 font-bold text-lg text-gray-900"
                                         htmlFor="foodCategory"
                                       >
                                         Food Area
@@ -194,24 +198,24 @@ export default function CardTable() {
                                         </option>
                                       </select>
                                     </div>
-                                    <div class="flex flex-col mb-2">
+                                    <div className="flex flex-col mb-2">
                                       <label
-                                        class="add-food-label"
+                                        className="add-food-label"
                                         htmlFor="foodImage"
                                       >
                                         Food Image
                                       </label>
                                       <input
-                                        class="add-food-input"
+                                        className="add-food-input"
                                         type="file"
                                         name="foodImage"
                                         id="foodImage"
                                         // onChange={handleImage}
                                       />
                                     </div>
-                                    <div class="flex flex-col mb-2">
+                                    <div className="flex flex-col mb-2">
                                       <label
-                                        class="add-food-label"
+                                        className="add-food-label"
                                         htmlFor="foodDescription"
                                       >
                                         Food Description
@@ -271,16 +275,16 @@ export default function CardTable() {
                                     </button>
                                   </div>
                                   {/*body*/}
-                                  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                                    <div class="mb-4">
+                                  <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                    <div className="mb-4">
                                       <label
-                                        class="block text-gray-700 text-sm font-bold mb-2"
+                                        className="block text-gray-700 text-sm font-bold mb-2"
                                         for="username"
                                       >
                                         Plaese Input This Food Code To Confirm
                                       </label>
                                       <input
-                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         id="username"
                                         type="text"
                                         placeholder="Food Code"

@@ -1,0 +1,54 @@
+.single-review-item {
+  @apply mx-2 p-6 relative mb-6;
+  background-color: #f7fafb;
+  border-radius: 5px;
+  transition: var(--transition);
+  p {
+    @apply text-base mb-0;
+  }
+  &:hover {
+    background-color: #eef9ff;
+  }
+  &__ratting {
+    @apply flex mt-3 mb-3;
+    li {
+      svg {
+        @apply text-2xl text-yellow-400;
+      }
+    }
+  }
+  &__info {
+    @apply relative mt-6;
+    padding-left: 75px;
+    img {
+      @apply inline-block absolute left-0 top-0;
+      height: 58px;
+      width: 58px;
+      border-radius: 50%;
+    }
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--mainColor);
+    }
+    span {
+      font-size: 14px;
+      color: var(--paragraphColor);
+    }
+  }
+  &__quote-icon {
+    @apply absolute bottom-8 right-9;
+    svg {
+      @apply text-red-300 text-3xl;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-title-warp {
+    @apply text-center;
+    h2 {
+      font-size: 22px !important;
+    }
+  }
+}
