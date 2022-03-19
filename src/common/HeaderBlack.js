@@ -13,7 +13,7 @@ const HeaderBlack = () => {
   const addToCart = useSelector((state) => state.addToCart);
 
   const { user, logout } = useFirebase();
-  console.log(user.email);
+  // console.log(user.email);
 
   const navigate = useNavigate();
 
@@ -190,10 +190,11 @@ const HeaderBlack = () => {
                                     {({ active }) => (
                                       <Link
                                         to="/dashboard"
-                                        className={`${active
+                                        className={`${
+                                          active
                                             ? "bg-gray-100 text-gray-900"
                                             : "text-gray-700"
-                                          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Dashboard
                                       </Link>
@@ -203,10 +204,11 @@ const HeaderBlack = () => {
                                     {({ active }) => (
                                       <a
                                         href="#support"
-                                        className={`${active
+                                        className={`${
+                                          active
                                             ? "bg-gray-100 text-gray-900"
                                             : "text-gray-700"
-                                          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Support
                                       </a>
@@ -220,10 +222,11 @@ const HeaderBlack = () => {
                                       <a
                                         onClick={logOutButton}
                                         href="#sign-out"
-                                        className={`${active
+                                        className={`${
+                                          active
                                             ? "bg-gray-100 text-gray-900"
                                             : "text-gray-700"
-                                          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Sign out
                                       </a>
@@ -255,8 +258,7 @@ const HeaderBlack = () => {
           </div>
         </div>
       </nav>
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-      </Drawer>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}></Drawer>
     </div>
   );
 };

@@ -95,7 +95,6 @@ const Header = () => {
                 </NavLink>
               </li>
 
-
               <li className="nav-item">
                 <NavLink
                   to="/about"
@@ -109,7 +108,7 @@ const Header = () => {
                 <NavLink
                   to="/dashboard/settings"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <span className="ml-2">Profile</span>
                 </NavLink>
@@ -119,10 +118,13 @@ const Header = () => {
                   className=" text-white rounded px-2 py-1"
                   onClick={() => setIsOpen(true)}
                 >
-                  <span className="text-2xl"><AiOutlineShoppingCart /></span>
+                  <span className="text-2xl">
+                    <AiOutlineShoppingCart />
+                  </span>
                 </button>
-                <span className="text-white align-top ">{addToCart.length} </span>
-
+                <span className="text-white align-top ">
+                  {addToCart.length}{" "}
+                </span>
               </li>
 
               <li className="nav-item">
@@ -189,10 +191,10 @@ const Header = () => {
                                       <Link
                                         to="/dashboard"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
-                                      // className={`${active
-                                      //   ? "bg-gray-100 text-gray-900"
-                                      //   : "text-white"
-                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        // className={`${active
+                                        //   ? "bg-gray-100 text-gray-900"
+                                        //   : "text-white"
+                                        //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Dashboard
                                       </Link>
@@ -203,10 +205,10 @@ const Header = () => {
                                       <Link
                                         to="/contact"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-200 hover:text-black"
-                                      // className={`${active
-                                      //   ? "bg-gray-100 text-gray-900"
-                                      //   : "text-gray-700"
-                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        // className={`${active
+                                        //   ? "bg-gray-100 text-gray-900"
+                                        //   : "text-gray-700"
+                                        //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Support
                                       </Link>
@@ -221,10 +223,10 @@ const Header = () => {
                                         onClick={logOutButton}
                                         href="#sign-out"
                                         className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-400 hover:text-black"
-                                      // className={`${active
-                                      //   ? "bg-gray-100 text-gray-900"
-                                      //   : "text-gray-700"
-                                      //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                        // className={`${active
+                                        //   ? "bg-gray-100 text-gray-900"
+                                        //   : "text-gray-700"
+                                        //   } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                                       >
                                         Sign out
                                       </a>

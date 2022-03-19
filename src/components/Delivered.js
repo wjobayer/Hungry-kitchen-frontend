@@ -10,9 +10,9 @@ export default function Delivered() {
   const [showModal, setShowModal] = useState(false);
   const [Deliver, setDeliver] = useState(false);
   useEffect(() => {
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian')
-      .then(res => res.json())
-      .then(data => setProduct(data.meals))
+    fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian")
+      .then((res) => res.json())
+      .then((data) => setProduct(data.meals));
   }, [control]);
 
   const handleDelete = (id) => {
@@ -26,16 +26,16 @@ export default function Delivered() {
           setControl(!control);
         }
       });
-    console.log(id);
   };
   return (
     <Card>
       <CardHeader className="bg-orange-500" contentPosition="none">
         <div className="w-full flex items-center justify-between">
-
-          <div className='inline-flex'>
+          <div className="inline-flex">
             <h2 className="text-white text-2xl">Delivered</h2>
-            <h2 className="text-white text-2xl ml-8"><GiCampCookingPot /></h2>
+            <h2 className="text-white text-2xl ml-8">
+              <GiCampCookingPot />
+            </h2>
           </div>
           {/* <Button
                         color="transparent"
@@ -64,33 +64,28 @@ export default function Delivered() {
               </tr>
             </thead>
             {product?.map((product, index) => (
-              <tbody className='hover:bg-gray-200'>
+              <tbody className="hover:bg-gray-200">
                 <tr>
                   <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                     {product.strMeal}
                     <div className="flex">
                       <div className="w-24 h-24 rounded-full border-2 border-white">
-                        <Image
-                          src={product.strMealThumb}
-                          rounded
-                          alt="..."
-                        />
+                        <Image src={product.strMealThumb} rounded alt="..." />
                       </div>
                     </div>
                   </th>
+                  <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left"></th>
                   <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-
-                  </th>
-                  <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setDeliver(true)}>
+                    <button
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      onClick={() => setDeliver(true)}
+                    >
                       Done
                     </button>
 
                     {Deliver ? (
                       <>
-                        <div
-                          className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-                        >
+                        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                           <div className="relative w-auto my-6 mx-auto max-w-3xl">
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-md shadow-gray-400 relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -109,38 +104,39 @@ export default function Delivered() {
                                 </button>
                               </div>
                               {/*body*/}
-                              <form className='px-16'
+                              <form
+                                className="px-16"
                                 // onSubmit={handleSubmit}
                                 enctype="multipart/form-data"
                               >
-                                <div class="flex flex-col mb-2">
-                                  {/* <label class="add-food-label" htmlFor="foodName">
+                                <div className="flex flex-col mb-2">
+                                  {/* <label className="add-food-label" htmlFor="foodName">
                                     Food Name
                                   </label> */}
                                   <input
-                                    class="add-food-input"
+                                    className="add-food-input"
                                     type="text"
                                     name="foodName"
                                     id="foodName"
-                                  // onChange={(e) => handleChange(e)}
+                                    // onChange={(e) => handleChange(e)}
                                   />
                                 </div>
-                                <div class="flex flex-col mb-2">
-                                  {/* <label class="add-food-label" htmlFor="foodPrice">
+                                <div className="flex flex-col mb-2">
+                                  {/* <label className="add-food-label" htmlFor="foodPrice">
                                     Food Price
                                   </label> */}
                                   <input
-                                    placeholder='Food Price'
-                                    class="add-food-input"
+                                    placeholder="Food Price"
+                                    className="add-food-input"
                                     type="number"
                                     name="foodPrice"
                                     id="foodPrice"
-                                  // onChange={(e) => handleChange(e)}
+                                    // onChange={(e) => handleChange(e)}
                                   />
                                 </div>
-                                <div class="flex flex-col mb-2">
+                                <div className="flex flex-col mb-2">
                                   <label
-                                    class="mb-2 font-bold text-lg text-gray-900"
+                                    className="mb-2 font-bold text-lg text-gray-900"
                                     htmlFor="foodCategory"
                                   >
                                     Food Category
@@ -149,7 +145,7 @@ export default function Delivered() {
                                     name="foodCategory"
                                     id="category"
                                     className="add-food-input"
-                                  // onChange={(e) => handleChange(e)}
+                                    // onChange={(e) => handleChange(e)}
                                   >
                                     <option value="category">category</option>
                                     <option value="Chicken">Chicken</option>
@@ -157,9 +153,9 @@ export default function Delivered() {
                                     <option value="Dessert">Dessert</option>
                                   </select>
                                 </div>
-                                <div class="flex flex-col mb-2">
+                                <div className="flex flex-col mb-2">
                                   <label
-                                    class="mb-2 font-bold text-lg text-gray-900"
+                                    className="mb-2 font-bold text-lg text-gray-900"
                                     htmlFor="foodCategory"
                                   >
                                     Food Area
@@ -168,29 +164,31 @@ export default function Delivered() {
                                     name="foodArea"
                                     id="Area"
                                     className="add-food-input"
-                                  // onChange={(e) => handleChange(e)}
+                                    // onChange={(e) => handleChange(e)}
                                   >
                                     <option value="Area">Area</option>
                                     <option value="Chinese">Chinese</option>
                                     <option value="Indian">Indian</option>
                                     <option value="Canadian">Canadian</option>
-                                    <option value="Portuguese">Portuguese</option>
+                                    <option value="Portuguese">
+                                      Portuguese
+                                    </option>
                                   </select>
                                 </div>
-                                <div class="flex flex-col mb-2">
-                                  {/* <label class="add-food-label" htmlFor="foodImage">
+                                <div className="flex flex-col mb-2">
+                                  {/* <label className="add-food-label" htmlFor="foodImage">
                 Food Image
               </label> */}
                                   <input
-                                    class="add-food-input"
+                                    className="add-food-input"
                                     type="file"
                                     name="foodImage"
                                     id="foodImage"
-                                  // onChange={handleImage}
+                                    // onChange={handleImage}
                                   />
                                 </div>
-                                <div class="flex flex-col mb-2">
-                                  {/* <label class="add-food-label" htmlFor="foodDescription">
+                                <div className="flex flex-col mb-2">
+                                  {/* <label className="add-food-label" htmlFor="foodDescription">
                 Food Description
               </label> */}
                                   <textarea
@@ -199,7 +197,7 @@ export default function Delivered() {
                                     id="foodDescription"
                                     cols="30"
                                     rows="2"
-                                  // onChange={(e) => handleChange(e)}
+                                    // onChange={(e) => handleChange(e)}
                                   ></textarea>
                                 </div>
                               </form>
@@ -229,9 +227,7 @@ export default function Delivered() {
                     ) : null}
                     {showModal ? (
                       <>
-                        <div
-                          className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-                        >
+                        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                           <div className="relative w-auto my-6 mx-auto max-w-3xl">
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-md shadow-gray-400 relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -250,12 +246,20 @@ export default function Delivered() {
                                 </button>
                               </div>
                               {/*body*/}
-                              <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                                <div class="mb-4">
-                                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                <div className="mb-4">
+                                  <label
+                                    className="block text-gray-700 text-sm font-bold mb-2"
+                                    for="username"
+                                  >
                                     Plaese Input This Food Code To Confirm
                                   </label>
-                                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Food Code" />
+                                  <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="username"
+                                    type="text"
+                                    placeholder="Food Code"
+                                  />
                                 </div>
                               </form>
 
@@ -285,9 +289,7 @@ export default function Delivered() {
                   </th>
                 </tr>
               </tbody>
-            ))
-
-            }
+            ))}
           </table>
         </div>
       </CardBody>

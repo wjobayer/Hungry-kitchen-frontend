@@ -1,24 +1,26 @@
-import React from 'react';
-import { useLocation, Navigate } from 'react-router-dom';
-import useAuth from '../Hooks/useAuth';
-import useFirebase from '../Hooks/useFirebase';
-
+import React from "react";
+import { useLocation, Navigate } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import useFirebase from "../Hooks/useFirebase";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading, admin } = useFirebase();
   let location = useLocation();
 
   if (isLoading) {
-    return <button type="button" class="bg-indigo-500 ..." disabled>
-      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-
-      </svg>
-      Processing...
-    </button>
+    return (
+      <button type="button" className="bg-indigo-500 ..." disabled>
+        <svg
+          className="animate-spin h-5 w-5 mr-3 ..."
+          viewBox="0 0 24 24"
+        ></svg>
+        Processing...
+      </button>
+    );
   }
 
   if (user.email && admin) {
-    return children
+    return children;
   }
 
   if (user.email) {
@@ -26,7 +28,6 @@ const PrivateRoute = ({ children, ...rest }) => {
   }
 
   return <Navigate to="/login" state={{ from: location }} replace />;
-
 };
 
 export default PrivateRoute;
