@@ -5,7 +5,7 @@ import PaginationCompo from "../ProductCard/PaginationCompo";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { FaListAlt } from "react-icons/fa";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../common/Footer";
 import HeaderBlack from "../../common/HeaderBlack";
 
@@ -37,7 +37,7 @@ const FoodCategories = () => {
     const fetchFoods = async () => {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:5000/mealTime?mealTime=${mealTime}`
+        `https://hungry-kitchen-app.herokuapp.com/mealTime?mealTime=${mealTime}`
       );
       const json = await response.json();
       setFoods(json);
@@ -51,7 +51,7 @@ const FoodCategories = () => {
     const fetchFoods = async () => {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:5000/category?category=portuguese`
+        `https://hungry-kitchen-app.herokuapp.com/category?category=portuguese`
       );
       const json = await response.json();
       setFoods(json);

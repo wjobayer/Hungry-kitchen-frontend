@@ -15,10 +15,12 @@ export const foodSlice = createSlice({
       } else {
         const cartItem = {
           ...payload,
+          oldId: payload._id,
           cartQuantity: payload.cartQuantity,
           totalPrice: payload.price * payload.cartQuantity,
           orderStatus: "pending",
         };
+        // delete cartItem._id;
         state.addToCart.push(cartItem);
       }
     },
