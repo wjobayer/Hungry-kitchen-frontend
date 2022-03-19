@@ -45,7 +45,7 @@ const FoodCategories = () => {
     };
     fetchFoods();
     setCurrentPage(1);
-  }, []);
+  }, [mealTime]);
   // ----------------------------------------------------------
   useEffect(() => {
     const fetchFoods = async () => {
