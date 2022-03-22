@@ -20,7 +20,7 @@ export const foodSlice = createSlice({
           totalPrice: payload.price * payload.cartQuantity,
           orderStatus: "pending",
         };
-        // delete cartItem._id;
+        delete cartItem._id;
         state.addToCart.push(cartItem);
       }
     },
