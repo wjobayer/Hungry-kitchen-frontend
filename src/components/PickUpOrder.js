@@ -33,13 +33,17 @@ export default function PickUpOrder() {
   };
 
   const handleDelete = async (product) => {
-    product.riderStatus = "Pending";
+    product.riderStatus = "Not Accepted";
     const response = await axios.put(
       `http://localhost:5000/orders/${product._id}`,
       product
     );
     if (response.data.modifiedCount) {
-      Swal.fire("Rider Order Accepted", "Your Order Rider Accepted", "success");
+      Swal.fire(
+        "Rider not Accepted",
+        "Your Order Rider is not Accepted",
+        "success"
+      );
       setControl(!control);
     }
   };
