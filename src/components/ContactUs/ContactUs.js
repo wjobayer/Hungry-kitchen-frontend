@@ -121,18 +121,24 @@ const ContactUs = () => {
         <div class="contact-form-wrapper">
                         <form ref={form} onSubmit={sendEmail}>
                             <div class="form-item">
-                            
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        Name
+      </label>
                                 <input className='border py-2 '  type="text" name="name"  required="" placeholder='Name' />
                                
                             </div>
                          
-                            <div class="form-item">
-                            
-                                <input className='border py-2' type="text" name="email" required=""
+                            <div class="form-item my-8">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        Email
+      </label>
+                                <input className='border  py-2' type="text" name="email" required=""
                                 placeholder='Email' />
                                
                             </div>
-                           
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        What's on your mind?
+      </label>
                             <div class="form-item">
                                 <textarea className='border py-2'  name="message" required="" placeholder='Message'></textarea>
                                

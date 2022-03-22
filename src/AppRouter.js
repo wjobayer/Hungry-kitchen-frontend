@@ -17,8 +17,9 @@ import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
+import OrderHistory from "./pages/OrderHistory";
 import Rider from "./pages/Rider";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Payment from "./Payment/Payment";
 
 const AppRouter = () => {
   return (
@@ -30,19 +31,14 @@ const AppRouter = () => {
         <Route path="/details/:id" element={<FoodDetails />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/orderhistory" element={<OrderHistory />} />
+        <Route path="/orderhistory/:orderId" element={<Payment />} />
 
         {/* <Route path="/search" element={<Srch />} /> */}
         <Route path="/search" element={<SearchResult />} />
         <Route path="/search/:searchText" element={<SearchResult />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route
-          path="/contact"
-          element={
-            <PrivateRoute>
-              <ContactUs />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />
         {/* <Sidebar /> */}
 

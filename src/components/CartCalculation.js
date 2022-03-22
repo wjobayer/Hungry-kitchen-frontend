@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { removeAllFromCart } from "../redux/slices/foodSlice";
 
@@ -11,6 +12,7 @@ const CartCalculation = () => {
   }, 0);
   const [deleveryFee, setDeleveryFee] = useState(0);
   const total = deleveryFee + subTotal;
+  console.log(total);
 
   const handleCheckout = () => {
     Swal.fire({
@@ -102,7 +104,12 @@ const CartCalculation = () => {
             Proceed to checkout
           </button>
         )}
+        <NavLink
+                      to="/orderhistory"
+                      className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
+                    >Proceed To Pay</NavLink>
       </div>
+      
     </div>
   );
 };

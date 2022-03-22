@@ -3,6 +3,7 @@ import CardBody from "@material-tailwind/react/CardBody";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import { Chart } from "chart.js";
 import { useEffect } from "react";
+import { RingSpinner } from "react-spinners-kit";
 
 export default function ChartBar() {
   useEffect(() => {
@@ -146,6 +147,7 @@ export default function ChartBar() {
           <canvas id="bar-chart"></canvas>
         </div>
       </CardBody>
+      <RingSpinner	 size={30} color="#686769"   />
     </Card>
   );
 }
