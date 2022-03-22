@@ -15,16 +15,18 @@ export const foodSlice = createSlice({
       } else {
         const cartItem = {
           ...payload,
+          oldId: payload._id,
           cartQuantity: payload.cartQuantity,
           totalPrice: payload.price * payload.cartQuantity,
           orderStatus: "pending",
         };
+        delete cartItem._id;
         state.addToCart.push(cartItem);
       }
     },
     cartQuantity(state, { payload }) {
       const itemIndex = state.addToCart.findIndex(
-        (item) => item._id === payload._id
+        (item) => item.oldId === payload.oldId
       );
       state.addToCart[itemIndex].cartQuantity = payload.cartQuantity;
       state.addToCart[itemIndex].totalPrice =
@@ -32,7 +34,7 @@ export const foodSlice = createSlice({
     },
     removeFromCart(state, { payload }) {
       state.addToCart = state.addToCart.filter(
-        (food) => food._id !== payload._id
+        (food) => food.oldId !== payload.oldId
       );
     },
     removeAllFromCart(state, { payload }) {

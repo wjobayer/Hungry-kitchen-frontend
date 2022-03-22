@@ -78,7 +78,7 @@ export default function TrafficCard() {
                   <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left"></th>
                   <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                     <button
-                      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                       onClick={() => setDeliver(true)}
                     >
                       Deliver
@@ -142,16 +142,16 @@ export default function TrafficCard() {
                                 </button>
                               </div>
                               {/*body*/}
-                              <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                                <div class="mb-4">
+                              <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                <div className="mb-4">
                                   <label
-                                    class="block text-gray-700 text-sm font-bold mb-2"
+                                    className="block text-gray-700 text-sm font-bold mb-2"
                                     for="username"
                                   >
                                     Plaese Input This Food Code To Confirm
                                   </label>
                                   <input
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     id="username"
                                     type="text"
                                     placeholder="Food Code"

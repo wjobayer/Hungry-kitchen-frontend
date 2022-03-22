@@ -1,8 +1,8 @@
 import React from "react";
-import {FaTwitterSquare,FaYoutube} from 'react-icons/fa'
-import {AiOutlineInstagram,AiFillFacebook} from 'react-icons/ai'
-import {MdOutlineTransitEnterexit} from 'react-icons/md'
-import {TiSocialDribbble} from 'react-icons/ti'
+import { FaTwitterSquare, FaYoutube } from "react-icons/fa";
+import { AiOutlineInstagram, AiFillFacebook } from "react-icons/ai";
+import { MdOutlineTransitEnterexit } from "react-icons/md";
+import { TiSocialDribbble } from "react-icons/ti";
 
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
 const Footer = () => {
@@ -32,36 +32,36 @@ const Footer = () => {
                   restaurant@gmail.com
                 </p>
                 <div className="flex">
-                <a
-                  className="hover:text-orange-400 text-2xl"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <AiFillFacebook/>
-                </a>
-                <a
-                  className="mx-3 hover:text-orange-400 text-2xl"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                   <FaYoutube/>
-                </a>
-                <a
-                  className="hover:text-orange-400 text-2xl"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                  <TiSocialDribbble/>
-                </a>
-                <a
-                  className="mx-3 hover:text-orange-400 text-2xl"
-                  href="https://youtu.be/62b9HXn4VnI"
-                >
-                 <FaTwitterSquare/>
-                </a>
-                <a
-                  className="hover:text-orange-400 text-2xl"
-                  href="https://youtu.be/62b9HXn4VnI"
-                > <AiOutlineInstagram/>
-                </a>
-                 
+                  <a
+                    className="hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <AiFillFacebook />
+                  </a>
+                  <a
+                    className="mx-3 hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <FaYoutube />
+                  </a>
+                  <a
+                    className="hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <TiSocialDribbble />
+                  </a>
+                  <a
+                    className="mx-3 hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <FaTwitterSquare />
+                  </a>
+                  <a
+                    className="hover:text-orange-400 text-2xl"
+                    href="https://youtu.be/62b9HXn4VnI"
+                  >
+                    <AiOutlineInstagram />
+                  </a>
                 </div>
               </div>
               <div>

@@ -13,6 +13,11 @@ import FoodDetails from "./components/FoodDetails/FoodDetails";
 import NotFound from "./components/NotFound/NotFound";
 import SearchResult from "./components/SearchResult";
 import TestCompo from "./components/TestCompo";
+// import Sidebar from '../src/components/Sidebar';
+// import CourierForm from "./components/PartnerSection/CourierForm";
+// import RestaurantForm from "./components/PartnerSection/RestaurantForm";
+// // import ReviewPage from "./pages/ReviewPage";
+import AboutPage from "./pages/AboutPage";
 import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
 import Login from "./pages/LoginRegister/Login";
@@ -20,6 +25,8 @@ import Register from "./pages/LoginRegister/Register";
 import OrderHistory from "./pages/OrderHistory";
 import Rider from "./pages/Rider";
 import Payment from "./Payment/Payment";
+// // import UserProfile from "./pages/UserProfile";
+// import PopularResturants from "./components/PopularResturants/PopularResturants";
 
 const AppRouter = () => {
   return (
@@ -50,6 +57,10 @@ const AppRouter = () => {
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="/category/:mealTime" element={<FoodCategories />} />
+        <Route path="category" element={<FoodCategories />} />
+        {/* <Route path="/reviewPage" element={<ReviewPage />} /> */}
+        <Route path="/aboutPage" element={<AboutPage />} />
+        {/* <Route path="/userProfile" element={<UserProfile />} /> */}
       </Routes>
     </Router>
   );

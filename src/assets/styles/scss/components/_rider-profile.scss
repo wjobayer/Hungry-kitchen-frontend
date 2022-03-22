@@ -1,0 +1,43 @@
+.sales-value {
+  @apply pt-14 pb-28 px-3 md:px-8 h-auto;
+  &__Container {
+    @apply container mx-auto max-w-full;
+  }
+  &__wrapper {
+    @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4;
+    &__item {
+      @apply divide-y divide-gray-300 border-orange-400 shadow-inner p-8 rounded-lg;
+      &__content {
+        @apply grid grid-cols-3;
+      }
+    }
+  }
+}
+
+.rider {
+  @apply px-3 md:px-8 h-auto -mt-24;
+  &__container {
+    @apply container mx-auto max-w-full;
+  }
+  &__wrapper {
+    @apply grid grid-cols-1 xl:grid-cols-6;
+    &__area {
+      @apply xl:col-start-1 xl:col-end-5 px-4 mb-16;
+      &__title {
+        @apply text-4xl text-black font-bold p-8 rounded-xl  text-center bg-gradient-to-r from-red-400 to-blue-500;
+      }
+      &__form {
+        @apply w-full mt-10 mx-auto max-w-3xl;
+        label {
+          @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2;
+        }
+        input {
+          @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500;
+        }
+      }
+    }
+    &__info {
+      @apply xl:col-start-5 xl:col-end-7 px-4 mb-16 mt-14;
+    }
+  }
+}
