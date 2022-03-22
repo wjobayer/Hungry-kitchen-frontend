@@ -41,7 +41,7 @@ export default function PickUpOrder() {
     if (response.data.modifiedCount) {
       Swal.fire(
         "Rider not Accepted",
-        "Your Order Rider is not Accepted",
+        "Rider not Accepted Your Order",
         "success"
       );
       setControl(!control);
