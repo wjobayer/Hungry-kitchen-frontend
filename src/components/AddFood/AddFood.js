@@ -10,14 +10,24 @@ const AddFood = () => {
     foodDescription: "",
     resturantName: "",
     resturantName: "",
+    resturantOpen: "",
+    resturantClose: "",
   });
 
   const [foodImage, setFoodImage] = useState();
   const handleChange = (e) => {
     setFoodInfo({ ...foodInfo, [e.target.name]: e.target.value });
   };
-  const { foodName, category, type, foodDescription, price, resturantName } =
-    foodInfo;
+  const {
+    foodName,
+    category,
+    type,
+    foodDescription,
+    price,
+    resturantName,
+    resturantClose,
+    resturantOpen,
+  } = foodInfo;
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!foodImage) {
@@ -32,6 +42,8 @@ const AddFood = () => {
         price,
         foodImage,
         resturantName,
+        resturantOpen,
+        resturantClose
       })
       .then((res) => {
         if (res.status === 200) {
@@ -76,7 +88,6 @@ const AddFood = () => {
                 type="text"
                 name="foodName"
                 placeholder="Food Name"
-                // value={}
                 id="foodName"
                 onChange={(e) => handleChange(e)}
               />
@@ -113,15 +124,15 @@ const AddFood = () => {
                 class="mb-2 font-bold text-lg text-gray-900"
                 htmlFor="foodCategory"
               >
-                Food Category
+                Food Type
               </label>
               <select
-                name="foodCategory"
-                id="category"
+                name="type"
+                id="type"
                 className="add-food-input"
                 onChange={(e) => handleChange(e)}
               >
-                <option value="category">category</option>
+                <option value="type">Type</option>
                 <option value="Chicken">Chicken</option>
                 <option value="Pasta">Pasta</option>
                 <option value="Dessert">Dessert</option>
@@ -132,15 +143,15 @@ const AddFood = () => {
                 class="mb-2 font-bold text-lg text-gray-900"
                 htmlFor="foodCategory"
               >
-                Food Area
+                Food Category
               </label>
               <select
-                name="foodArea"
+                name="category"
                 id="Area"
                 className="add-food-input"
                 onChange={(e) => handleChange(e)}
               >
-                <option value="Area">Area</option>
+                <option value="category">Category</option>
                 <option value="Chinese">Chinese</option>
                 <option value="Indian">Italian</option>
                 <option value="Indian">Indian</option>
@@ -158,6 +169,32 @@ const AddFood = () => {
                 name="foodImage"
                 id="foodImage"
                 onChange={(e) => handleImage(e.target.files[0])}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodPrice">
+                Resturant Open
+              </label>
+              <input
+                class="add-food-input"
+                type="text"
+                name="resturantOpen"
+                placeholder="resturant Open"
+                id="resturantOpen"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div class="flex flex-col mb-2">
+              <label class="add-food-label" htmlFor="foodPrice">
+                Resturant Close
+              </label>
+              <input
+                class="add-food-input"
+                type="text"
+                name="resturantClose"
+                placeholder="resturant Close"
+                id="resturantClose"
+                onChange={(e) => handleChange(e)}
               />
             </div>
             <div class="flex flex-col mb-2">

@@ -12,7 +12,6 @@ import Swal from "sweetalert2";
 export default function PickUpOrder() {
   const [product, setProduct] = useState([]);
   const [control, setControl] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [Accept, setAccept] = useState(false);
   useEffect(async () => {
     const response = await axios.get(`http://localhost:5000/orders`);
@@ -27,7 +26,18 @@ export default function PickUpOrder() {
       `http://localhost:5000/orders/${product._id}`,
       product
     );
-    console.log(response.data);
+    if (response.data.modifiedCount) {
+      Swal.fire("Rider Order Accepted", "Your Order Rider Accepted", "success");
+      setControl(!control);
+    }
+  };
+
+  const handleDelete = async (product) => {
+    product.riderStatus = "Pending";
+    const response = await axios.put(
+      `http://localhost:5000/orders/${product._id}`,
+      product
+    );
     if (response.data.modifiedCount) {
       Swal.fire("Rider Order Accepted", "Your Order Rider Accepted", "success");
       setControl(!control);
@@ -95,7 +105,7 @@ export default function PickUpOrder() {
                       </button>
                       <button
                         class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                        onClick={() => setShowModal(true)}
+                        onClick={() => handleDelete(product)}
                       >
                         <AiFillDelete />
                       </button>
