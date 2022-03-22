@@ -27,7 +27,7 @@ const Home = () => {
       <PartnerSection />
       <NewsLetter />
       <MobileFeatured />
-      <ReactSlick></ReactSlick>
+      {/* <ReactSlick></ReactSlick> */}
       <Footer></Footer>
     </div>
   );

@@ -38,7 +38,7 @@ const SettingsForm = () => {
     formData.append("foodArea", foodArea);
     formData.append("foodDescription", foodDescription);
     formData.append("foodPic", foodPic);
-    // await axios.post("http://localhost:5000/food", formData)
+    // await axios.post("https://hungry-kitchen-app.herokuapp.com/food", formData)
     //     .then(res => console.log(res.data))
   };
   return (

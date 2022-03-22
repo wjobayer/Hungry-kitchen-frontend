@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { getFood, getFoods } from "../actions/foodAction";
 export const foodSlice = createSlice({
   name: "food",
   initialState: {
     addToCart: [],
+    loading: false,
+    foods: [],
+    error: {},
+    food: {},
   },
   reducers: {
     addToCart(state, { payload }) {
@@ -40,6 +44,31 @@ export const foodSlice = createSlice({
     removeAllFromCart(state, { payload }) {
       state.addToCart = [];
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getFoods.pending, (state, { payload }) => {
+        state.loading = true;
+      })
+      .addCase(getFoods.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.foods = payload;
+      })
+      .addCase(getFoods.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(getFood.pending, (state, { payload }) => {
+        state.loading = true;
+      })
+      .addCase(getFood.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.food = payload;
+      })
+      .addCase(getFood.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      });
   },
 });
 
