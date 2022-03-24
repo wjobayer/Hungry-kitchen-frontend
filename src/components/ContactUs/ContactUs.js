@@ -108,7 +108,7 @@ const ContactUs = () => {
  </div>
       <div className='container flex mt-20' >
       <div>
-          <img style={{height:'430px'}} className='mr-20 contact-img' src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
+          <img style={{height:'430px'}} className='mr-20 contact-img' src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="food" />
         </div>
        <div>
        <div>
@@ -118,22 +118,22 @@ const ContactUs = () => {
           <p style={{color:'#646464'}} className='text-1xl mb-10'>Our support team is spread across the globe to give you answer fast.</p>
         </div>
         <div>
-        <div class="contact-form-wrapper">
+        <div className="contact-form-wrapper">
                         <form ref={form} onSubmit={sendEmail}>
-                            <div class="form-item">
+                            <div className="form-item">
                             
-                                <input className='border py-2 '  type="text" name="name"  required="" placeholder='Name' />
+                                <input className='border py-2 '  type="text" name="name"  required="" placeholder='Name' alt='input' />
                                
                             </div>
                          
-                            <div class="form-item">
+                            <div className="form-item">
                             
                                 <input className='border py-2' type="text" name="email" required=""
                                 placeholder='Email' />
                                
                             </div>
                            
-                            <div class="form-item">
+                            <div className="form-item">
                                 <textarea className='border py-2'  name="message" required="" placeholder='Message'></textarea>
                                
                             </div>
