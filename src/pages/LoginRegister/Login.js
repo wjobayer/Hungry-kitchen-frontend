@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import {
-  Link,
-  unstable_HistoryRouter,
-  useLocation,
-  useNavigate,
+  Link, useLocation,
+  useNavigate
 } from "react-router-dom";
 import useFirebase from "../../Hooks/useFirebase";
 
@@ -92,29 +90,7 @@ const Login = () => {
 
 
 
-          <div className='mb-5'>
-            <div className="w-1/2 mx-auto flex items-center justify-between py-5">
-              <hr className="w-1/2 bg-gray-400" />
-              <p className="text-base font-medium leading-4 px-2.5 ">OR </p>
-              <hr className="w-1/2 bg-gray-400  " />
-            </div>
-
-            <div className='text-center mb-5'><br /> <strong className=' text-center text-decoration-line: underline'>Easy login</strong></div>
-
-            {/* Social login */}
-            <div className='flex justify-center px-5'>
-              <button aria-label="Continue with google" role="button" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-80 mr-5" onClick={handleGoogleLogin} >
-                <FcGoogle />
-                <p className="text-base font-medium ml-4 text-gray-700">with Google</p>
-              </button>
-
-              <button aria-label="Continue with google" role="button" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-80 ">
-                <FaFacebookF className='fill-blue-700' />
-                <p className="text-base font-medium ml-4 text-gray-700">with Facebook</p>
-              </button>
-            </div>
-
-          </div>
+         
 
           <p className="text-center text-gray-500 text-xs">
             &copy;2022 Hungry Kitchen Ltd. All rights reserved.

@@ -151,9 +151,9 @@ const useFirebase = () => {
   }, []);
 
   // send login data to mongodb
-  const saveUser = (email, displayName, method) => {
-    const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+  const saveUser = (email, displayName, role, phoneNumber, method) => {
+    const user = { email, displayName, role, phoneNumber };
+    fetch("https://hungry-kitchen-app.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
