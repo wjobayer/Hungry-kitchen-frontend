@@ -13,15 +13,21 @@ import useFirebase from "../../Hooks/useFirebase";
 import OfferModal from "../../components/OfferModal";
 import LatestFoods from "../../components/LatestFoods";
 // import PopularResturants from "../../components/PopularResturants/PopularResturants";
+import ResturantSlider from "../../components/ResturantSlider/ResturantSlider";
+import HomePageOffer from "../../components/HomePageOffer";
 const Home = () => {
   const { role } = useFirebase();
   console.log("my role of the website:" + role);
   return (
     <div>
       <Header></Header>
+
       <HeroSection></HeroSection>
+      <HomePageOffer />
       <OfferModal />
+      <ResturantSlider />
       <FoodTime />
+
       {/* <PopularResturants /> */}
       <ProductCard />
       <ParallaxSection />

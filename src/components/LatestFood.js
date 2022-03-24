@@ -3,6 +3,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { MdWatchLater } from "react-icons/md";
 import { FaShippingFast } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const LatestFood = ({ latestFood }) => {
   const {
@@ -14,14 +15,23 @@ const LatestFood = ({ latestFood }) => {
     resturantOpen,
     resturantClose,
   } = latestFood;
+
+  const navigate = useNavigate();
+  const handleDetails = (id) => {
+    navigate(`/details/${id}`);
+  };
+
   return (
     <>
       <div className="xl:col-span-4 lg:col-span-6 md:col-span-6 bg-white">
         <div className="">
           <div className="relative">
-            <a href="#">
+            <div
+              className="cursor-pointer"
+              onClick={() => handleDetails(latestFood._id)}
+            >
               <img src={foodImage} alt="" className="" />
-            </a>
+            </div>
             <div className="text-3xl bg-gray-300 p-2 rounded-full text-gray-500 absolute top-6 right-6">
               <FaShippingFast />
             </div>
@@ -36,11 +46,16 @@ const LatestFood = ({ latestFood }) => {
           <div className="">
             <div className="p-5">
               <div className="">
-                <a href="#">
+                <div
+                  className="cursor-pointer"
+                  onClick={() => handleDetails(latestFood._id)}
+                >
                   <h3 className="text-3xl font-bold mb-3">{foodName}</h3>
-                </a>
+                </div>
                 <div className="">
-                  <p className="text-base">{foodDescription}</p>
+                  <p className="text-base">
+                    {foodDescription.slice(0, 150)}...
+                  </p>
                 </div>
               </div>
             </div>

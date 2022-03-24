@@ -73,29 +73,6 @@ const FoodCategories = () => {
     <>
       <HeaderBlack className="" />
       <div className="container px-7 mx-auto">
-        {/* <div className="my-5 flex justify-center">
-        <div className="w-96">
-          <p className="text-red-500 font-bold text-sm text-center tracking-wider">
-            FRESH FROM OUR VENDORS
-          </p>
-          <h3 className="font-bold text-3xl  text-center">
-            We Offer People Best Way To Eat Best Foods
-          </h3>
-        </div>
-      </div> */}
-
-        {/* -------------filter/query buttons ------------- */}
-
-        {/* ----------------------------------------------------------------------------------------- */}
-        {/* <div className="flex justify-center ">
-        <div className="flex bg-red-50 p-3 rounded-3xl  mb-4">
-          <h3 className="font-bold ">Here are all</h3>
-          <h3 className="font-bold border-b-2 mx-2 border-red-500 text-red-500 ">
-            {country}
-          </h3>
-          <h3 className="font-bold">foods from us</h3>
-        </div>
-      </div> */}
         {/* --------------------------------------- */}
         <div className="grid md:grid-cols-[1fr,_2fr] gap-4">
           <div>

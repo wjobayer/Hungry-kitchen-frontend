@@ -1,6 +1,21 @@
 .food-courses {
-  @apply grid md:grid-cols-3 gap-7 my-4 mt-7;
+  @apply grid md:grid-cols-3 gap-7 my-4;
 }
 .food-time-card {
-  @apply bg-orange-50 font-bold text-3xl p-16 rounded-xl flex border border-yellow-400 shadow-md hover:shadow-xl duration-150;
+  @apply bg-white p-8 rounded-xl flex justify-between border  shadow-md hover:shadow-xl duration-150;
+}
+.image-section:hover {
+  .img-back {
+    @apply scale-105 duration-300 relative;
+    z-index: 1;
+  }
+  img {
+    position: relative;
+    z-index: 2;
+  }
+}
+.details-btn:hover {
+  .details-span {
+    margin-left: 4px;
+  }
 }
