@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const SingleSlider = ({ resturant }) => {
   const navigate = useNavigate();
   const handleClick = (mealTime) => {
@@ -15,10 +15,10 @@ const SingleSlider = ({ resturant }) => {
         <p className="font-bold text-lg">{resturant.resturantName}</p>
         <p>4/5 Dhanmondi, Dhaka, Bangladesh </p>
         <button
-          className="px-3 py-2 mt-2 bg-yellow-400 rounded rounded-lg hover:bg-black hover:text-white duration-200"
+          className="rounded ... px-4 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-2 duration-100 my-2 flex items-center"
           onClick={() => handleClick("breakfast")}
         >
-          Order Foods
+          <AiOutlineShoppingCart className="text-lg mr-1" /> Order now
         </button>
       </div>
     </div>
