@@ -10,7 +10,7 @@ export default function TrafficCard() {
   const [product, setProduct] = useState([]);
   const [control, setControl] = useState(false);
   useEffect(async () => {
-    const response = await axios.get(`https://hungry-kitchen-app.herokuapp.com/orders`);
+    const response = await axios.get(`http://localhost:5000/orders`);
     const orderAcceptedFood = response.data.filter(
       (food) => food.orderStatus === "Accepted"
     );
@@ -20,7 +20,7 @@ export default function TrafficCard() {
   const handleDeliverd = async (product) => {
     product.orderStatus = "Deliverd";
     const response = await axios.put(
-      `https://hungry-kitchen-app.herokuapp.com/orders/${product._id}`,
+      `http://localhost:5000/orders/${product._id}`,
       product
     );
     if (response.data.modifiedCount) {

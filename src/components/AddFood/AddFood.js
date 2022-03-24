@@ -34,7 +34,7 @@ const AddFood = () => {
       return;
     }
     await axios
-      .post("https://hungry-kitchen-app.herokuapp.com/foods", {
+      .post("http://localhost:5000/foods", {
         foodName,
         type,
         category,

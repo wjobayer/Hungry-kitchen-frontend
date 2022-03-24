@@ -21,7 +21,7 @@ const SearchResult = () => {
       setLoading(true);
 
       const response = await fetch(
-        `https://hungry-kitchen-app.herokuapp.com/foods`
+        `http://localhost:5000/foods`
       );
       const json = await response.json();
       setAllFoods(json);

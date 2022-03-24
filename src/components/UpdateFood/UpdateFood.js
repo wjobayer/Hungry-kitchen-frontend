@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useParams, useNavigate } from "react-router-dom";
 const UpdateFood = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [foodInfo, setFoodInfo] = useState({});
 
   useEffect(() => {
-    axios.get(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`).then((res) => {
+    axios.get(`http://localhost:5000/foods/${id}`).then((res) => {
       setFoodInfo(res.data);
     });
   }, []);
@@ -25,7 +25,7 @@ const UpdateFood = () => {
       return;
     }
     await axios
-      .put(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`, {
+      .put(`http://localhost:5000/foods/${id}`, {
         foodName,
         type,
         category,

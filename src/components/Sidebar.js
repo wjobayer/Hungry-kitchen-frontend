@@ -1,12 +1,11 @@
 import H6 from "@material-tailwind/react/Heading6";
 import { useEffect, useState } from "react";
-import { AiFillSetting } from "react-icons/ai";
+import { AiFillSetting, AiOutlineUser } from "react-icons/ai";
+import { BiHome, BiLogOutCircle } from "react-icons/bi";
 import { BsTable } from "react-icons/bs";
-import { BiLogOutCircle, BiHome } from "react-icons/bi";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { GiArchiveRegister } from "react-icons/gi";
 import { IoFastFoodOutline } from "react-icons/io5";
-import { AiOutlineUser } from "react-icons/ai";
 import { MdDashboard, MdDeliveryDining } from "react-icons/md";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
@@ -19,7 +18,7 @@ export default function Sidebar() {
   const { user } = useFirebase();
 
   useEffect(() => {
-    fetch(`https://hungry-kitchen-app.herokuapp.com/users`)
+    fetch(`http://localhost:5000/users`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data);

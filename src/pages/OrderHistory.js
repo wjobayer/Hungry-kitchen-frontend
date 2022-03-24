@@ -8,10 +8,10 @@ const OrderHistory = () => {
   const { user } = useFirebase();
   const [history, setHistory] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/orders/altdevsteam@gmail.com")
+    fetch(`http://localhost:5000/orders/pay/${user.email}`)
       .then((res) => res.json())
       .then((data) => setHistory(data));
-  }, []);
+  }, [user.email]);
   console.log(history);
   return (
     <div>

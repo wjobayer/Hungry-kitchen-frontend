@@ -24,7 +24,7 @@ const CartCalculation = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch("https://hungry-kitchen-app.herokuapp.com/orders", {
+        fetch("http://localhost:5000/orders", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -108,6 +108,10 @@ const CartCalculation = () => {
                       to="/orderhistory"
                       className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
                     >Proceed To Pay</NavLink>
+        <NavLink
+                      to="/scheduleOrder"
+                      className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
+                    >Schedule Order</NavLink>
       </div>
       
     </div>

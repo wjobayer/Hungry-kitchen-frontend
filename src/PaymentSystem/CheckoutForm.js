@@ -1,10 +1,10 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
-import { RingSpinner } from "react-spinners-kit";
+import { FlapperSpinner } from "react-spinners-kit";
 import useFirebase from '../Hooks/useFirebase';
 
 const CheckoutForm = ({ order }) => {
-    const { price, foodName, _id } = order;
+    const { price,totalPrice, _id } = order;
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useFirebase();
@@ -95,16 +95,21 @@ const CheckoutForm = ({ order }) => {
 
     }
     return (
-        <div>
+        <div className='mt-16 px-32 '>
+            <img className='mb-2' src="https://i.ibb.co/YQfRDMW/Screenshot-2022-03-24-002706.png" alt="ok" width="500" height="600"></img>
             <form onSubmit={handleSubmit}>
+            <label class="mb-8 block text-gray-700 text-xl font-bold" for="card">
+        Enter your card number to pay your bill.
+      </label>
                 <CardElement
                     options={{
                         style: {
                             base: {
-                                fontSize: '16px',
-                                color: '#424770',
+                                fontSize: '20px',
+                                color: '#6a329f',
+                                letterSpacing: '0.025em',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: '#0b9dcb',
                                 },
                             },
                             invalid: {
@@ -113,15 +118,16 @@ const CheckoutForm = ({ order }) => {
                         },
                     }}
                 />
-                {processing ? <RingSpinner	 size={30} color="#686769"   /> : <button type="submit" disabled={!stripe || success}>
-                    Pay ${price}
+                {processing ? 
+                <FlapperSpinner className="mt-8" size={40} color="#686769" />: <button  className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-12 text-xl'  type="submit" disabled={!stripe || success}>
+                    Pay {totalPrice} $
                 </button>}
             </form>
             {
                 error && <p style={{ color: 'red' }}>{error}</p>
             }
             {
-                success && <p style={{ color: 'green' }}>{success}</p>
+                success && <p className='font-bold text-green-700 mt-12 text-xl'>{success}</p>
             }
         </div>
     );

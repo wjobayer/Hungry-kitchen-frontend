@@ -24,7 +24,8 @@ import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
 import OrderHistory from "./pages/OrderHistory";
 import Rider from "./pages/Rider";
-import Payment from "./Payment/Payment";
+import ScheduleOrder from "./pages/ScheduleOrder";
+import Payment from "./PaymentSystem/Payment";
 // // import UserProfile from "./pages/UserProfile";
 // import PopularResturants from "./components/PopularResturants/PopularResturants";
 
@@ -39,7 +40,8 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
-        <Route path="/orderhistory/:orderId" element={<Payment />} />
+        <Route path="/orderhistory/:Id" element={<Payment />} />
+        <Route path="/scheduleOrder" element={<ScheduleOrder />} />
 
         {/* <Route path="/search" element={<Srch />} /> */}
         <Route path="/search" element={<SearchResult />} />

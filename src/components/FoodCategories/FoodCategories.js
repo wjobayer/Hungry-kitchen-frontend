@@ -1,13 +1,13 @@
-import { React, useState, useEffect } from "react";
-import SingleCard from "../ProductCard/SingleCard/SingleCard";
-// import { BiLoaderCircle } from "react-icons/bi";
-import PaginationCompo from "../ProductCard/PaginationCompo";
+import { React, useEffect, useState } from "react";
+import { FaListAlt } from "react-icons/fa";
 import { MdOutlineArrowRight } from "react-icons/md";
 import { RiLayoutGridFill } from "react-icons/ri";
-import { FaListAlt } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../common/Footer";
 import HeaderBlack from "../../common/HeaderBlack";
+// import { BiLoaderCircle } from "react-icons/bi";
+import PaginationCompo from "../ProductCard/PaginationCompo";
+import SingleCard from "../ProductCard/SingleCard/SingleCard";
 
 const FoodCategories = () => {
   const [category, setCategory] = useState("indian");
@@ -37,7 +37,7 @@ const FoodCategories = () => {
     const fetchFoods = async () => {
       setLoading(true);
       const response = await fetch(
-        `https://hungry-kitchen-app.herokuapp.com/mealTime?mealTime=${mealTime}`
+        `http://localhost:5000/mealTime?mealTime=${mealTime}`
       );
       const json = await response.json();
       setFoods(json);
@@ -51,7 +51,7 @@ const FoodCategories = () => {
     const fetchFoods = async () => {
       setLoading(true);
       const response = await fetch(
-        `https://hungry-kitchen-app.herokuapp.com/category?category=portuguese`
+        `http://localhost:5000/category?category=portuguese`
       );
       const json = await response.json();
       setFoods(json);

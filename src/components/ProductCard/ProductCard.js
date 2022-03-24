@@ -24,7 +24,7 @@ const ProductCard = () => {
       setLoading(true);
 
       const response = await fetch(
-        `https://hungry-kitchen-app.herokuapp.com/category?category=${country}`
+        `http://localhost:5000/category?category=${country}`
       );
       const json = await response.json();
       setFoods(json);

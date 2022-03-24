@@ -14,7 +14,7 @@ export default function PickUpOrder() {
   const [control, setControl] = useState(false);
   const [Accept, setAccept] = useState(false);
   useEffect(async () => {
-    const response = await axios.get(`https://hungry-kitchen-app.herokuapp.com/orders`);
+    const response = await axios.get(`http://localhost:5000/orders`);
     const acceptedOrder = response.data.filter(
       (food) => food.riderStatus === "Pending"
     );
@@ -23,7 +23,7 @@ export default function PickUpOrder() {
   const handleUpdate = async (product) => {
     product.riderStatus = "Accepted";
     const response = await axios.put(
-      `https://hungry-kitchen-app.herokuapp.com/orders/${product._id}`,
+      `http://localhost:5000/orders/${product._id}`,
       product
     );
     if (response.data.modifiedCount) {
@@ -35,7 +35,7 @@ export default function PickUpOrder() {
   const handleDelete = async (product) => {
     product.riderStatus = "Not Accepted";
     const response = await axios.put(
-      `https://hungry-kitchen-app.herokuapp.com/orders/${product._id}`,
+      `http://localhost:5000/orders/${product._id}`,
       product
     );
     if (response.data.modifiedCount) {
