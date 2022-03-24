@@ -7,7 +7,7 @@ export default function OfferModal() {
     setTimeout(() => {
       setShowModal(true);
       setCloseTimeOut(1);
-    }, 2000);
+    }, 10000);
   }
 
   return (
