@@ -11,15 +11,21 @@ import Footer from "../../common/Footer";
 import FoodTime from "../../components/FoodTime/FoodTime";
 import useFirebase from "../../Hooks/useFirebase";
 import OfferModal from "../../components/OfferModal";
+import ResturantSlider from "../../components/ResturantSlider/ResturantSlider";
+import HomePageOffer from "../../components/HomePageOffer";
 const Home = () => {
   const { role } = useFirebase();
   console.log("my role of the website:" + role);
   return (
     <div>
       <Header></Header>
+
       <HeroSection></HeroSection>
+      <HomePageOffer />
       <OfferModal />
+      <ResturantSlider />
       <FoodTime />
+
       {/* <PopularResturants /> */}
       <ProductCard />
       <ParallaxSection />
