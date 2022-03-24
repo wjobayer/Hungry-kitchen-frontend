@@ -11,6 +11,7 @@ import Footer from "../../common/Footer";
 import FoodTime from "../../components/FoodTime/FoodTime";
 import useFirebase from "../../Hooks/useFirebase";
 import OfferModal from "../../components/OfferModal";
+import LatestFoods from "../../components/LatestFoods";
 // import PopularResturants from "../../components/PopularResturants/PopularResturants";
 const Home = () => {
   const { role } = useFirebase();
@@ -27,8 +28,9 @@ const Home = () => {
       <PartnerSection />
       <NewsLetter />
       <MobileFeatured />
-      <ReactSlick></ReactSlick>
-      <Footer></Footer>
+      <LatestFoods />
+      <ReactSlick />
+      <Footer />
     </div>
   );
 };
