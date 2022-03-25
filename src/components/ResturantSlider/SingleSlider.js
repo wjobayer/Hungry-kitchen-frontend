@@ -15,7 +15,7 @@ const SingleSlider = ({ resturant }) => {
         <p className="font-bold text-lg">{resturant.resturantName}</p>
         <p>4/5 Dhanmondi, Dhaka, Bangladesh </p>
         <button
-          className="rounded ... px-4 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-2 duration-100 my-2 flex items-center"
+          className="rounded ... w-full flex justify-center px-4 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-2 duration-100 my-2 flex items-center"
           onClick={() => handleClick("breakfast")}
         >
           <AiOutlineShoppingCart className="text-lg mr-1" /> Order now
