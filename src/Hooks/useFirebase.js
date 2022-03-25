@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
 import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-  updateProfile,
+    createUserWithEmailAndPassword,
+    getAuth,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+    updateProfile
 } from "firebase/auth";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import initializeAuthentication from "../Firebase/firebase.init";
 
@@ -151,9 +151,9 @@ const useFirebase = () => {
   }, []);
 
   // send login data to mongodb
-  const saveUser = (email, displayName, method) => {
-    const user = { email, displayName };
-    fetch("https://hungry-kitchen-app.herokuapp.com/users", {
+  const saveUser = (email, displayName, role, phoneNumber, method) => {
+    const user = { email, displayName, role, phoneNumber };
+    fetch("https://hungry-kitchen-app.herokuapp.com//users", {
       method: method,
       headers: {
         "content-type": "application/json",

@@ -1,11 +1,13 @@
 import React from "react";
+import { AiFillFacebook, AiOutlineInstagram } from "react-icons/ai";
 import { FaTwitterSquare, FaYoutube } from "react-icons/fa";
-import { AiOutlineInstagram, AiFillFacebook } from "react-icons/ai";
-import { MdOutlineTransitEnterexit } from "react-icons/md";
 import { TiSocialDribbble } from "react-icons/ti";
+import { useNavigate } from "react-router-dom";
 
 // import ImageSlider from '../../Componenets/ImageSlider/ImageSlider';
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-slate-100 pt-8 px-7 mx-auto">
       <div className="container  text-left">
@@ -77,7 +79,7 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/food"
+                    onClick={()=>{navigate('details/6231705fa094bd0a17ac77ef')}}
                   >
                     Food
                   </a>
@@ -85,7 +87,7 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/resturant"
+                    onClick={()=>{navigate('details/6231705fa094bd0a17ac77ef')}}
                   >
                     Resturant
                   </a>
@@ -93,7 +95,7 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/cart"
+                    onClick={()=>{navigate('details/6231705fa094bd0a17ac77ef')}}
                   >
                     Cart
                   </a>
@@ -101,9 +103,9 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/blog"
+                    href="https://docs.google.com/document/d/1tNUn2UK47N4Ii1VIU1sHKLZQu36M4w1oG5KNO7WWRvk/edit?usp=sharing"
                   >
-                    Blog
+                    Documentation
                   </a>
                 </p>
               </div>
@@ -161,7 +163,7 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/food"
+                    onClick={()=>{navigate('details/6231705fa094bd0a17ac77ef')}}
                   >
                     Food
                   </a>
@@ -169,7 +171,7 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/resturant"
+                    onClick={()=>{navigate('details/6231705fa094bd0a17ac77ef')}}
                   >
                     Resturant
                   </a>
@@ -177,17 +179,17 @@ const Footer = () => {
                 <p className="mt-3">
                   <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/cart"
+                    onClick={()=>{navigate('details/6231705fa094bd0a17ac77ef')}}
                   >
                     Cart
                   </a>
                 </p>
                 <p className="mt-3">
-                  <a
+                <a
                     className="font-extrabold hover:text-orange-400"
-                    href="/blog"
+                    href="https://docs.google.com/document/d/1tNUn2UK47N4Ii1VIU1sHKLZQu36M4w1oG5KNO7WWRvk/edit?usp=sharing"
                   >
-                    Blog
+                    Documentation
                   </a>
                 </p>
               </div>

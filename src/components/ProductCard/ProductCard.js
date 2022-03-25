@@ -6,7 +6,7 @@ import PaginationCompo from "./PaginationCompo";
 import SingleCard from "./SingleCard/SingleCard";
 
 const ProductCard = () => {
-  const [country, setCountry] = useState("indian");
+  const [country, setCountry] = useState("italian");
   const [layout, setLayout] = useState("vertical");
 
   //pagination stuff-----------------------------------

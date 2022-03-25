@@ -4,30 +4,36 @@ import CardHeader from "@material-tailwind/react/CardHeader";
 import Image from "@material-tailwind/react/Image";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { getFoods } from "../redux/actions/foodAction";
-
 export default function CardTable() {
   const [control, setControl] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [edit, setEdit] = useState(false);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading, foods } = useSelector((state) => state);
   useEffect(() => {
     dispatch(getFoods());
   }, [control]);
 
+  // handle delete
   const handleDelete = (id) => {
-    fetch(`https://aqueous-falls-64682.herokuapp.com/deleteproduct/${id}`, {
+    fetch(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          window.confirm("Do you really want to Delete?");
+          Swal.fire("Food Delete!", "Food successfully Delete!", "success");
           setControl(!control);
         }
       });
     console.log(id);
+  };
+
+  // handle update
+  const handleUpdate = async (id) => {
+    navigate(`/dashboard/addFood/${id}`)
   };
   return (
     <Card>
@@ -86,235 +92,17 @@ export default function CardTable() {
                       </th>
                       <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                         <button
-                          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                          onClick={() => setEdit(true)}
+                          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                          onClick={() => handleUpdate(food._id)}
                         >
                           Edit
                         </button>
                         <button
-                          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
-                          onClick={() => setShowModal(true)}
+                          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
+                          onClick={() => handleDelete(food._id)}
                         >
                           Delete
                         </button>
-                        {edit ? (
-                          <>
-                            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                              <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                                {/*content*/}
-                                <div className="border-0 rounded-lg shadow-md shadow-gray-400 relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                  {/*header*/}
-                                  <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                                    <h3 className="text-3xl font-semibold">
-                                      Edit Your Food Item
-                                    </h3>
-                                    <button
-                                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                      onClick={() => setEdit(false)}
-                                    >
-                                      <span className=" text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                        X
-                                      </span>
-                                    </button>
-                                  </div>
-                                  {/*body*/}
-                                  <form
-                                    className="px-16"
-                                    // onSubmit={handleSubmit}
-                                    enctype="multipart/form-data"
-                                  >
-                                    <div className="flex flex-col mb-2">
-                                      <label
-                                        className="add-food-label"
-                                        htmlFor="foodName"
-                                      >
-                                        Food Name
-                                      </label>
-                                      <input
-                                        className="add-food-input"
-                                        type="text"
-                                        name="foodName"
-                                        id="foodName"
-                                        // onChange={(e) => handleChange(e)}
-                                      />
-                                    </div>
-                                    <div className="flex flex-col mb-2">
-                                      <label
-                                        className="add-food-label"
-                                        htmlFor="foodPrice"
-                                      >
-                                        Food Price
-                                      </label>
-                                      <input
-                                        className="add-food-input"
-                                        type="number"
-                                        name="foodPrice"
-                                        id="foodPrice"
-                                        // onChange={(e) => handleChange(e)}
-                                      />
-                                    </div>
-                                    <div className="flex flex-col mb-2">
-                                      <label
-                                        className="mb-2 font-bold text-lg text-gray-900"
-                                        htmlFor="foodCategory"
-                                      >
-                                        Food Category
-                                      </label>
-                                      <select
-                                        name="foodCategory"
-                                        id="category"
-                                        className="add-food-input"
-                                        // onChange={(e) => handleChange(e)}
-                                      >
-                                        <option value="category">
-                                          category
-                                        </option>
-                                        <option value="Chicken">Chicken</option>
-                                        <option value="Pasta">Pasta</option>
-                                        <option value="Dessert">Dessert</option>
-                                      </select>
-                                    </div>
-                                    <div className="flex flex-col mb-2">
-                                      <label
-                                        className="mb-2 font-bold text-lg text-gray-900"
-                                        htmlFor="foodCategory"
-                                      >
-                                        Food Area
-                                      </label>
-                                      <select
-                                        name="foodArea"
-                                        id="Area"
-                                        className="add-food-input"
-                                        // onChange={(e) => handleChange(e)}
-                                      >
-                                        <option value="Area">Area</option>
-                                        <option value="Chinese">Chinese</option>
-                                        <option value="Indian">Indian</option>
-                                        <option value="Canadian">
-                                          Canadian
-                                        </option>
-                                        <option value="Portuguese">
-                                          Portuguese
-                                        </option>
-                                      </select>
-                                    </div>
-                                    <div className="flex flex-col mb-2">
-                                      <label
-                                        className="add-food-label"
-                                        htmlFor="foodImage"
-                                      >
-                                        Food Image
-                                      </label>
-                                      <input
-                                        className="add-food-input"
-                                        type="file"
-                                        name="foodImage"
-                                        id="foodImage"
-                                        // onChange={handleImage}
-                                      />
-                                    </div>
-                                    <div className="flex flex-col mb-2">
-                                      <label
-                                        className="add-food-label"
-                                        htmlFor="foodDescription"
-                                      >
-                                        Food Description
-                                      </label>
-                                      <textarea
-                                        className="add-food-input"
-                                        name="foodDescription"
-                                        id="foodDescription"
-                                        cols="30"
-                                        rows="2"
-                                        // onChange={(e) => handleChange(e)}
-                                      ></textarea>
-                                    </div>
-                                  </form>
-
-                                  {/*footer*/}
-                                  <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                    <button
-                                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                      type="button"
-                                      onClick={() => setEdit(false)}
-                                    >
-                                      Close
-                                    </button>
-                                    <button
-                                      className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                      type="button"
-                                      onClick={() => setEdit(false)}
-                                    >
-                                      Save Changes
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="fixed inset-0 z-40 bg-gray-50 bg-opacity-5"></div>
-                          </>
-                        ) : null}
-                        {showModal ? (
-                          <>
-                            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                              <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                                {/*content*/}
-                                <div className="border-0 rounded-lg shadow-md shadow-gray-400 relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                  {/*header*/}
-                                  <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                                    <h3 className="text-3xl font-semibold">
-                                      To Confirm Delete
-                                    </h3>
-                                    <button
-                                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                      onClick={() => setShowModal(false)}
-                                    >
-                                      <span className=" text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                        X
-                                      </span>
-                                    </button>
-                                  </div>
-                                  {/*body*/}
-                                  <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                                    <div className="mb-4">
-                                      <label
-                                        className="block text-gray-700 text-sm font-bold mb-2"
-                                        for="username"
-                                      >
-                                        Plaese Input This Food Code To Confirm
-                                      </label>
-                                      <input
-                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="username"
-                                        type="text"
-                                        placeholder="Food Code"
-                                      />
-                                    </div>
-                                  </form>
-
-                                  {/*footer*/}
-                                  <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                    <button
-                                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                      type="button"
-                                      onClick={() => setShowModal(false)}
-                                    >
-                                      Close
-                                    </button>
-                                    <button
-                                      className="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                      type="button"
-                                      onClick={() => setShowModal(false)}
-                                    >
-                                      Delete
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="fixed inset-0 z-40 bg-gray-50 bg-opacity-5"></div>
-                          </>
-                        ) : null}
                       </th>
                     </tr>
                   </tbody>
