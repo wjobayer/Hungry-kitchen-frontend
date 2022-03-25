@@ -19,12 +19,15 @@ const Home = () => {
   const { role } = useFirebase();
   console.log("my role of the website:" + role);
   return (
-    <div>
+    <div className="main-home-page">
       <Header></Header>
 
       <HeroSection></HeroSection>
-      <HomePageOffer />
-      <OfferModal />
+      <div className="home-offer-section">
+        <HomePageOffer />
+      </div>
+
+      {/* <OfferModal /> */}
       <ResturantSlider />
       <FoodTime />
 
