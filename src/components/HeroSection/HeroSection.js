@@ -41,7 +41,7 @@ const HeroSection = () => {
           </div>
         </div>
       </main>
-
+      
       <div></div>
 
       {/* <div className="lg:absolute sm:absolute lg:inset-y-0 lg:right-0 -z-30">

@@ -71,7 +71,7 @@ export default function PageVisitsCard() {
             {product?.map((product) => (
               <tbody className="hover:bg-gray-200" key={product._id}>
                 <tr>
-                  <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
+                  <th className="w-1/3 border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">
                     {product.foodName}
                   </th>
                   <th className="border-b border-gray-200 align-middle font-light text-lg whitespace-nowrap px-2 py-4 text-left">

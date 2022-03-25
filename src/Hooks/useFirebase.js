@@ -88,8 +88,8 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => { })
-          .catch((error) => { });
+          .then(() => {})
+          .catch((error) => {});
         navigate("/");
       })
       .catch((error) => {
