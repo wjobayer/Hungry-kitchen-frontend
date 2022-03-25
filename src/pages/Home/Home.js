@@ -7,7 +7,6 @@ import HomePageOffer from "../../components/HomePageOffer";
 import LatestFoods from "../../components/LatestFoods";
 import MobileFeatured from "../../components/MobileFeatured";
 import NewsLetter from "../../components/NewsLetter/NewsLetter";
-import OfferModal from "../../components/OfferModal";
 import ParallaxSection from "../../components/ParallaxSection/ParallaxSection";
 import PartnerSection from "../../components/PartnerSection/PartnerSection";
 import ProductCard from "../../components/ProductCard/ProductCard";
@@ -24,7 +23,7 @@ const Home = () => {
 
       <HeroSection></HeroSection>
       <HomePageOffer />
-      <OfferModal />
+      {/* <OfferModal /> */}
       <ResturantSlider />
       <FoodTime />
 

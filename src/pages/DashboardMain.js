@@ -11,6 +11,9 @@ import Rider from "../pages/Rider";
 import Settings from "../pages/Settings";
 import Tables from "../pages/Tables";
 import Dashboard from "./Dashboard";
+import MakeAdmin from "./MakeAdmin";
+import RiderProfile from "./RiderProfile";
+import UserProfile from "./UserProfile";
 
 
 
@@ -26,6 +29,9 @@ const DashboardMain = () => {
             <Route path='addFood/:id' element={<UpdateFood></UpdateFood>}/>
             <Route path='tables' element={<Tables></Tables>}/>
             <Route path='maps' element={<Maps></Maps>}/>
+            <Route path="userProfile" element={<UserProfile />} />
+            <Route path="riderProfile" element={<RiderProfile />} />
+            <Route path='admin' element={<MakeAdmin></MakeAdmin>}/>
             <Route path='/' element={<Dashboard></Dashboard>}/>
         </Routes>
         <Footer></Footer>

@@ -8,7 +8,7 @@ const UpdateFood = () => {
   const [foodInfo, setFoodInfo] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/foods/${id}`).then((res) => {
+    axios.get(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`).then((res) => {
       setFoodInfo(res.data);
     });
   }, []);
@@ -25,7 +25,7 @@ const UpdateFood = () => {
       return;
     }
     await axios
-      .put(`http://localhost:5000/foods/${id}`, {
+      .put(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`, {
         foodName,
         type,
         category,

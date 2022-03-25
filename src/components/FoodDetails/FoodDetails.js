@@ -44,7 +44,7 @@ const FoodDetails = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/foods/${id}`)
+    fetch(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data));
   }, [id]);
@@ -62,7 +62,7 @@ const FoodDetails = () => {
       setLoading(true);
 
       const response = await fetch(
-        `http://localhost:5000/foods/`
+        `https://hungry-kitchen-app.herokuapp.com/foods/`
       );
       const json = await response.json();
       setFoods(json);

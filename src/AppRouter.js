@@ -22,7 +22,6 @@ import DashboardMain from "./pages/DashboardMain";
 import Home from "./pages/Home/Home";
 import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
-import OrderHistory from "./pages/OrderHistory";
 import Rider from "./pages/Rider";
 import ScheduleOrder from "./pages/ScheduleOrder";
 import Payment from "./PaymentSystem/Payment";
@@ -39,8 +38,8 @@ const AppRouter = () => {
         <Route path="/details/:id" element={<FoodDetails />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/orderhistory" element={<OrderHistory />} />
-        <Route path="/orderhistory/:Id" element={<Payment />} />
+        {/* <Route path="/orderhistory" element={<OrderHistory />} /> */}
+        <Route path="/payment" element={<Payment />} />
         <Route path="/scheduleOrder" element={<ScheduleOrder />} />
 
         {/* <Route path="/search" element={<Srch />} /> */}

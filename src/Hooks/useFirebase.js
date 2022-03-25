@@ -1,12 +1,12 @@
 import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-  updateProfile
+    createUserWithEmailAndPassword,
+    getAuth,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+    updateProfile
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -145,7 +145,7 @@ const useFirebase = () => {
 
   // isAdmin
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://hungry-kitchen-app.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setRole(data.admin));
   }, []);
@@ -153,7 +153,7 @@ const useFirebase = () => {
   // send login data to mongodb
   const saveUser = (email, displayName, role, phoneNumber, method) => {
     const user = { email, displayName, role, phoneNumber };
-    fetch("https://hungry-kitchen-app.herokuapp.com/users", {
+    fetch("https://hungry-kitchen-app.herokuapp.com//users", {
       method: method,
       headers: {
         "content-type": "application/json",

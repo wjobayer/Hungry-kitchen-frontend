@@ -6,7 +6,7 @@ const LatestFoods = () => {
   const [latestFoods, setLatestFoods] = useState([]);
   console.log("latestFoods", latestFoods);
   useEffect(() => {
-    fetch("http://localhost:5000/foods")
+    fetch("https://hungry-kitchen-app.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => setLatestFoods(data));
   }, []);

@@ -37,7 +37,7 @@ const FoodCategories = () => {
     const fetchFoods = async () => {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:5000/mealTime?mealTime=${mealTime}`
+        `https://hungry-kitchen-app.herokuapp.com/mealTime?mealTime=${mealTime}`
       );
       const json = await response.json();
       setFoods(json);
@@ -51,7 +51,7 @@ const FoodCategories = () => {
     const fetchFoods = async () => {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:5000/category?category=portuguese`
+        `https://hungry-kitchen-app.herokuapp.com/category?category=portuguese`
       );
       const json = await response.json();
       setFoods(json);

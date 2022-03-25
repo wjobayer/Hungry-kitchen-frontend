@@ -11,7 +11,7 @@ export default function Delivered() {
   const [control, setControl] = useState(false);
 
   useEffect(async () => {
-    const response = await axios.get(`http://localhost:5000/orders`);
+    const response = await axios.get(`https://hungry-kitchen-app.herokuapp.com/orders`);
     const acceptedOrder = response.data.filter(
       (food) => food.riderStatus === "Accepted"
     );
@@ -21,7 +21,7 @@ export default function Delivered() {
   const handleUpdate = async (product) => {
     product.riderStatus = "Done";
     const response = await axios.put(
-      `http://localhost:5000/orders/${product._id}`,
+      `https://hungry-kitchen-app.herokuapp.com/orders/${product._id}`,
       product
     );
     if (response.data.modifiedCount) {

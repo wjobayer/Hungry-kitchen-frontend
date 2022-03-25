@@ -4,7 +4,7 @@ import SingleSlider from "./SingleSlider";
 export default function ResturantSlider() {
   const [resturants, setResturants] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/resturants")
+    fetch("https://hungry-kitchen-app.herokuapp.com/resturants")
       .then((res) => res.json())
       .then((data) => setResturants(data));
   }, []);

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { removeAllFromCart } from "../redux/slices/foodSlice";
 
 const CartCalculation = () => {
   const cartProducts = useSelector((state) => state.addToCart);
@@ -13,7 +12,7 @@ const CartCalculation = () => {
   const [deleveryFee, setDeleveryFee] = useState(0);
   const total = deleveryFee + subTotal;
   console.log(total);
-
+  const navigate = useNavigate(); 
   const handleCheckout = () => {
     Swal.fire({
       title: "Do you want to conferm order?",
@@ -24,20 +23,21 @@ const CartCalculation = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch("http://localhost:5000/orders", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(cartProducts),
-        })
-          .then((res) => res.json())
-          .then((data) => {})
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-        dispatch(removeAllFromCart(cartProducts));
-        Swal.fire("Ordered successfully!", "", "success");
+        navigate('/payment');
+        // fetch("https://hungry-kitchen-app.herokuapp.com/orders", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(cartProducts),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {})
+        //   .catch((error) => {
+        //     console.error("Error:", error);
+        //   });
+        // dispatch(removeAllFromCart(cartProducts));
+        // Swal.fire("Ordered successfully!", "", "success");
       } else if (result.isDenied) {
         Swal.fire("Order is not placed!", "", "info");
       }
@@ -104,10 +104,7 @@ const CartCalculation = () => {
             Proceed to checkout
           </button>
         )}
-        <NavLink
-                      to="/orderhistory"
-                      className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"
-                    >Proceed To Pay</NavLink>
+        
         <NavLink
                       to="/scheduleOrder"
                       className="py-2 px-4 border rounded mr-3 font-bold bg-yellow-400 hover:bg-black hover:text-white duration-100 flex items-center"

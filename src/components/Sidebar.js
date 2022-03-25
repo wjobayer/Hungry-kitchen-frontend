@@ -4,7 +4,6 @@ import { AiFillSetting, AiOutlineUser } from "react-icons/ai";
 import { BiHome, BiLogOutCircle } from "react-icons/bi";
 import { BsTable } from "react-icons/bs";
 import { FaMapMarkedAlt } from "react-icons/fa";
-import { GiArchiveRegister } from "react-icons/gi";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { MdDashboard, MdDeliveryDining } from "react-icons/md";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -18,7 +17,7 @@ export default function Sidebar() {
   const { user } = useFirebase();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://hungry-kitchen-app.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data);
@@ -48,7 +47,7 @@ export default function Sidebar() {
       >
         <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
           <NavLink
-            to="/dashboard"
+            to="/"
             exact
             className="flex items-center gap-4 text-xl text-gray-700 font-light px-4 py-3 rounded-lg"
             activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
@@ -152,20 +151,6 @@ export default function Sidebar() {
                   >
                     <IoFastFoodOutline />
                     Add Food
-                  </NavLink>
-                </li>
-                <li className="rounded-lg  text-gray-700">
-                  <NavLink
-                    to="/dashboard/maps"
-                    className={
-                      color === "register"
-                        ? "flex items-center gap-4 text-xl text-white font-light px-4 py-3 rounded-lg bg-blue-500 outline-none ring ring-violet-300"
-                        : "flex items-center gap-4 text-xl text-black font-light px-4 py-3 rounded-lg "
-                    }
-                    onClick={() => handleFilter("register")}
-                  >
-                    <GiArchiveRegister />
-                    Register
                   </NavLink>
                 </li>
               </ul>

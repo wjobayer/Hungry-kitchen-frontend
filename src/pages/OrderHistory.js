@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Footer from "../common/Footer";
 import HeaderBlack from "../common/HeaderBlack";
-import useFirebase from "../Hooks/useFirebase";
 
 const OrderHistory = () => {
-  const { user } = useFirebase();
-  const [history, setHistory] = useState([]);
-  useEffect(() => {
-    fetch(`http://localhost:5000/orders/pay/${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setHistory(data));
-  }, [user.email]);
-  console.log(history);
+  // const { user } = useFirebase();
+  // const [history, setHistory] = useState([]);
+  const history = useSelector((state) => state.addToCart);
+  // useEffect(() => {
+  //   fetch(`https://hungry-kitchen-app.herokuapp.com/orders/pay/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setHistory(data));
+  // }, [user.email]);
+  // console.log(history);
   return (
     <div>
       <HeaderBlack></HeaderBlack>

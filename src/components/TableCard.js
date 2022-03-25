@@ -18,7 +18,7 @@ export default function CardTable() {
 
   // handle delete
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/foods/${id}`, {
+    fetch(`https://hungry-kitchen-app.herokuapp.com/foods/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

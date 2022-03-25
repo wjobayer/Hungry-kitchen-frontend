@@ -10,7 +10,7 @@ export default function PageVisitsCard() {
   const [product, setProduct] = useState([]);
   const [control, setControl] = useState(false);
   useEffect(async () => {
-    const response = await axios.get(`http://localhost:5000/orders`);
+    const response = await axios.get(`https://hungry-kitchen-app.herokuapp.com/orders`);
     const pendingOrder = response.data.filter(food => food.orderStatus === "pending")
     setProduct(pendingOrder);
   }, [control]);
@@ -19,7 +19,7 @@ export default function PageVisitsCard() {
     product.orderStatus = "Accepted";
     product.riderStatus = "Pending";
     const response = await axios.put(
-      `http://localhost:5000/orders/${product._id}`,
+      `https://hungry-kitchen-app.herokuapp.com/orders/${product._id}`,
       product
     );
     console.log(response)
@@ -30,7 +30,7 @@ export default function PageVisitsCard() {
   };
 
   const handleDelete = async (id) => {
-    const response = await axios.delete(`http://localhost:5000/orders/${id}`);
+    const response = await axios.delete(`https://hungry-kitchen-app.herokuapp.com/orders/${id}`);
     console.log(response.data);
     if(response.data.acknowledged){
       Swal.fire("Order Delete", "Order delete successfull", "success");

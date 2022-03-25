@@ -36,7 +36,13 @@ const ScheduleOrder = () => {
         <h1 className='text-2xl border p-4'>Date :{dateOf}</h1>
         </div>
             </div>
+            <div className='flex justify-center'>
+            <button className="hover:bg-transparent bg-yellow-400 text-black font-semibold hover:text-black py-2 px-4 border border-yellow-400 mb-8 hover:border-transparent rounded mx-auto">
+            Checkout Order
+            </button>
             </div>
+            </div>
+            
             </div>
             <Footer></Footer>
         </div>

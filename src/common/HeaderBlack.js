@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import React from "react";
-import { AiOutlineBell, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -65,7 +65,7 @@ const HeaderBlack = () => {
                 </NavLink>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   to="/category"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
@@ -73,9 +73,9 @@ const HeaderBlack = () => {
                 >
                   <span className="ml-2">All Items</span>
                 </NavLink>
-              </li>
+              </li> */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   to="/allrestaurant"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
@@ -83,7 +83,7 @@ const HeaderBlack = () => {
                 >
                   <span className="ml-2">All Restaurant</span>
                 </NavLink>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 <NavLink
@@ -91,7 +91,7 @@ const HeaderBlack = () => {
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                   activeclassname="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-black shadow-md"
                 >
-                  <span className="ml-2">Restaurant Search</span>
+                  <span className="ml-2">Search Food</span>
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -127,7 +127,7 @@ const HeaderBlack = () => {
                 </span>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   to="/cart"
                   className="px-3 py-2 flex items-center font-bold leading-snug text-black hover:opacity-75"
@@ -137,7 +137,7 @@ const HeaderBlack = () => {
                     <AiOutlineBell />
                   </span>
                 </NavLink>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 {user.email ? (
