@@ -33,7 +33,7 @@ const Payment = () => {
             <h2 className="text-2xl">{orders.price} $ x {orders.cartQuantity} = {orders.totalPrice} $</h2>
             </div>
             </div> */}
-           <div className='py-8 my-16 container bg-white border rounded-xl shadow-xl col-span-2'> 
+           <div className='w-2/3 py-8 my-16 container bg-white border rounded-xl shadow-xl col-span-2'> 
            <Elements stripe={stripePromise}>
                <CheckoutForm ></CheckoutForm>
             </Elements>

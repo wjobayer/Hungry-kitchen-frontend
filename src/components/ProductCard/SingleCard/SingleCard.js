@@ -1,15 +1,15 @@
 import { React, useState } from "react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { addToCart } from "../../../redux/slices/foodSlice";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import useFirebase from "../../../Hooks/useFirebase";
+import { addToCart } from "../../../redux/slices/foodSlice";
 
 const SingleCard = ({ food, loading, layout }) => {
   //Location tracking from order
-  const offer = 10;
+  const offer = 15;
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   function getLocation() {
@@ -112,7 +112,7 @@ const SingleCard = ({ food, loading, layout }) => {
         <div className="flex justify-between items-center">
           <div
             onClick={() => handleAddCart({ ...food, cartQuantity: counter })}
-            className="rounded ... px-4 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-2 duration-100 my-2 flex items-center"
+            className="rounded cursor-pointer ... px-4 bg-yellow-400 hover:bg-black hover:text-white   font-bold  p-2 duration-100 my-2 flex items-center"
           >
             <AiOutlineShoppingCart className="text-lg mr-2" /> Order now !
           </div>
