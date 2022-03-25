@@ -168,14 +168,25 @@ textarea:valid + label {
   transform: scale(1.1, 1.1);
   filter: sepia(0.5);
 }
+@media only screen and (max-width: 1280px) {
+  .contact-img {
+    display: none;
+  }
+}
 
 @media only screen and (max-width: 800px) {
   h2 {
     font-size: clamp(40px, 10vw, 60px);
   }
+  .contact-img {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 400px) {
+  .contact-img {
+    display: none;
+  }
   h2 {
     font-size: clamp(30px, 12vw, 60px);
   }
@@ -188,4 +199,10 @@ textarea:valid + label {
     width: 38px;
     height: 38px;
   }
+}
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Prevent the image from stretching. So it crops the image to prevent from awkward stretching */
 }

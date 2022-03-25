@@ -19,6 +19,13 @@ import Login from "./pages/LoginRegister/Login";
 import Register from "./pages/LoginRegister/Register";
 import Rider from "./pages/Rider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+// import Sidebar from '../src/components/Sidebar';
+// import CourierForm from "./components/PartnerSection/CourierForm";
+// import RestaurantForm from "./components/PartnerSection/RestaurantForm";
+// // import ReviewPage from "./pages/ReviewPage";
+import AboutPage from "./pages/AboutPage";
+// // import UserProfile from "./pages/UserProfile";
+// import PopularResturants from "./components/PopularResturants/PopularResturants";
 
 const AppRouter = () => {
   return (
@@ -54,6 +61,10 @@ const AppRouter = () => {
         <Route path="/tables" element={<Tables />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="/category/:mealTime" element={<FoodCategories />} />
+        <Route path="category" element={<FoodCategories />} />
+        {/* <Route path="/reviewPage" element={<ReviewPage />} /> */}
+        <Route path="/aboutPage" element={<AboutPage />} />
+        {/* <Route path="/userProfile" element={<UserProfile />} /> */}
       </Routes>
     </Router>
   );

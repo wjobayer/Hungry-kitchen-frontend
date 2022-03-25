@@ -1,5 +1,6 @@
 import React from "react";
-import SearchFood from "../SearchFood";
+import { Link } from "react-router-dom";
+
 
 const HeroSection = () => {
   return (
@@ -32,9 +33,11 @@ const HeroSection = () => {
           </p>
 
           <div className="mt-4 sm:mt-4 sm:flex sm:justify-center lg:justify-start">
-            <button className="rounded px-6 bg-yellow-400 hover:bg-white hover:text-black font-bold p-4 mt-7 ">
-              Order Now!!!
-            </button>
+            <Link to='/search'>
+              <button className="rounded px-6 bg-yellow-400 hover:bg-white hover:text-black font-bold p-4 mt-7 ">
+                Order Now!!!
+              </button>
+            </Link>
           </div>
         </div>
       </main>

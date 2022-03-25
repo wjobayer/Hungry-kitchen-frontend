@@ -1,0 +1,30 @@
+// .about-us {
+//   &__header {
+//     @apply py-20 bg-cover bg-no-repeat text-center text-white;
+//     background-image: url(http://my-templates.online/deli-taste/assets/images/resources/pager-bg.jpg);
+//     // margin-top: "-250px";
+//     &__wrapper {
+//       @apply container;
+//       &__title {
+//         @apply text-6xl font-bold mb-8;
+//       }
+//       &__subtitle {
+//         @apply flex items-center justify-center text-gray-300 text-lg gap-2;
+//       }
+//     }
+//   }
+//   &__content {
+//     @apply py-24;
+//     &__wrapper {
+//       @apply container;
+//     }
+//     &__subtitle {
+//       @apply mt-12 text-gray-500 font-medium text-lg mb-8;
+//       line-height: 30px;
+//     }
+//     &__description {
+//       @apply text-base text-gray-600;
+//       line-height: 27px;
+//     }
+//   }
+// }

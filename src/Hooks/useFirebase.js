@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -8,7 +9,6 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import initializeAuthentication from "../Firebase/firebase.init";
 

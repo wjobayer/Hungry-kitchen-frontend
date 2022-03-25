@@ -11,17 +11,17 @@ export default function MapExample() {
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
-    } 
+    }
   }
-  
+
   function showPosition(position) {
-    setLatitude (position.coords.latitude);
+    setLatitude(position.coords.latitude);
     setLongitude(position.coords.longitude);
-    console.log(position)
+    console.log(position);
   }
   getLocation();
   console.log(latitude);
-  console.log(longitude)
+  console.log(longitude);
   return (
     <div className="relative w-full rounded-xl shadow-lg">
       <LoadScript googleMapsApiKey="AIzaSyCN5RsuQUGXEAd3TqNpEkHygtmhFxNiDZk">

@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MobileFeatured = () => {
   return (
@@ -17,8 +18,11 @@ const MobileFeatured = () => {
             </p>
 
             <div className="flex gap-5 mt-10">
-              <button className="btn-brand">Order Food</button>
-              <button className="btn-brand-secondary">Search Food</button>
+              <Link to="/category">
+                <button className="btn-brand">Order Food</button>
+              </Link>
+              <Link to='/search'>
+                <button className="btn-brand-secondary">Search Food</button></Link>
             </div>
           </div>
           <div className="mobile-featured__image">

@@ -1,0 +1,12 @@
+@media only screen and (max-width: 1200px) {
+  /*Big smartphones [426px -> 600px]*/
+  .about-img1 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  /*Small smartphones [325px -> 425px]*/
+  .about-img1 {
+    display: none;
+  }
+}
