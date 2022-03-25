@@ -23,6 +23,7 @@ export const foodSlice = createSlice({
           cartQuantity: payload.cartQuantity,
           totalPrice: payload.price * payload.cartQuantity,
           orderStatus: "pending",
+          riderStatus: "pending",
         };
         delete cartItem._id;
         state.addToCart.push(cartItem);
